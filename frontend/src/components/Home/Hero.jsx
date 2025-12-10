@@ -5,22 +5,30 @@ import { ChefHat } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="relative h-screen  flex items-center justify-center bg-black overflow-hidden">
+    <div className="relative h-screen flex items-center justify-center bg-black overflow-hidden">
+
+{/* Background Rectangle Image */}
+  <img
+    src="/assets/Rectangle1.png"
+    alt="Background Rectangle"
+    className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none"
+  />
 
 
 
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0 mx-0 md:mx-[10%] rounded-3xl">
-        <img
-          src="/assets/hero.jpg" 
-          alt="Restaurant Interior"
-          className="w-full h-full object-cover"
-        />
-        {/* Dark Overlay */}
-        {/* <div className="absolute inset-0 bg-black/60"></div> */}
-      </div>
+  <div className="absolute inset-0 z-10 mx-0 h-[80vh] mt-20 md:mx-[10%] rounded-4xl overflow-hidden">
+    <img
+      src="/assets/hero.jpg"
+      alt="Restaurant Interior"
+      className="w-full h-full object-cover"
+    />
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-black/60"></div>
+  </div>
 
-      <div className="relative z-30 text-center px-4 max-w-5xl mx-auto mt-16">
+  <div className="relative z-20 text-center px-4 max-w-5xl mx-auto mt-16">
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

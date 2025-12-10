@@ -4,28 +4,9 @@ import Navbar from '../components/common/Navbar';
 import Footer from '../components/Home/Footer';
 
 const ComingSoon = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // SVG for the jagged/grunge edge effect
-  const GrungeEdgeTop = ({ className, color = "text-[#FFC20E]" }) => (
-    <div className={`absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180 ${className}`} style={{ marginTop: '-1px' }}>
-      <svg className={`relative block w-[200%] h-[40px] md:h-[60px] ${color}`} fill="currentColor" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
-        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
-        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
-      </svg>
-    </div>
-  );
 
-  const GrungeEdgeBottom = ({ className, color = "text-[#FFC20E]" }) => (
-    <div className={`absolute bottom-0 left-0 w-full overflow-hidden leading-none ${className}`} style={{ marginBottom: '-1px' }}>
-      <svg className={`relative block w-[200%] h-[40px] md:h-[60px] ${color}`} fill="currentColor" viewBox="0 0 1200 120" preserveAspectRatio="none">
-         <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" opacity=".25"></path>
-        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
-        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
-      </svg>
-    </div>
-  );
+
 
   return (
     <div className="min-h-screen bg-black font-sans text-white overflow-x-hidden selection:bg-[#FFC20E] selection:text-black">
@@ -187,7 +168,7 @@ const ComingSoon = () => {
             </div>
             
              {/* Decorative Doodles (Absolute Bottom Right) */}
-            <div className="absolute bottom-10 right-0 opacity-20 pointer-events-none -rotate-12 mt-12">
+            <div className="absolute bottom-3 right-0 opacity-20 pointer-events-none -rotate-12">
              <img src="/assets/garlic.png" alt="" />
             </div>
         </div>
@@ -195,9 +176,24 @@ const ComingSoon = () => {
 
       {/* --- COMING SOON LOCATIONS --- */}
 <section
-  className="relative w-full max-h-[100vh] mb-20 flex items-center justify-center px-6 bg-cover bg-center bg-no-repeat"
+  className="relative w-full mb-6 flex items-center justify-center py-24 bg-cover bg-center bg-no-repeat"
   style={{ backgroundImage: "url('/assets/Rectangle66.png')" }}
 >
+
+  {/* 🔵 LEFT DECOR IMAGE */}
+  <img
+    src="/assets/garliccopy.png"
+    alt=""
+    className="absolute top-52 left-24 w-24 md:w-32 opacity-80 pointer-events-none z-0"
+  />
+
+  {/* 🔴 RIGHT DECOR IMAGE */}
+  <img
+    src="/assets/burger.png"
+    alt=""
+    className="absolute top-52 right-24 w-24 md:w-32 opacity-80 pointer-events-none z-0"
+  />
+
   {/* MAIN CENTERED CONTENT */}
   <div className="relative z-10 w-full max-w-5xl mx-auto mt-12">
 
@@ -212,12 +208,12 @@ const ComingSoon = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
 
       {/* Card 1 */}
-      <div className="w-full max-w-[350px]  bg-white rounded-xl overflow-hidden shadow-2xl transform hover:-translate-y-2 transition-transform duration-300">
-        <div className="h-48 overflow-hidden relative">
+      <div className="w-full max-w-[400px] p-2 bg-white rounded-xl overflow-hidden shadow-2xl transform hover:-translate-y-2 transition-transform duration-300">
+        <div className="h-48 overflow-hidden relative rounded-xl">
           <img
             src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop"
             alt="Mississauga"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-xl"
           />
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
@@ -233,8 +229,8 @@ const ComingSoon = () => {
       </div>
 
       {/* Card 2 */}
-      <div className="w-full max-w-[350px] bg-white rounded-xl overflow-hidden shadow-2xl transform hover:-translate-y-2 transition-transform duration-300">
-        <div className="h-60 overflow-hidden relative">
+      <div className="w-full max-w-[400px] p-2 bg-white rounded-xl overflow-hidden shadow-2xl transform hover:-translate-y-2 transition-transform duration-300">
+        <div className="h-60 overflow-hidden relative rounded-xl">
           <img
             src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop"
             alt="Vancouver"
@@ -259,17 +255,28 @@ const ComingSoon = () => {
 
 
       {/* --- CTA FRANCHISE SECTION --- */}
-      <section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[100vh] flex items-center justify-center">
           <div className="absolute inset-0 z-0">
              <img 
-                src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=1977&auto=format&fit=crop" 
+                src="/assets/chef.jpg" 
                 alt="Chef Cooking" 
                 className="w-full h-full object-cover"
             />
              <div className="absolute inset-0 bg-black/60"></div>
           </div>
 
-          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <div className="relative z-99 text-center px-4 max-w-4xl mx-auto">
+
+
+
+  <div className="flex items-center justify-center mb-4 space-x-2">
+    <img src="/assets/franchiseBear.png" alt="Teddy" className="w-8 h-8" />
+    <p className="font-semibold">Book now</p>
+  </div>
+
+
+
+
               <h2 className="text-4xl md:text-6xl font-black uppercase mb-2 leading-tight">
                   Want Jasper Wings in your <br/> <span className="text-[#FFC20E]">City Next?</span>
               </h2>

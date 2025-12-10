@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React from "react";
+import { ArrowRight } from "lucide-react";
 
 const WhatYouGet = () => {
   const benefits = [
@@ -7,17 +7,34 @@ const WhatYouGet = () => {
     "Central Supply & Sauce Distribution",
     "Menu Tested & Optimized",
     "Marketing Support",
-    "Website & Digital Ordering System"
+    "Website & Digital Ordering System",
   ];
 
   return (
-    <div className="flex flex-col md:flex-row w-full bg-black">
+    <div className="relative flex flex-col md:flex-row w-full bg-black">
       <div className="w-full md:w-1/2 h-[500px] md:h-auto relative">
-        <img 
+        <img
           src="/assets/pizza.jpg"
-          alt="Delicious Pizza" 
+          alt="Delicious Pizza"
           className="w-full h-full object-cover"
         />
+        {/* Badge overlay */}
+        <div className="absolute h-24 w-80 bottom-1 right-1 bg-[#F5CF5A] text-black px-4 py-3 flex items-center gap-3 shadow-lg z-50 rounded-xl">
+          {/* Teddy bear icon */}
+          <img
+            src="/assets/franchiseBear.png"
+            alt="Teddy Bear"
+            className="w-10 h-10"
+          />
+
+          <div className="flex flex-col leading-snug">
+            <h6 className="text-2xl font-semibold">
+              We cook{" "}
+              <span className=" ml-2 text-white text-2xl font-bold">hot</span>
+            </h6>
+            <h6 className="text-2xl font-semibold">Special for you</h6>
+          </div>
+        </div>
       </div>
 
       <div className="w-full md:w-1/2 bg-yellow-500 text-black p-10 md:p-20 relative overflow-hidden">

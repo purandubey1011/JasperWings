@@ -23,14 +23,29 @@ return (
       {/* MAIN CONTENT */}
       <div className="max-w-7xl mt-32 mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
 
-        {/* PIZZA IMAGE */}
-        <div>
-          <img
-            src="/assets/pizza.jpg"
-            alt="Cheesy Pizza"
-            className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-          />
-        </div>
+{/* PIZZA IMAGE */}
+<div className="relative">
+  <img
+    src="/assets/pizza.jpg"
+    alt="Cheesy Pizza"
+    className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
+  />
+
+  {/* Bottom-right teddy + WA badge */}
+  <div className="absolute -bottom-1 -right-1 flex items-center gap-2 bg-[#F5CF5A] text-black px-3 py-1 rounded shadow-lg">
+    <img
+      src="/assets/franchiseBear.png"
+      alt="Teddy Bear"
+      className="w-6 h-6"
+    />
+          <div className="flex flex-col leading-snug">
+            <h6 className="text-2xl font-semibold">
+              We cook{" "}
+              <span className=" ml-2 text-white text-2xl font-bold">hot</span>
+            </h6>
+            <h6 className="text-2xl font-semibold">Special for you</h6>
+          </div>  </div>
+</div>
 
         {/* TEXT AREA */}
         <div>

@@ -27,6 +27,8 @@ import AboutSection from "../components/Home/AboutSection";
 import TestimonialSection from "../components/Home/TestimonialSection";
 import BookTableSection from "../components/Home/BookTableSection";
 import Footer from "../components/Home/Footer";
+import GallerySection from "../components/Home/GallerySection";
+import WhatHotNow from "../components/Home/WhatHotNow";
 
 
 // --- Mock Data ---
@@ -185,7 +187,7 @@ const MenuSection = () => {
       <div className="max-w-7xl mx-auto">
 <div className="relative text-center mb-16 max-w-7xl mx-auto px-4">
   {/* --- Left Image (Radish) --- */}
-  {/* Positioned absolute to the left. 'md:block' means it only shows on larger screens */}
+  
   <div className="hidden md:block absolute top-0 left-0 -translate-x-4">
     <img
       src="/assets/radish.png"
@@ -197,10 +199,13 @@ const MenuSection = () => {
   {/* --- Center Content --- */}
   <div className="relative z-10 pt-8">
     <div className="flex justify-center items-center gap-2 mb-4">
-        {/* You can add the small bear icon here if you have it */}
-        <h4 className="text-yellow-500 font-bold uppercase tracking-wider text-sm">
-            Jasper Favourites
-        </h4>
+
+
+  <div className="flex items-center justify-center mb-4 space-x-2">
+    <img src="/assets/franchiseBear.png" alt="Teddy" className="w-8 h-8" />
+    <p className="font-semibold text-black">Jasper Favourites</p>
+  </div>
+        
     </div>
     
     <h2 className="text-4xl md:text-6xl font-black text-black leading-tight font-sans">
@@ -260,11 +265,11 @@ const FeatureSection = () => {
       {/* --- Top Right Pizza Image --- */}
       {/* Positioned absolute to stick to the top right corner. 
           Replace src with your actual pizza sketch image. */}
-      <div className="absolute top-8 right-0 w-64 md:w-96 opacity-80 pointer-events-none ">
+      <div className="absolute top-6 -right-28 w-64 md:w-96 opacity-80 pointer-events-none ">
          <img
            src="/assets/splaterpizza.png" 
            alt="pizza sketch" 
-           className="w-full h-full object-contain rotate-282
+           className="w-auto h-full object-contain rotate-282
            "
          />
       </div>
@@ -273,7 +278,7 @@ const FeatureSection = () => {
         
         {/* --- Header Section --- */}
         {/* Flex container to split Headline (Left) and Paragraph (Right) */}
-        <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-32">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-32 pt-5">
           
           {/* Left Side: Label & Headline */}
           <div className="md:w-1/2">
@@ -347,35 +352,7 @@ const FeatureSection = () => {
 // Sample data for testimonials
 
 
-const GallerySection = () => {
-  const galleryImages = [
-    "https://images.unsplash.com/photo-1628519592419-86a347959b21?auto=format&fit=crop&w=800&q=80", // Phone/QR Scan
-    "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?auto=format&fit=crop&w=800&q=80", // Steak on Grill
-    "https://images.unsplash.com/photo-1628519592419-86a347959b21?auto=format&fit=crop&w=800&q=80", // Phone/QR Scan (Duplicate for pattern)
-    "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80", // Steak on Board
-    "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?auto=format&fit=crop&w=800&q=80", // Steak on Grill
-    "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80", // Steak on Board
-    "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=800&q=80", // Coffee Pour
-    "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80", // Steak on Board
-  ];
 
-  return (
-    <div className="grid grid-cols-2 md:grid-cols-4 px-12 mt-5 gap-1 p-1 bg-black">
-      {galleryImages.map((src, idx) => (
-        <motion.div 
-          key={idx} 
-          whileHover={{ opacity: 0.8 }}
-          className="h-64 overflow-hidden relative cursor-pointer"
-        >
-           <img src={src} alt="Gallery" className="w-full h-full object-cover" />
-           <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-all flex items-center justify-center text-white opacity-0 hover:opacity-100">
-             <Instagram size={32} />
-           </div>
-        </motion.div>
-      ))}
-    </div>
-  );
-};
 
 
 
@@ -388,6 +365,7 @@ const Home = () => {
         <AboutSection />
       <MenuSection />
       <FeatureSection />
+      <WhatHotNow />
       <TestimonialSection />
       <GallerySection />
       <BookTableSection />

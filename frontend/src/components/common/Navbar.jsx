@@ -16,7 +16,7 @@ const Navbar = () => {
         {/* Desktop Menu - Centered as per image */}
         <div className="hidden md:flex gap-12 font-bold text-sm tracking-wider items-center absolute left-1/2 transform -translate-x-1/2">
           <a
-            href="#"
+            href="/"
             className="hover:text-yellow-400 transition-colors uppercase"
           >
             Home
@@ -28,10 +28,22 @@ const Navbar = () => {
             Menu
           </a>
           <a
-            href="#contact"
+            href="/coming-soon"
+            className="hover:text-yellow-400 transition-colors uppercase"
+          >
+            Coming Soon
+          </a>
+          <a
+            href="/contact"
             className="hover:text-yellow-400 transition-colors uppercase"
           >
             Contact
+          </a>
+          <a
+            href="/franchizy"
+            className="hover:text-yellow-400 transition-colors uppercase"
+          >
+            Franshise
           </a>
         </div>
 

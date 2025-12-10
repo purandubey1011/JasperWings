@@ -6,6 +6,8 @@ import InquiryForm from '../components/Franchise/InquiryForm';
 import FAQSection from '../components/Franchise/FAQSection';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/Home/Footer';
+import BookTableSection from '../components/Home/BookTableSection';
+import { Book } from 'lucide-react';
 
 
 const FranchisePage = () => {
@@ -17,6 +19,7 @@ const FranchisePage = () => {
       <WhatYouGet/>
       <InquiryForm/>
       <FAQSection/>
+      <BookTableSection />
       <Footer/>
       <div className="w-full h-10 bg-black"></div>
     </div>

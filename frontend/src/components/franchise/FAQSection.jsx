@@ -28,16 +28,16 @@ const FAQSection = () => {
       </div>
 
       {/* Left Side Middle: Green Leaves */}
-      <div className="absolute top-1/3 left-0 md:left-4 w-20 md:w-28 opacity-80 pointer-events-none z-0">
+      {/* <div className="absolute top-1/3 left-6 md:left-4 w-20 md:w-28 opacity-80 pointer-events-none z-0">
         <img 
             src="/assets/carrot.png" // REPLACE with your Leaves image
             alt="Leaves Decoration" 
             className="w-full h-auto -rotate-45"
         />
-      </div>
+      </div> */}
 
       {/* Bottom Left: Avocado/Veg */}
-      <div className="absolute bottom-3 left-0 md:left-0 w-24 md:w-32 opacity-80 pointer-events-none">
+      <div className="absolute bottom-20 left-0 md:left-0 w-24 md:w-32 opacity-80 pointer-events-none">
         <img 
             src="/assets/carrot.png" // REPLACE with your Avocado image
             alt="Avocado Decoration" 

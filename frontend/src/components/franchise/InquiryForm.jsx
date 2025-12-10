@@ -9,9 +9,9 @@ const InquiryForm = () => {
       {/* Replace 'src' with your actual line-art pizza image */}
       <div className="absolute top-0 left-0 w-32 md:w-48 opacity-50 pointer-events-none">
         <img 
-          src="/api/placeholder/200/200" 
+          src="/assets/splaterpizza.png" 
           alt="Pizza Decoration" 
-          className="w-full h-auto -rotate-12"
+          className="w-full h-auto"
         />
       </div>
 
