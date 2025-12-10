@@ -121,26 +121,7 @@ const features = [
   },
 ];
 
-const reviews = [
-  {
-    id: 1,
-    name: "Alex R.",
-    text: "The flavor is absolutely insane! Best wings in the city.",
-    rating: 5,
-  },
-  {
-    id: 2,
-    name: "Sarah M.",
-    text: "Love the vibe and the spicy burger is a must-try.",
-    rating: 5,
-  },
-  {
-    id: 3,
-    name: "James K.",
-    text: "Fast delivery and the food was still piping hot.",
-    rating: 4,
-  },
-];
+
 
 // --- Components ---
 
@@ -245,7 +226,7 @@ const FeatureSection = () => {
     {
       id: 1,
       title: "Fresh Wings Daily",
-      icon: <ShoppingBasket size={40} strokeWidth={1.5} />, 
+      icon: <ShoppingBasket size={40} strokeWidth={1.5} />,
     },
     {
       id: 2,
@@ -260,61 +241,55 @@ const FeatureSection = () => {
   ];
 
   return (
-    <div className="relative bg-black pb-35 text-white overflow-hidden max-h-screen">
+    <section className="relative bg-black text-white py-16 md:py-24 overflow-hidden">
       
       {/* --- Top Right Pizza Image --- */}
-      {/* Positioned absolute to stick to the top right corner. 
-          Replace src with your actual pizza sketch image. */}
-      <div className="absolute top-6 -right-28 w-64 md:w-96 opacity-80 pointer-events-none ">
-         <img
-           src="/assets/splaterpizza.png" 
-           alt="pizza sketch" 
-           className="w-auto h-full object-contain rotate-282
-           "
-         />
+      <div className="absolute top-0 right-0 w-40 md:w-72 opacity-70 pointer-events-none">
+        <img
+          src="/assets/splaterpizza.png"
+          alt="pizza sketch"
+          className="w-full h-auto object-contain rotate-282"
+        />
       </div>
 
-      <div className=" mx-auto relative z-10 pl-12">
-        
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+
         {/* --- Header Section --- */}
-        {/* Flex container to split Headline (Left) and Paragraph (Right) */}
-        <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-32 pt-5">
-          
-          {/* Left Side: Label & Headline */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 md:gap-16 mb-16 md:mb-24">
+
+          {/* Left Text + Heading */}
           <div className="md:w-1/2">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-2 mb-6"
+              className="flex items-center gap-2 mb-4 md:mb-6"
             >
-              {/* Small Bear Icon Placeholder */}
-              <span className="text-2xl">🐻</span> 
-              <span className="text-yellow-500 font-bold tracking-wide text-sm uppercase">
+              <span className="text-xl md:text-2xl">🐻</span>
+              <span className="text-yellow-500 font-bold tracking-wide text-sm md:text-base uppercase">
                 The Jasper Experience
               </span>
             </motion.div>
 
-<motion.h6 
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.1 }}
-  className="text-2xl md:text-7xl font-medium uppercase leading-[0.9] tracking-tight"
->
-  <span className="whitespace-nowrap">More Than A Bite - </span>
-  <br />
-  <span className="text-yellow-500">It's A Mood</span>
-</motion.h6>
-
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl sm:text-4xl md:text-6xl font-bold uppercase leading-tight"
+            >
+              More Than A Bite -
+              <br />
+              <span className="text-yellow-500">It's A Mood</span>
+            </motion.h2>
           </div>
 
-          {/* Right Side: Description Text */}
-          <motion.div 
+          {/* Right Description Text */}
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
             className="md:w-1/3"
           >
-            <p className="text-gray-400  max-w-7xl text-lg leading-tight font-barlow pr-6">
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed font-barlow">
               Loud Flavours. Fresh Ingredients. Hot Off The Fryer. We Don't Just
               Serve Food — We Serve Cravings.
             </p>
@@ -322,7 +297,7 @@ const FeatureSection = () => {
         </div>
 
         {/* --- Features Grid --- */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 md:gap-16 text-center">
           {features.map((feature, index) => (
             <motion.div
               key={feature.id}
@@ -332,13 +307,14 @@ const FeatureSection = () => {
               whileHover={{ scale: 1.05 }}
               className="flex flex-col items-center"
             >
-              {/* Yellow Circle Container */}
-              <div className="w-32 h-32 rounded-full bg-yellow-500 text-black flex items-center justify-center mb-8 border-4 border-yellow-500 ring-4 ring-black ring-inset">
+
+              {/* Yellow Circle */}
+              <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-yellow-500 text-black flex items-center justify-center mb-6 md:mb-8 border-4 border-yellow-500 ring-4 ring-black ring-inset">
                 {feature.icon}
               </div>
-              
+
               {/* Title */}
-              <h3 className="text-2xl font-bold tracking-wide">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold tracking-wide">
                 {feature.title}
               </h3>
             </motion.div>
@@ -346,9 +322,10 @@ const FeatureSection = () => {
         </div>
 
       </div>
-    </div>
+    </section>
   );
 };
+
 // Sample data for testimonials
 
 
@@ -359,7 +336,7 @@ const FeatureSection = () => {
 
 const Home = () => {
   return (
-    <div className="font-sans text-white selection:bg-yellow-400 selection:text-black">
+    <div className="font-sans text-white selection:bg-yellow-400 selection:text-black overflow-hidden">
       <Navbar />
       <Hero />
         <AboutSection />

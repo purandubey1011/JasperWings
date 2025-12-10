@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {motion} from 'framer-motion'
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,17 +70,29 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-zinc-900 border-b border-gray-800 p-6 flex flex-col gap-4 text-center">
-          <a href="#" className="hover:text-yellow-400 uppercase font-bold">
+          <a href="/" className="hover:text-yellow-400 uppercase font-bold">
             Home
           </a>
-          <a href="#menu" className="hover:text-yellow-400 uppercase font-bold">
+          <a href="/menu" className="hover:text-yellow-400 uppercase font-bold">
             Menu
           </a>
           <a
-            href="#contact"
+            href="/contact"
             className="hover:text-yellow-400 uppercase font-bold"
           >
             Contact
+          </a>
+                    <a
+            href="/coming-soon"
+            className="hover:text-yellow-400 transition-colors uppercase"
+          >
+            Coming Soon
+          </a>
+                    <a
+            href="/franchizy"
+            className="hover:text-yellow-400 transition-colors uppercase"
+          >
+            Franshise
           </a>
           <button className="border border-yellow-500 text-yellow-500 px-6 py-3 rounded-full font-bold uppercase w-full">
             Order Now

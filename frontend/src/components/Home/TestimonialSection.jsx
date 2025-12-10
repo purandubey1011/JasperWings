@@ -63,7 +63,7 @@ function TestimonialCard() {
 
 const TestimonialSection = () => {
   return (
-    <section className="relative h-screen bg-black pt-12">
+    <section className="relative min-h-screen bg-black pt-12">
       {/* Background Image */}
       <div className="absolute top-1 inset-0 z-50 flex justify-center items-start opacity-50 pointer-events-none">
         {/* Replace with your actual image path */}
