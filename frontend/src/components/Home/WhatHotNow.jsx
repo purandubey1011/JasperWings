@@ -36,71 +36,16 @@ const categories = [
 ];
 
 const products = [
-  {
-    id: 1,
-    name: "Delicious Burger",
-    price: 280,
-    oldPrice: 300,
-    discount: "-25%",
-    image:"/public/home/whathotnow/productfood.png",
-  },
-  {
-    id: 2,
-    name: "Delicious Burger",
-    price: 280,
-    oldPrice: 300,
-    discount: "-25%",
-   image:"/public/home/whathotnow/productfood.png",
-  },
-  {
-    id: 3,
-    name: "Delicious Burger",
-    price: 280,
-    oldPrice: 300,
-    discount: "-25%",
-    image:"/public/home/whathotnow/productfood.png",
-  },
-  {
-    id: 4,
-    name: "Delicious Burger",
-    price: 280,
-    oldPrice: 300,
-    discount: "-25%",
-    image:"/public/home/whathotnow/productfood.png",
-  },
-  {
-    id: 5,
-    name: "Delicious Burger",
-    price: 280,
-    oldPrice: 300,
-    discount: "-25%",
-    image:"/public/home/whathotnow/productfood.png",
-  },
-  {
-    id: 6,
-    name: "Delicious Burger",
-    price: 280,
-    oldPrice: 300,
-    discount: "-25%",
-    image:"/public/home/whathotnow/productfood.png",
-  },
-  {
-    id: 7,
-    name: "Delicious Burger",
-    price: 280,
-    oldPrice: 300,
-    discount: "-25%",
-    image:"/public/home/whathotnow/productfood.png",
-  },
-  {
-    id: 8,
-    name: "Delicious Burger",
-    price: 280,
-    oldPrice: 300,
-    discount: "-25%",
-    image:"/public/home/whathotnow/productfood.png",
-  },
+  { id: 1, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
+  { id: 2, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
+  { id: 3, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
+  { id: 4, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
+  { id: 5, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
+  { id: 6, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
+  { id: 7, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
+  { id: 8, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
 ];
+
 
 // --- SVGs for Doodles ---
 const LeafDoodleLeft = () => (
