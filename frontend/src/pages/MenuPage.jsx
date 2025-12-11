@@ -84,8 +84,7 @@ const MENU_ITEMS = {
       price: "280",
       oldPrice: "350",
       discount: "-20%",
-      image:
-        "/public/menu/menufood.png",
+      image: "/menu/menufood.png",
     },
     {
       id: 102,
@@ -93,8 +92,7 @@ const MENU_ITEMS = {
       price: "320",
       oldPrice: "400",
       discount: "-20%",
-      image:
-       "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 103,
@@ -102,8 +100,7 @@ const MENU_ITEMS = {
       price: "300",
       oldPrice: "375",
       discount: "-20%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 104,
@@ -111,8 +108,7 @@ const MENU_ITEMS = {
       price: "310",
       oldPrice: "380",
       discount: "-18%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 105,
@@ -120,8 +116,7 @@ const MENU_ITEMS = {
       price: "295",
       oldPrice: "370",
       discount: "-20%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 106,
@@ -129,10 +124,10 @@ const MENU_ITEMS = {
       price: "305",
       oldPrice: "380",
       discount: "-19%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
   ],
+
   burgers: [
     {
       id: 201,
@@ -140,8 +135,7 @@ const MENU_ITEMS = {
       price: "250",
       oldPrice: "320",
       discount: "-22%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 202,
@@ -149,8 +143,7 @@ const MENU_ITEMS = {
       price: "350",
       oldPrice: "450",
       discount: "-22%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 203,
@@ -158,8 +151,7 @@ const MENU_ITEMS = {
       price: "290",
       oldPrice: "360",
       discount: "-19%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 204,
@@ -167,10 +159,10 @@ const MENU_ITEMS = {
       price: "240",
       oldPrice: "300",
       discount: "-20%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
   ],
+
   sandwiches: [
     {
       id: 301,
@@ -178,8 +170,7 @@ const MENU_ITEMS = {
       price: "180",
       oldPrice: "220",
       discount: "-18%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 302,
@@ -187,8 +178,7 @@ const MENU_ITEMS = {
       price: "160",
       oldPrice: "200",
       discount: "-20%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 303,
@@ -196,8 +186,7 @@ const MENU_ITEMS = {
       price: "190",
       oldPrice: "240",
       discount: "-21%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 304,
@@ -205,10 +194,10 @@ const MENU_ITEMS = {
       price: "200",
       oldPrice: "250",
       discount: "-20%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
   ],
+
   pizza: [
     {
       id: 401,
@@ -216,8 +205,7 @@ const MENU_ITEMS = {
       price: "420",
       oldPrice: "520",
       discount: "-19%",
-      image:
-       "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 402,
@@ -225,8 +213,7 @@ const MENU_ITEMS = {
       price: "480",
       oldPrice: "600",
       discount: "-20%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 403,
@@ -234,8 +221,7 @@ const MENU_ITEMS = {
       price: "450",
       oldPrice: "560",
       discount: "-20%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 404,
@@ -243,10 +229,10 @@ const MENU_ITEMS = {
       price: "520",
       oldPrice: "650",
       discount: "-20%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
   ],
+
   dessert: [
     {
       id: 501,
@@ -254,8 +240,7 @@ const MENU_ITEMS = {
       price: "180",
       oldPrice: "220",
       discount: "-18%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 502,
@@ -263,8 +248,7 @@ const MENU_ITEMS = {
       price: "200",
       oldPrice: "250",
       discount: "-20%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 503,
@@ -272,8 +256,7 @@ const MENU_ITEMS = {
       price: "140",
       oldPrice: "180",
       discount: "-22%",
-      image:
-        "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
     {
       id: 504,
@@ -281,11 +264,11 @@ const MENU_ITEMS = {
       price: "160",
       oldPrice: "200",
       discount: "-20%",
-      image:
-       "/public/menu/menufood.png"
+      image: "/menu/menufood.png",
     },
   ],
 };
+
 
 // --- CategoryRail (non-sticky, no auto-scroll) ---
 const CategoryRail = ({ activeCategory, setActiveCategory }) => (
