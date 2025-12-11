@@ -27,139 +27,165 @@ const ContactPage = () => {
   }
 
   return (
-    <div>
+    <div className="bg-neutral-950 font-sans selection:bg-amber-400 selection:text-black">
       <Navbar />
-      <main className="bg-[#080808] py-16">
-        <div className="relative min-h-screen w-full bg-neutral-900 font-sans text-white overflow-hidden flex flex-col md:flex-row p-4 md:p-8 lg:p-12">
-          {/* INNER ROUNDED HERO CONTAINER */}
-          <div className="relative z-10 w-full max-w-7xl rounded-[2rem] bg-[url('/assets/contacthero.jpg')] bg-cover bg-center bg-no-repeat border border-white/10 shadow-2xl p-8 md:p-12 lg:mt-12">
-            {/* FLEX LAYOUT — LEFT + RIGHT */}
-            <div className="flex flex-col md:flex-row gap-12">
-              {/* LEFT COLUMN */}
-              <div className="flex-1 space-y-6">
-                {/* Header */}
-                <h1
-                  className="text-5xl md:text-6xl font-black uppercase tracking-wide text-transparent bg-clip-text bg-white"
-                  style={{
-                    fontFamily: '"Impact","Oswald",sans-serif',
-                    filter: "drop-shadow(0 0 10px rgba(0,0,0,0.5))",
-                  }}
-                >
-                  Let’s Talk Flavour
-                </h1>
+      {/* MAIN HERO — set overall hero wrapper to 90vh */}
+      <main className="bg-black flex justify-center items-start pt-30 pb-10">
+        <div className="w-full max-w-[95vw] px-4">
+          {/* Outer container that visually matches the screenshot.
+              It is exactly 90vh tall (using min-h so it can grow in very small screens) */}
+          <div
+            className="relative mx-auto rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl"
+            style={{ minHeight: "90vh" }}
+          >
+            {/* Background image for the rounded container */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: "url('/assets/contacthero.jpg')",
+                filter: "saturate(0.95) contrast(0.95)",
+              }}
+              aria-hidden="true"
+            />
 
-                <p className="text-gray-300 text-sm md:text-base font-light tracking-wide">
-                  Reach out for orders, catering, feedback, or collabs — we're
-                  listening.
-                </p>
+            {/* dark overlay for readable white text */}
+            <div className="absolute inset-0 bg-black/60" />
 
-                <hr className="border-white/20" />
+            {/* Content (left + right) */}
+            <div className="relative z-10 h-full w-full p-6 md:p-10 lg:p-14">
+              <div className="flex flex-col lg:flex-row h-full gap-8">
+                {/* LEFT COLUMN — content block */}
+                <div className="flex-1 flex flex-col justify-start md:justify-center text-white pr-0 lg:pr-8">
+                  <h1
+                    className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-wide mb-3"
+                    style={{
+                      fontFamily: '"Impact","Oswald",sans-serif',
+                      filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.6))",
+                      lineHeight: 1,
+                    }}
+                  >
+                    LET&apos;S TALK FLAVOUR
+                  </h1>
 
-                {/* Address */}
-                <div className="flex items-start gap-4">
-                  <div className="p-2 border border-white/30 rounded-full">
-                    <MapPin size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold">Visit Us</h3>
-                    <p className="text-gray-300 text-sm">
-                      123 Queen Street West
-                      <br />
-                      Toronto, Canada
-                    </p>
-                  </div>
-                </div>
+                  <p className="text-gray-300 text-sm md:text-base font-light tracking-wide max-w-xl">
+                    Reach out for orders, catering, feedback, or collabs — we&apos;re
+                    listening.
+                  </p>
 
-                <hr className="border-white/20" />
+                  <hr className="border-white/10 my-6 w-full max-w-xl" />
 
-                {/* Hours */}
-                <div className="flex items-start gap-4">
-                  <div className="p-2 border border-white/30 rounded-full">
-                    <Clock size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-2">Open Hours</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-300 text-sm">
-                      <p>
-                        <span className="font-medium text-white">Mon–Thu:</span>{" "}
-                        11 AM – 10 PM
-                      </p>
-                      <p>
-                        <span className="font-medium text-white">Fri–Sat:</span>{" "}
-                        11 AM – 12 AM
-                      </p>
-                      <p>
-                        <span className="font-medium text-white">Sun:</span> 12
-                        PM – 9 PM
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <hr className="border-white/20" />
-
-                {/* Contact */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {/* Phone */}
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 border border-white/30 rounded-full">
-                      <Phone size={20} className="text-white" />
+                  {/* Visit / Address */}
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="p-2 border border-white/20 rounded-full shrink-0">
+                      <MapPin size={18} className="text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold">Booking Inquiries</h3>
-                      <p className="text-white underline cursor-pointer hover:text-orange-400 text-sm mt-1">
-                        +1 (416) 555-0192
+                      <h3 className="text-lg font-bold text-white">Visit or Reach Out to Us</h3>
+                      <p className="text-gray-300 text-sm mt-1">
+                        123 Queen Street West
+                        <br />
+                        Toronto, Canada
                       </p>
                     </div>
                   </div>
 
-                  {/* Email */}
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 border border-white/30 rounded-full">
-                      <Mail size={20} className="text-white" />
+                  <hr className="border-white/10 my-4 w-full max-w-xl" />
+
+                  {/* Open Hours */}
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="p-2 border border-white/20 rounded-full shrink-0">
+                      <Clock size={18} className="text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold">Email Us</h3>
-                      <p className="text-white underline cursor-pointer hover:text-orange-400 text-sm mt-1 break-all">
-                        contact@jasperwings.ca
-                      </p>
+                      <h3 className="text-lg font-bold text-white mb-2">Open Hours</h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 text-gray-300 text-sm">
+                        <p>
+                          <span className="font-medium text-white">Mon–Thu:</span> 11 AM – 10 PM
+                        </p>
+                        <p>
+                          <span className="font-medium text-white">Fri–Sat:</span> 11 AM – 12 AM
+                        </p>
+                        <p>
+                          <span className="font-medium text-white">Sun:</span> 12 PM – 9 PM
+                        </p>
+                      </div>
                     </div>
+                  </div>
+
+                  <hr className="border-white/10 my-4 w-full max-w-xl" />
+
+                  {/* Contact details */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl">
+                    <div className="flex items-start gap-4">
+                      <div className="p-2 border border-white/20 rounded-full shrink-0">
+                        <Phone size={18} className="text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-white">Contact Details</h3>
+                        <p className="text-gray-300 text-sm mt-1">Booking inquiries: </p>
+                        <a className="text-white underline text-sm mt-1 inline-block hover:text-amber-400" href="tel:+14165550192">
+                          +1 (416) 555-0192
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="p-2 border border-white/20 rounded-full shrink-0">
+                        <Mail size={18} className="text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-white">Email Us</h3>
+                        <a className="text-white underline text-sm mt-1 inline-block break-all hover:text-amber-400" href="mailto:contact@jasperwings.ca">
+                          contact@jasperwings.ca
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr className="border-white/10 my-6 w-full max-w-xl" />
+
+                  {/* Social icons */}
+                  <div className="flex items-center gap-3">
+                    <span className="text-gray-300 mr-2">Follow Us :</span>
+                    <SocialIcon Icon={Facebook} />
+                    <SocialIcon Icon={Instagram} />
+                    <SocialIcon Icon={Twitter} />
+                    <SocialIcon Icon={Linkedin} />
                   </div>
                 </div>
 
-                <hr className="border-white/20" />
+                {/* RIGHT COLUMN — Map card */}
+                <div className="w-full md:w-[360px] lg:w-[420px] flex-shrink-0 flex items-center justify-center">
+                  <div className="rounded-[1.5rem] overflow-hidden p-3 bg-white/5 backdrop-blur-sm border border-white/20 shadow-lg w-full">
+                    <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden bg-gray-200">
+                      <img
+                        src="/assets/map.png"
+                        alt="map"
+                        className="w-full h-full object-cover"
+                      />
+                      {/* decorative pin centered */}
+                      <MapPin
+                        size={44}
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-red-600 drop-shadow-lg"
+                      />
+                    </div>
 
-                {/* Social Icons */}
-                <div className="flex items-center gap-4">
-                  <SocialIcon Icon={Facebook} />
-                  <SocialIcon Icon={Instagram} />
-                  <SocialIcon Icon={Twitter} />
-                  <SocialIcon Icon={Linkedin} />
-                </div>
-              </div>
-
-              {/* RIGHT COLUMN — MAP CARD */}
-              <div className="flex-1 flex justify-center md:justify-end">
-                <div className=" lg:mt-20 p-3 rounded-[2rem] w-[250px] sm:w-[300px] lg:w-[350px]">
-                  <div className="relative w-full aspect-[4/5] rounded-[1.5rem] overflow-hidden bg-gray-200">
-                    <img
-                      src="/assets/map.png"
-                      className="w-full h-full object-cover opacity-90"
-                    />
-                    <MapPin
-                      size={48}
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-red-600 drop-shadow-lg fill-red-600"
-                    />
+                    {/* small address summary under the map (optional) */}
+                    <div className="mt-4 px-2">
+                      <h4 className="text-white font-bold">Our Location</h4>
+                      <p className="text-gray-300 text-sm">123 Queen Street West, Toronto</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <BookTableSection />
+          
+        </div>
       </main>
 
+        <BookTableSection />
       <Footer />
     </div>
   );

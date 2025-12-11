@@ -15,7 +15,7 @@ import { MdLocationOn } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full bg-[#080808] text-gray-400 font-sans overflow-hidden py-16 md:py-24">
+    <footer className="relative w-full bg-[#080808] text-gray-400 font-sans overflow-hidden py-16 md:py-14">
 
       {/* ===================== DECOR IMAGES ===================== */}
 

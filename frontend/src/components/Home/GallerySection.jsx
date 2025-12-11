@@ -3,9 +3,9 @@ import React from 'react';
 const GallerySection = () => {
   // URLs that match the visual content of the provided image
   const images = {
-    steakPlate: "https://images.unsplash.com/photo-1546241072-48010ad2862c?auto=format&fit=crop&w=800&q=80",
-    qrCode: "https://images.unsplash.com/photo-1622675363311-ac97f3a9a383?auto=format&fit=crop&w=800&q=80", 
-    grill: "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?auto=format&fit=crop&w=800&q=80",
+    steakPlate: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    qrCode: "https://images.unsplash.com/photo-1706759755851-6163305080f0?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+    grill: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=999&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coffee: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80"
   };
 
@@ -51,7 +51,7 @@ const GallerySection = () => {
         </div>
 
         {/* Row 2 */}
-        <div className="w-[180%] ml-[-40%] sm:w-[150%] sm:ml-[-25%] md:w-[125%] md:ml-[-12.5%] flex gap-4">
+        <div className="w-[180%] ml-[-40%] sm:w-[150%] sm:ml-[-25%] md:w-[125%] md:ml-[-6.5%] flex gap-4">
           {row2.map((img, index) => (
             <div key={`r2-${index}`} className="flex-1 aspect-square relative group overflow-hidden bg-white">
               <img 

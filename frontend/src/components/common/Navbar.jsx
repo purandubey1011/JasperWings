@@ -1,50 +1,57 @@
-import React, { useState } from 'react'
-import {motion} from 'framer-motion'
-import { Menu, X } from 'lucide-react';
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({bg='black'}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-black text-white py-5 px-6 fixed w-full top-0 z-50">
+    <nav className={`bg-${bg} text-white py-5 px-6 w-full fixed top-0 z-50`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo */}
+        {/* Logo (clickable -> home) */}
         <div className="flex flex-col leading-none w-52">
-          <img src="/assets/logo.jpg" alt="" />
+          <Link to="/" onClick={() => setIsOpen(false)}>
+            <img
+              src="/assets/logo.jpg"
+              alt="Unyfer Logo"
+              className="w-full h-auto"
+            />
+          </Link>
         </div>
 
         {/* Desktop Menu - Centered as per image */}
         <div className="hidden md:flex gap-12 font-bold text-sm tracking-wider items-center absolute left-1/2 transform -translate-x-1/2">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="hover:text-yellow-400 transition-colors uppercase"
           >
             Home
-          </a>
-          <a
-            href="/menu"
+          </Link>
+          <Link
+            to="/menu"
             className="hover:text-yellow-400 transition-colors uppercase"
           >
             Menu
-          </a>
-          <a
-            href="/coming-soon"
+          </Link>
+          <Link
+            to="/coming-soon"
             className="hover:text-yellow-400 transition-colors uppercase"
           >
             Coming Soon
-          </a>
-          <a
-            href="/contact"
+          </Link>
+          <Link
+            to="/contact"
             className="hover:text-yellow-400 transition-colors uppercase"
           >
             Contact
-          </a>
-          <a
-            href="/franchizy"
+          </Link>
+          <Link
+            to="/franchizy"
             className="hover:text-yellow-400 transition-colors uppercase"
           >
             Franshise
-          </a>
+          </Link>
         </div>
 
         {/* CTA Button - Outlined as per image */}
@@ -53,6 +60,11 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest transition-all"
+            onClick={() => {
+              setIsOpen(false);
+              // optional: navigate to order page if you have one
+              // navigate('/order');
+            }}
           >
             Order Now
           </motion.button>
@@ -62,45 +74,71 @@ const Navbar = () => {
         <button
           className="md:hidden text-yellow-400"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-zinc-900 border-b border-gray-800 p-6 flex flex-col gap-4 text-center">
-          <a href="/" className="hover:text-yellow-400 uppercase font-bold">
-            Home
-          </a>
-          <a href="/menu" className="hover:text-yellow-400 uppercase font-bold">
-            Menu
-          </a>
-          <a
-            href="/contact"
-            className="hover:text-yellow-400 uppercase font-bold"
+      {/* Mobile Menu (animated) */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="md:hidden absolute top-full left-0 w-full bg-zinc-900 border-b border-gray-800 p-6 flex flex-col gap-4 text-center"
           >
-            Contact
-          </a>
-                    <a
-            href="/coming-soon"
-            className="hover:text-yellow-400 transition-colors uppercase"
-          >
-            Coming Soon
-          </a>
-                    <a
-            href="/franchizy"
-            className="hover:text-yellow-400 transition-colors uppercase"
-          >
-            Franshise
-          </a>
-          <button className="border border-yellow-500 text-yellow-500 px-6 py-3 rounded-full font-bold uppercase w-full">
-            Order Now
-          </button>
-        </div>
-      )}
+            <Link
+              to="/"
+              className="hover:text-yellow-400 uppercase font-bold"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              to="/menu"
+              className="hover:text-yellow-400 uppercase font-bold"
+              onClick={() => setIsOpen(false)}
+            >
+              Menu
+            </Link>
+            <Link
+              to="/contact"
+              className="hover:text-yellow-400 uppercase font-bold"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </Link>
+            <Link
+              to="/coming-soon"
+              className="hover:text-yellow-400 transition-colors uppercase"
+              onClick={() => setIsOpen(false)}
+            >
+              Coming Soon
+            </Link>
+            <Link
+              to="/franchizy"
+              className="hover:text-yellow-400 transition-colors uppercase"
+              onClick={() => setIsOpen(false)}
+            >
+              Franshise
+            </Link>
+
+            <Link
+              to="/order"
+              onClick={() => setIsOpen(false)}
+              className="border border-yellow-500 text-yellow-500 px-6 py-3 rounded-full font-bold uppercase w-full inline-block text-center"
+            >
+              Order Now
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
 
-export default Navbar
+export default Navbar;

@@ -13,7 +13,7 @@ import { Book } from 'lucide-react';
 const FranchisePage = () => {
   return (
     <div className="font-sans bg-black text-white overflow-x-hidden">
-      <Navbar/>
+      <Navbar bg={"trasparent"} />
       <HeroSection/>
       <WhyItWorks/>
       <WhatYouGet/>

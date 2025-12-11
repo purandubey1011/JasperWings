@@ -3,11 +3,11 @@ import { ChevronDown, ArrowRight, Check } from 'lucide-react';
 
 const InquiryForm = () => {
   return (
-    <section className="relative bg-black py-20 px-4 md:px-20 overflow-hidden w-full">
+    <section className="relative bg-[#0C0C0C] py-14 px-4 md:px-20 overflow-hidden w-full">
       
       {/* --- Decorative Background Image (Top Left) --- */}
       {/* Replace 'src' with your actual line-art pizza image */}
-      <div className="absolute top-0 left-0 w-32 md:w-48 opacity-50 pointer-events-none">
+      <div className="absolute top-5 left-5 w-32 md:w-48 opacity-50 pointer-events-none">
         <img 
           src="/assets/splaterpizza.png" 
           alt="Pizza Decoration" 
@@ -131,7 +131,7 @@ const InquiryForm = () => {
           <div className="md:col-span-2 flex justify-center mt-6">
             <button 
               type="button"
-              className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold text-lg rounded-full px-12 py-3 flex items-center gap-2 transition-transform transform hover:scale-105 shadow-[0_4px_14px_0_rgba(234,179,8,0.39)]"
+              className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold text-lg rounded-full px-12 py-3 flex items-center gap-2 transition-transform transform hover:scale-105 "
             >
               SUBMIT <ArrowRight size={20} strokeWidth={2.5} />
             </button>

@@ -75,8 +75,8 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               className="
-                bg-yellow-400 text-black 
-                px-10 py-3 sm:py-4 
+                bg-[#FFC222] text-black 
+                px-10 py-3 sm:py-3 
                 rounded-full font-bold 
                 text-sm sm:text-base uppercase tracking-widest 
                 shadow-lg hover:bg-yellow-300 transition
@@ -92,7 +92,7 @@ const Hero = () => {
               }}
               className="
                 border border-white text-white 
-                px-10 py-3 sm:py-4 
+                px-10 py-3 sm:py-3 
                 rounded-full font-bold 
                 text-sm sm:text-base uppercase tracking-widest 
                 hover:border-yellow-400 transition

@@ -29,16 +29,16 @@ const testimonials = [
 
 function TestimonialCard() {
   return (
-    <div className="relative bg-[#111111] rounded-3xl p-8 pt-12 flex flex-col items-center text-center group border border-gray-800/50 shadow-2xl transition-transform hover:-translate-y-1">
+    <div className="relative bg-[#0a0a0a] rounded-3xl p-8 pt-6 flex flex-col items-center text-center group border border-gray-800/50 shadow-2xl transition-transform hover:-translate-y-1">
       
       {/* Floating Quote Icon */}
-      <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 bg-[#1a1a1a] rounded-full flex items-center justify-center border-4 border-[#0d0d0d]">
+      <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 bg-[#0f0e0e] rounded-full flex items-center justify-center border-4 border-[#0d0d0d]">
         <Quote className="w-6 h-6 text-[#f59e0b] fill-[#f59e0b]" />
       </div>
 
       {/* Content */}
       <div className="mt-4 mb-6">
-        <p className="text-gray-400 leading-relaxed text-sm md:text-base font-light italic">
+        <p className="text-gray-300 leading-relaxed text-sm md:text-sm font-base italic">
           "Lorem ipsum dolor sit amet consectetur. Suspendisse aliquet tellus adipiscing condimentum donec blandit. Dignissim nunc facilisi pretium id molestie lectus duis."
         </p>
       </div>
@@ -54,8 +54,8 @@ function TestimonialCard() {
 
       {/* Author Info */}
       <div className="mt-auto">
-        <h4 className="text-white font-bold text-lg">John</h4>
-        <p className="text-gray-500 text-xs uppercase tracking-wider mt-1">Business Man</p>
+        <h4 className="text-white font-bold text-md">John</h4>
+        <p className="text-gray-500 text-[.6vw] uppercase tracking-wider mt-1">Business Man</p>
       </div>
     </div>
   );
@@ -77,14 +77,14 @@ const TestimonialSection = () => {
             <FaPaw className="text-xl" />
             <span>TESTIMONIALS</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-wide" style={{ fontFamily: 'Impact, sans-serif' }}>
+          <h2 className="text-4xl md:text-5xl font-medium text-white uppercase tracking-wide" style={{ fontFamily: 'Impact, sans-serif' }}>
             WHAT CUSTOMER SAYS?
           </h2>
         </div>
 
 
       {/* Cards Container */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 mt-8">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-4 mt-8">
         {/* Testimonial Card 1 */}
         <TestimonialCard />
         {/* Testimonial Card 2 */}
