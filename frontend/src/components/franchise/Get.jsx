@@ -12,14 +12,14 @@ const WhatYouGet = () => {
 
   return (
     <div className="relative flex flex-col md:flex-row w-full bg-black">
-      <div className="w-full md:w-1/2 h-[500px] md:h-auto relative">
+      <div className="w-full md:w-1/2 h-[350px] md:h-[500px] md:h-auto relative">
         <img
           src="/assets/pizza.jpg"
           alt="Delicious Pizza"
           className="w-full h-full object-cover"
         />
         {/* Badge overlay */}
-        <div className="absolute h-24 w-80 bottom-1 right-1 bg-[#F5CF5A] text-black px-4 py-3 flex items-center gap-3 shadow-lg z-50 rounded-xl">
+        <div className="absolute h-20 md:h-24 w-56 md:w-80 bottom-1 right-1 bg-[#F5CF5A] text-black px-4 py-3 flex items-center gap-3 shadow-lg z-50 rounded-xl">
           {/* Teddy bear icon */}
           <img
             src="/assets/franchiseBear.png"
@@ -28,12 +28,13 @@ const WhatYouGet = () => {
           />
 
           <div className="flex flex-col leading-snug">
-            <h6 className="text-2xl font-semibold">
+            <h6 className="text-lg md:text-2xl font-semibold">
               We cook{" "}
             </h6>
-            <h6 className="text-2xl font-semibold">Special for you</h6>
+            <h6 className="text-lg md:text-2xl font-semibold">Special for you</h6>
           </div>
         </div>
+
       </div>
 
       <div className="w-full flex flex-col items-start justify-center md:w-1/2 bg-[#FFC222] text-black p-10 md:p-20 relative overflow-hidden">

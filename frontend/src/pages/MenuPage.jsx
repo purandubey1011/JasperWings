@@ -274,44 +274,57 @@ const MENU_ITEMS = {
 const CategoryRail = ({ activeCategory, setActiveCategory }) => (
   <div className="py-6 h-auto bg-black border-b border-white/5">
     <div className="max-w-7xl mx-auto px-4 relative overflow-x-auto scrollbar-hide">
-      <div className="flex space-x-10 min-w-max justify-start items-center py-2">
+
+      {/* Desktop: original horizontal rail (kept).
+          Mobile: switch to grid (4 cols x auto rows) and remove horizontal scroll. */}
+      <div
+        className={`
+          md:flex space-x-10 min-w-max justify-start items-center py-2 px-4
+
+          /* MOBILE: grid layout, centered, no horizontal scroll */
+          max-sm:grid max-sm:grid-cols-4 max-sm:auto-rows-auto max-sm:gap-x-6 max-sm:gap-y-6
+          max-sm:justify-items-center max-sm:place-items-center max-sm:py-4 max-sm:overflow-visible max-sm:min-w-0
+        `}
+      >
         {CATEGORIES.map((cat) => (
           <button
             key={cat.id}
             onClick={() => setActiveCategory(cat.id)}
-            className={`group flex flex-col items-center transition-all
-              ${
-                activeCategory === cat.id
-                  ? "scale-110"
-                  : "opacity-80 hover:opacity-100"
-              }
+            className={`
+              group flex flex-col items-center transition-all
+              ${activeCategory === cat.id ? "scale-110" : "opacity-80 hover:opacity-100"}
+
+              /* MOBILE: ensure each grid cell stacks properly and centers content */
+              max-sm:flex-col max-sm:w-full max-sm:items-center
             `}
           >
             {/* Circle Image */}
             <div
-              className={`w-24 h-24 rounded-full p-1 border-[3px] overflow-hidden transition-all
-                ${
-                  activeCategory === cat.id
-                    ? "border-amber-400"
-                    : "border-transparent group-hover:border-white/40"
-                }
+              className={`
+                w-24 h-24 rounded-full p-1 border-[3px] overflow-hidden transition-all
+                ${activeCategory === cat.id ? "border-amber-400" : "border-transparent group-hover:border-white/40"}
+
+                /* MOBILE: slightly larger circles and thicker border to match screenshot */
+                max-sm:w-20 max-sm:h-20 max-sm:p-0 max-sm:border-[4px] max-sm:rounded-full
               `}
             >
               <img
                 src={cat.image}
                 alt={cat.name}
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover rounded-full
+                           /* MOBILE: cover and keep rounding */
+                           max-sm:object-cover max-sm:rounded-full"
               />
             </div>
 
             {/* Text */}
             <span
-              className={`mt-2 text-sm font-semibold uppercase tracking-wide
-                ${
-                  activeCategory === cat.id
-                    ? "text-amber-400"
-                    : "text-gray-300 group-hover:text-white"
-                }
+              className={`
+                mt-2 text-sm font-semibold uppercase tracking-wide
+                ${activeCategory === cat.id ? "text-amber-400" : "text-gray-300 group-hover:text-white"}
+
+                /* MOBILE: slightly larger label, center, allow two lines */
+                max-sm:mt-3 max-sm:text-[14px] max-sm:text-center max-sm:px-1
               `}
             >
               {cat.name}
@@ -325,9 +338,9 @@ const CategoryRail = ({ activeCategory, setActiveCategory }) => (
 
 // --- ProductCard (exact design you gave) ---
 const ProductCard = ({ product }) => (
-  <div className="bg-[#FFC629] rounded-md overflow-hidden flex flex-col items-center p-4 sm:p-5 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl min-h-[340px]">
+  <div className="bg-[#FFC629] rounded-md overflow-hidden flex flex-col items-center p-4 sm:p-5 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl min-h-[280px] md:min-h-[340px]">
     {/* Image container = takes full available height */}
-    <div className="w-full flex-grow flex items-center justify-center">
+    <div className=" flex-grow flex items-center justify-center ">
       <img
         src={product.image}
         alt={product.name}
@@ -336,7 +349,7 @@ const ProductCard = ({ product }) => (
     </div>
 
     {/* Discount + Price pills */}
-    <div className="w-full flex items-center justify-center gap-3 mt-4">
+    <div className="w-full flex items-center justify-center gap-1 md:gap-3 mt-2 md:mt-4">
       <div className="bg-white text-xs font-bold text-gray-900 px-2 py-1 rounded-md shadow-sm">
         {product.discount}
       </div>
@@ -348,8 +361,8 @@ const ProductCard = ({ product }) => (
     </div>
 
     {/* Title */}
-    <div className="mt-3 w-full text-center">
-      <h3 className="text-black font-extrabold text-base sm:text-lg tracking-tight">
+    <div className="mt-1 md:mt-3 w-full text-center">
+      <h3 className="text-gray-700 font-extrabold text-sm sm:text-lg tracking-tight">
         {product.name}
       </h3>
     </div>
@@ -376,7 +389,7 @@ const MenuSection = ({ title, items, id }) => (
     </div>
 
     {/* Grid of ProductCard */}
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-8 lg:gap-10">
       {items.map((item) => (
         <ProductCard key={item.id} product={item} />
       ))}
@@ -396,7 +409,7 @@ const MenuPage = () => {
         setActiveCategory={setActiveCategory}
       />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 md:pb-10">
         {Object.entries(MENU_ITEMS).map(([key, items]) => {
           // Find pretty name for category
           const catName = CATEGORIES.find((c) => c.id === key)?.name || key;

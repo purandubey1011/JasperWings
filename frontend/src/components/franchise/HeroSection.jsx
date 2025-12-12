@@ -17,10 +17,10 @@ const HeroSection = () => {
         <div className="flex items-center gap-2 mb-4 text-sm font-semibold tracking-wider">
           <span className="text-xl">☕</span> FRANCHISE JASPER WINGS
         </div>
-        <h1 className="text-5xl md:text-7xl font-extrabold uppercase tracking-tighter mb-4 leading-tighter">
-          Bring the Heat <br /> To Your City
+        <h1 className="text-4xl md:text-7xl font-extrabold uppercase tracking-tighter mb-4 leading-tighter">
+          Bring the Heat <span className='hidden md:inline'><br /></span> To Your City
         </h1>
-        <p className="text-white max-w-lg mx-auto mb-8 text-md">
+        <p className="text-white max-w-md mx-auto mb-8 text-sm md:text-lg font-medium">
           Fast-Casual. High-Demand. Proven Model. We're Expanding Across Canada.
         </p>
         <button className="bg-[#FFC222] text-black px-8 py-3 rounded-full font-bold text-sm hover:bg-yellow-400 transition transform hover:scale-105 ">

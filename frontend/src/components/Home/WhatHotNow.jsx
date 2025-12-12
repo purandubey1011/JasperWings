@@ -238,7 +238,7 @@ const ProductCard = ({ product }) => (
 
 
 const ViewFullMenuButton = () => (
-  <div className="flex justify-center mt-16 mb-6">
+  <div className="flex justify-center mt-12 md:mt-16 mb-6">
     <button className="px-8 py-3 bg-white border-2 border-yellow-400 text-yellow-500 font-bold rounded-full uppercase tracking-wider text-sm hover:bg-yellow-400 hover:text-white transition-colors duration-300 shadow-sm">
       View Full Menu
     </button>
@@ -289,7 +289,7 @@ const WhatHotNow = () => {
         </div>
 
         {/* Categories Carousel / Row */}
-        <div className="flex flex-wrap md:flex-nowrap justify-center gap-8 md:gap-6 mb-20 mt-5">
+        <div className="flex flex-wrap md:flex-nowrap justify-center gap-8 md:gap-6 mb-10 md:mb-20 mt-5">
           {categories.map((cat) => (
             <CategoryCard key={cat.id} category={cat} />
           ))}

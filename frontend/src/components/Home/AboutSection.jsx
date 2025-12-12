@@ -4,7 +4,7 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <div className="relative bg-black text-white py-20 px-6 overflow-hidden">
+    <div className="relative bg-black text-white pb-20 px-6 overflow-hidden">
       {/* LEFT TOMATO — simple, fixed, above pizza */}
       <img
         src="/assets/tomato.png"
@@ -68,23 +68,26 @@ const AboutSection = () => {
           </p>
 
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-  {[
-    { icon: <Soup size={18} />, text: "12+ Signature Wing Sauces" },
-    { icon: <Drumstick size={18} />, text: "Hand-Breaded Tenders" },
-    { icon: <Sandwich size={18} />, text: "Premium Canadian Beef Patties" },
-    { icon: <ChefHat size={18} />, text: "Fresh-Cut Fries Daily" },
-  ].map((item, index) => (
-    <li key={index} className="flex items-center gap-4">
-      <div className="bg-yellow-400 w-10 h-10 rounded-full flex items-center justify-center shadow-lg text-black">
-        {item.icon}
-      </div>
+            {[
+              { icon: <Soup size={18} />, text: "12+ Signature Wing Sauces" },
+              { icon: <Drumstick size={18} />, text: "Hand-Breaded Tenders" },
+              {
+                icon: <Sandwich size={18} />,
+                text: "Premium Canadian Beef Patties",
+              },
+              { icon: <ChefHat size={18} />, text: "Fresh-Cut Fries Daily" },
+            ].map((item, index) => (
+              <li key={index} className="flex items-center gap-4">
+                <div className="bg-yellow-400 w-10 h-10 rounded-full flex items-center justify-center shadow-lg text-black">
+                  {item.icon}
+                </div>
 
-      <span className="text-white text-base font-semibold">
-        {item.text}
-      </span>
-    </li>
-  ))}
-</ul>
+                <span className="text-white text-base font-semibold">
+                  {item.text}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

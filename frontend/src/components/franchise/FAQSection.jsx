@@ -29,7 +29,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="relative pb-24 pt-10 px-4 md:px-10 bg-black overflow-hidden w-full">
+    <section className="relative pb-14 md:pb-24 pt-10 px-4 md:px-10 bg-black overflow-hidden w-full">
       {/* --- Decorative Images (Placeholders) --- */}
 
       {/* Top Right: Pepper/Capsicum */}
@@ -78,10 +78,10 @@ const FAQSection = () => {
             >
               <button
                 onClick={() => toggleFaq(index)}
-                className="w-full flex justify-between items-center p-6 md:p-4 text-left hover:bg-gray-900 transition-colors duration-200"
+                className="w-full flex justify-between items-center p-4 md:p-6 md:p-4 text-left hover:bg-gray-900 transition-colors duration-200"
               >
                 {/* Question Text */}
-                <span className="text-lg md:text-xl font-medium text-gray-200 tracking-wide">
+                <span className="text-md md:text-xl font-medium text-gray-200 tracking-wide">
                   {faq.question}
                 </span>
 

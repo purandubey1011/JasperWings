@@ -127,7 +127,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-center md:text-right">
-            © 2018 • Falverra
+            © 2025 • Falverra
           </p>
         </div>
       </div>

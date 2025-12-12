@@ -13,13 +13,13 @@ const BookTableSection = () => {
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         {/* Top "BOOK NOW" label */}
-        <div className="flex items-center justify-center gap-2 text-white text-sm font-semibold mb-6 tracking-wider">
+        <div className="flex items-center justify-center gap-2 text-white text-md md:text-sm font-semibold mb-6 tracking-wider">
           <img src="/public/assets/aboutteddy.png" alt="" className='h-5' />
           <span>BOOK NOW</span>
         </div>
 
         {/* Main Title */}
-        <h2 className="text-5xl md:text-5xl font-extrabold text-white leading-tighter mb-8 uppercase" style={{ fontFamily: 'sans-serif', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+        <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tighter mb-8 uppercase" style={{ fontFamily: 'sans-serif', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
           READY TO INDULGE? <br />
           BOOK YOUR <span className="text-yellow-500">TABLE NOW!</span>
         </h2>

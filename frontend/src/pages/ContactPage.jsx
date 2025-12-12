@@ -30,7 +30,7 @@ const ContactPage = () => {
     <div className="bg-neutral-950 font-sans selection:bg-amber-400 selection:text-black">
       <Navbar />
       {/* MAIN HERO — set overall hero wrapper to 90vh */}
-      <main className="bg-black flex justify-center items-start pt-30 pb-10">
+      <main className="bg-black flex justify-center items-start pt-24 md:pt-30 pb-10">
         <div className="w-full max-w-[95vw] px-4">
           {/* Outer container that visually matches the screenshot.
               It is exactly 90vh tall (using min-h so it can grow in very small screens) */}
@@ -57,7 +57,7 @@ const ContactPage = () => {
                 {/* LEFT COLUMN — content block */}
                 <div className="flex-1 flex flex-col justify-start md:justify-center text-white pr-0 lg:pr-8">
                   <h1
-                    className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-wide mb-3"
+                    className="text-4xl sm:text-5xl md:text-6xl font-medium uppercase tracking-wide mb-3"
                     style={{
                       fontFamily: '"Impact","Oswald",sans-serif',
                       filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.6))",
@@ -72,10 +72,10 @@ const ContactPage = () => {
                     listening.
                   </p>
 
-                  <hr className="border-white/10 my-6 w-full max-w-xl" />
+                  <hr className="border-white/30 my-4 w-full max-w-xl" />
 
                   {/* Visit / Address */}
-                  <div className="flex items-start gap-4 mb-6">
+                  <div className="flex items-start gap-4 mb-1">
                     <div className="p-2 border border-white/20 rounded-full shrink-0">
                       <MapPin size={18} className="text-white" />
                     </div>
@@ -89,10 +89,10 @@ const ContactPage = () => {
                     </div>
                   </div>
 
-                  <hr className="border-white/10 my-4 w-full max-w-xl" />
+                  <hr className="border-white/30 my-3 w-full max-w-xl" />
 
                   {/* Open Hours */}
-                  <div className="flex items-start gap-4 mb-6">
+                  <div className="flex items-start gap-4 mb-2">
                     <div className="p-2 border border-white/20 rounded-full shrink-0">
                       <Clock size={18} className="text-white" />
                     </div>
@@ -112,7 +112,7 @@ const ContactPage = () => {
                     </div>
                   </div>
 
-                  <hr className="border-white/10 my-4 w-full max-w-xl" />
+                  <hr className="border-white/30 my-3 w-full max-w-xl" />
 
                   {/* Contact details */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl">
@@ -142,7 +142,7 @@ const ContactPage = () => {
                     </div>
                   </div>
 
-                  <hr className="border-white/10 my-6 w-full max-w-xl" />
+                  <hr className="border-white/30 my-3 w-full max-w-xl" />
 
                   {/* Social icons */}
                   <div className="flex items-center gap-3">
@@ -157,7 +157,7 @@ const ContactPage = () => {
                 {/* RIGHT COLUMN — Map card */}
                 <div className="w-full md:w-[360px] lg:w-[420px] flex-shrink-0 flex items-center justify-center">
                   <div className="rounded-[1.5rem] overflow-hidden p-3 bg-white/5 backdrop-blur-sm border border-white/20 shadow-lg w-full">
-                    <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden bg-gray-200">
+                    <div className="relative w-full aspect-[5/5] rounded-lg overflow-hidden bg-gray-200">
                       <img
                         src="/assets/map.png"
                         alt="map"

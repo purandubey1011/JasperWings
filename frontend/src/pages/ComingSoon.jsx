@@ -22,7 +22,7 @@ const ComingSoon = () => {
     <div className="min-h-screen bg-black font-sans text-white overflow-x-hidden selection:bg-[#FFC20E] selection:text-black">
       <Navbar bg={"trasparent"} />
 
-      <header className="relative w-full lg:h-[100vh] md:h-[80vh] overflow-hidden">
+      <header className="relative w-full h-[75vh] lg:h-[100vh] md:h-[80vh] overflow-hidden">
         {/* ---------------- BACKGROUND IMAGE ---------------- */}
         <div className="absolute inset-0 z-0">
           <img
@@ -34,20 +34,20 @@ const ComingSoon = () => {
         </div>
 
         {/* --------------- FOREGROUND RECTANGULAR IMAGE ---------------- */}
-        <div className="relative z-10 h-full flex items-end justify-center mt-14">
+        <div className="relative z-10 h-full flex items-center justify-center mt-14">
           {/* Your foreground image (rectangle / paint / splash) */}
-          <div className="relative w-full">
+          <div className="relative w-full md:h-auto h-[50vh]">
             {/* Rectangle image */}
             <img
               src="/assets/Rectangle1.png"
               alt="foreground"
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover"
             />
 
             {/* TEXT ON TOP OF FOREGROUND IMAGE */}
             <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
               {/* LINE 1 */}
-              <h1 className="text-black font-black text-4xl md:text-6xl lg:text-7xl uppercase leading-tight tracking-tighter">
+              <h1 className="text-black font-black text-4xl md:text-6xl lg:text-7xl uppercase leading-tighter tracking-tighter">
                 Find Jasper
               </h1>
 
@@ -57,7 +57,7 @@ const ComingSoon = () => {
               </h2>
 
               {/* LINE 3 (SMALL SUBTEXT) */}
-              <p className="text-black font-bold mt-3 text-sm md:text-base tracking-widest uppercase">
+              <p className="text-black font-bold mt-1 md:mt-3 text-sm md:text-lg  uppercase">
                 More Heat Coming Across Canada.
               </p>
             </div>
@@ -66,19 +66,19 @@ const ComingSoon = () => {
       </header>
 
       {/* --- CURRENTLY OPEN SECTION --- */}
-      <section className="bg-black py-16 md:py-24 px-6 relative overflow-hidden">
+      <section className="bg-black py-4 md:py-10 px-6 relative overflow-hidden">
         {/* Decorative  (Absolute) */}
-        <div className="absolute top-4 left-5 opacity-20 pointer-events-none rotate-12">
+        <div className="absolute top-14 left-5 opacity-20 pointer-events-none rotate-12">
           <img
             src="/assets/splaterpizza.png"
             alt=""
-            className="rotate-260 z-30"
+            className="rotate-260 z-30 h-30"
           />
         </div>
 
-        <div className="max-w-7xl mx-auto mt-7 lg:mt-8">
+        <div className="max-w-7xl mx-auto mt-7 md:mt-8 md:mb-10">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-6 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight">
               Currently Open
             </h2>
@@ -114,7 +114,6 @@ const ComingSoon = () => {
               </div>
             </div>
 
-
             {/* Right: Details Section */}
             <div className="space-y-2 pl-0 lg:pl-10 max-w-md">
               {/* Title */}
@@ -122,7 +121,7 @@ const ComingSoon = () => {
                 <h3 className="text-3xl md:text-4xl font-extrabold leading-tight mb-1 text-white">
                   Toronto – Downtown
                 </h3>
-                <span className="text-md font-medium text-gray-400">
+                <span className="text-sm md:text-md font-medium text-gray-400">
                   (OPEN)
                 </span>
               </div>
@@ -242,88 +241,126 @@ const ComingSoon = () => {
       </section>
 
       {/* --- COMING SOON LOCATIONS --- */}
-      <section
-        className="relative w-full mb-6 flex items-center justify-center py-24 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/assets/Rectangle66.png')" }}
-      >
+      <section className="relative w-full h-full mb-6 flex items-center justify-center py-24 overflow-hidden">
+        {/* 🟡 BACKGROUND IMAGE (replaces bg-cover) */}
+        <img
+          src="/assets/Rectangle66.png"
+          alt="background"
+          className="absolute w-full h-full object-cover"
+        />
+
+        {/* 🔳 OPTIONAL OVERLAY */}
+        {/* <div className="absolute inset-0 bg-white/10"></div> */}
+
         {/* 🔵 LEFT DECOR IMAGE */}
         <img
           src="/assets/garliccopy.png"
           alt=""
-          className="absolute top-52 left-24 w-24 md:w-32 opacity-80 pointer-events-none z-0"
+          className="absolute top-52 left-24 w-24 md:w-32 opacity-80 pointer-events-none z-[2]"
         />
 
         {/* 🔴 RIGHT DECOR IMAGE */}
         <img
           src="/assets/burger.png"
           alt=""
-          className="absolute top-52 right-24 w-24 md:w-32 opacity-80 pointer-events-none z-0"
+          className="absolute top-52 right-24 w-24 md:w-32 opacity-80 pointer-events-none z-[2]"
         />
 
-        {/* MAIN CENTERED CONTENT */}
-        <div className="relative z-10 w-full max-w-5xl mx-auto mt-12">
-
-          {/* FIXED TITLE — no cutting now */}
-          <div className="text-center px-4 mb-24">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase text-black leading-tight">
+        {/* MAIN CONTENT */}
+        <div
+          className="relative z-[5] w-full max-w-5xl mx-auto mt-12
+                /* MOBILE: tighter spacing & padding */
+                max-sm:mt-6 max-sm:px-4 max-sm:pb-6"
+        >
+          {/* TITLE */}
+          <div
+            className="text-center px-4 md:mb-[10vh]
+                  /* MOBILE: reduce bottom space so content fits better on small screens */
+                  max-sm:mb-6 max-sm:pt-10"
+          >
+            <h2
+              className="text-3xl md:text-5xl lg:text-6xl font-black uppercase text-black leading-tight
+                   /* MOBILE: smaller heading + tighter leading */
+                   max-sm:text-2xl max-sm:leading-snug"
+            >
               Coming Soon <br /> Locations
             </h2>
           </div>
 
-          {/* CARDS — REDUCED WIDTH */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center">
-            {/* Card 1 */}
-            <div className="w-full max-w-[450px] p-2 bg-white rounded-xl overflow-hidden shadow-2xl transform hover:-translate-y-2 transition-transform duration-300">
-              <div className="h-60 overflow-hidden relative rounded-xl">
+          {/* CARDS */}
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center
+                  /* MOBILE: slightly tighter gaps */
+                  max-sm:gap-4"
+          >
+            {/* CARD 1 */}
+            <div
+              className="w-full max-w-[450px] p-2 bg-white rounded-xl overflow-hidden shadow-2xl transform hover:-translate-y-2 transition-transform duration-300
+                    /* MOBILE: full width, smaller card padding & radius */
+                    max-sm:max-w-[96%] max-sm:p-3 max-sm:rounded-lg"
+            >
+              <div
+                className="h-60 overflow-hidden relative rounded-xl
+                      /* MOBILE: reduce image height for compact layout */
+                      max-sm:h-[220px] max-sm:rounded-lg"
+              >
                 <img
                   src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop"
                   alt="Mississauga"
-                  className="w-full h-full object-cover rounded-xl"
+                  className="w-full h-full object-cover rounded-xl max-sm:rounded-lg"
                 />
                 <div className="absolute inset-0 bg-black/20"></div>
               </div>
-              <div className="p-6 text-center">
-                <h3 className="text-black font-black text-2xl mb-2">
+              <div className="p-6 text-center max-sm:p-4">
+                <h3 className="text-black font-black text-2xl mb-2 max-sm:text-xl">
                   Mississauga – Coming Soon
                 </h3>
-                <p className="text-[#FFC20E] font-bold uppercase tracking-wider mb-6">
+                <p className="text-[#FFC20E] font-bold uppercase tracking-wider mb-6 max-sm:mb-4 max-sm:text-sm">
                   Opening Summer 2025
                 </p>
-                <button className="border-2 border-black text-black font-bold uppercase px-8 py-2 rounded-full hover:bg-black hover:text-[#FFC20E] transition-colors w-full">
+                <button
+                  className="border-2 border-black text-black font-bold uppercase px-8 py-2 rounded-full hover:bg-black hover:text-[#FFC20E] transition-colors w-full
+                           max-sm:px-6 max-sm:py-2 max-sm:text-sm"
+                >
                   Notify Me
                 </button>
               </div>
             </div>
 
-            {/* Card 2 */}
-            <div className="w-full max-w-[450px] p-2 bg-white rounded-xl overflow-hidden shadow-2xl transform hover:-translate-y-2 transition-transform duration-300">
-              <div className="h-60 overflow-hidden relative rounded-xl">
+            {/* CARD 2 */}
+            <div
+              className="w-full max-w-[450px] p-2 bg-white rounded-xl overflow-hidden shadow-2xl transform hover:-translate-y-2 transition-transform duration-300
+                    max-sm:max-w-[96%] max-sm:p-3 max-sm:rounded-lg"
+            >
+              <div className="h-60 overflow-hidden relative rounded-xl max-sm:h-[220px] max-sm:rounded-lg">
                 <img
                   src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop"
                   alt="Vancouver"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover max-sm:rounded-lg"
                 />
                 <div className="absolute inset-0 bg-black/20"></div>
               </div>
-              <div className="p-6 text-center">
-                <h3 className="text-black font-black text-2xl mb-2">
+              <div className="p-6 text-center max-sm:p-4">
+                <h3 className="text-black font-black text-2xl mb-2 max-sm:text-xl">
                   Vancouver – Coming Soon
                 </h3>
-                <p className="text-[#FFC20E] font-bold uppercase tracking-wider mb-6">
+                <p className="text-[#FFC20E] font-bold uppercase tracking-wider mb-6 max-sm:mb-4 max-sm:text-sm">
                   Opening Late 2025
                 </p>
-                <button className="border-2 border-black text-black font-bold uppercase px-8 py-2 rounded-full hover:bg-black hover:text-[#FFC20E] transition-colors w-full">
+                <button
+                  className="border-2 border-black text-black font-bold uppercase px-8 py-2 rounded-full hover:bg-black hover:text-[#FFC20E] transition-colors w-full
+                           max-sm:px-6 max-sm:py-2 max-sm:text-sm"
+                >
                   Notify Me
                 </button>
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
       {/* --- CTA FRANCHISE SECTION --- */}
-      <section className="relative h-[95vh] flex items-center justify-center">
+      <section className="relative h-[85vh] md:h-[95vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
             src="/assets/chef.jpg"

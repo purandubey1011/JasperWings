@@ -153,7 +153,7 @@ const MenuCard = ({ item }) => (
 
 const MenuSection = () => {
   return (
-    <div id="menu" className="bg-white py-20 px-6">
+    <div id="menu" className="bg-white py-12 md:py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="relative text-center mb-16 max-w-7xl mx-auto px-4">
           {/* --- Left Image (Radish) --- */}
@@ -181,7 +181,7 @@ const MenuSection = () => {
 
             <h2 className="text-4xl md:text-5xl font-black text-black leading-tighter font-sans">
               THE HITS EVERYONE
-              <br />
+              <span className="hidden md:flex"><br /></span>
               COMES <span className="text-yellow-500">BACK FOR</span>
             </h2>
 
