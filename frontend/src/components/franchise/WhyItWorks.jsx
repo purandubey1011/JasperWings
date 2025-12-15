@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 /**
  * WhyItWorks (mappable)
@@ -28,28 +29,46 @@ const FEATURES = [
 
 const WhyItWorks = () => {
   return (
-    <section className="relative py-22 bg-black px-4 md:px-20 overflow-hidden w-full">
-      {/* Decorative Background Elements (Blurry Leaves) */}
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="relative py-22 bg-black px-4 md:px-20 overflow-hidden w-full"
+    >
+      {/* Decorative Background Elements */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <img
+        <motion.img
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 0.6, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           src="/api/placeholder/100/100"
           alt=""
-          className="absolute top-10 right-0 md:right-20 w-16 opacity-60 blur-[1px] rotate-12"
+          className="absolute top-10 right-0 md:right-20 w-16 blur-[1px] rotate-12"
         />
-        <img
+        <motion.img
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 0.5, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           src="/api/placeholder/100/100"
           alt=""
-          className="absolute bottom-10 left-0 md:left-10 w-20 opacity-50 blur-[1px] -rotate-45"
+          className="absolute bottom-10 left-0 md:left-10 w-20 blur-[1px] -rotate-45"
         />
       </div>
 
       {/* Container */}
       <div className="relative z-10 max-w-6xl mx-auto">
-
         {/* Header */}
-        <div className="relative z-10 flex flex-col items-center justify-center mb-20 text-center
-                        /* MOBILE: align left and reduce spacing like screenshot */
-                        max-sm:items-start max-sm:text-left max-sm:mb-8 max-sm:px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative z-10 flex flex-col items-center justify-center mb-20 text-center
+                     max-sm:items-start max-sm:text-left max-sm:mb-8 max-sm:px-4"
+        >
           <div className="flex items-center gap-2 mb-4">
             <img
               src="/assets/franchiseBear.png"
@@ -62,46 +81,66 @@ const WhyItWorks = () => {
           </div>
 
           <div className="relative inline-block w-full">
-            <h2 className="text-4xl md:text-6xl font-extrabold uppercase leading-none tracking-tighter relative z-10
-                           /* MOBILE: smaller heading, left align */
-                           max-sm:text-3xl max-sm:leading-tight max-sm:tracking-tight">
+            <h2
+              className="text-4xl md:text-6xl font-extrabold uppercase leading-none tracking-tighter relative z-10
+                         max-sm:text-3xl max-sm:leading-tight max-sm:tracking-tight"
+            >
               <span className="text-white">Why Jasper Wings </span>
               <br />
               <span className="text-yellow-500">Works</span>
             </h2>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Icons Grid Section (mappable) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-10 max-w-6xl mx-auto relative z-10 pt-0
-                        /* MOBILE: 2 columns, left align, reduce gap and add left padding */
-                        max-sm:grid-cols-2 max-sm:gap-6 max-sm:pl-4 max-sm:pr-4 max-sm:justify-start">
+        {/* Icons Grid */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.12 },
+            },
+          }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-10 max-w-6xl mx-auto relative z-10 pt-0
+                     max-sm:grid-cols-2 max-sm:gap-6 max-sm:pl-4 max-sm:pr-4 max-sm:justify-start"
+        >
           {FEATURES.map((feature) => (
-            <div key={feature.id} className="flex flex-col items-center text-center group
-                                            /* MOBILE: align-start and left text alignment like screenshot */
-                                            max-sm:items-start max-sm:text-left">
-              <div className="w-32 h-32 md:w-32 md:h-32 rounded-full bg-yellow-500 flex items-center justify-center mb-8 border-[6px] border-black ring-[3px] ring-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.2)] transition-transform duration-300 group-hover:scale-105
-                              /* MOBILE: slightly smaller circle and border */
+            <motion.div
+              key={feature.id}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="flex flex-col items-center text-center group
+                         max-sm:items-start max-sm:text-left"
+            >
+              <div className="w-32 h-32 md:w-32 md:h-32 rounded-full bg-yellow-500 flex items-center justify-center mb-8
+                              border-[6px] border-black ring-[3px] ring-yellow-500
+                              shadow-[0_0_20px_rgba(234,179,8,0.2)]
+                              transition-transform duration-300 group-hover:scale-105
                               max-sm:w-20 max-sm:h-20 max-sm:border-[4px] max-sm:ring-[2px] max-sm:mb-4">
                 <img
                   src={feature.icon}
                   alt={feature.alt}
                   className="w-16 h-16 md:w-14 md:h-14 object-contain
-                             /* MOBILE: smaller icon */
                              max-sm:w-10 max-sm:h-10"
                 />
               </div>
 
-              <h3 className="text-xl md:text-lg font-bold text-white max-w-[220px] leading-tight
-                             /* MOBILE: slightly smaller title, left align */
-                             max-sm:text-base max-sm:max-w-none">
+              <h3
+                className="text-xl md:text-lg font-bold text-white max-w-[220px] leading-tight
+                           max-sm:text-base max-sm:max-w-none"
+              >
                 {feature.title}
               </h3>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

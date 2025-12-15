@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const FAQSection = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -28,85 +29,147 @@ const FAQSection = () => {
     },
   ];
 
+  // --- Animation Variants ---
+
+  // 1. Accordion Content Slide
+  const accordionAnim = {
+    collapsed: { height: 0, opacity: 0 },
+    open: { 
+      height: "auto", 
+      opacity: 1,
+      transition: { duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] } 
+    }
+  };
+
+  // 2. Floating Vegetables
+  const floatAnim = {
+    animate: {
+      y: [0, -15, 0],
+      rotate: [0, 5, -5, 0],
+      transition: {
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  // 3. Stagger Items
+  const containerStagger = {
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      }
+    }
+  };
+
+  // 4. Fade Up Entrance
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.5 } 
+    }
+  };
+
   return (
     <section className="relative pb-14 md:pb-24 pt-10 px-4 md:px-10 bg-black overflow-hidden w-full">
-      {/* --- Decorative Images (Placeholders) --- */}
-
-      {/* Top Right: Pepper/Capsicum */}
-      <div className="absolute top-10 right-0 md:right-10 w-24 md:w-32 opacity-80 pointer-events-none">
+      
+      {/* --- Decorative Images (Floating) --- */}
+      <motion.div 
+        variants={floatAnim}
+        animate="animate"
+        className="absolute top-10 right-0 md:right-10 w-24 md:w-32 opacity-80 pointer-events-none"
+      >
         <img
-          src="/assets/pumpkin2.png" // REPLACE with your Pepper image
+          src="/assets/pumpkin2.png" 
           alt="Pepper Decoration"
           className="w-full h-auto rotate-12"
         />
-      </div>
+      </motion.div>
 
-      {/* Left Side Middle: Green Leaves */}
-      {/* <div className="absolute top-1/3 left-6 md:left-4 w-20 md:w-28 opacity-80 pointer-events-none z-0">
-        <img 
-            src="/assets/carrot.png" // REPLACE with your Leaves image
-            alt="Leaves Decoration" 
-            className="w-full h-auto -rotate-45"
-        />
-      </div> */}
-
-      {/* Bottom Left: Avocado/Veg */}
-      <div className="absolute bottom-20 left-0 md:left-0 w-24 md:w-32 opacity-80 pointer-events-none">
+      <motion.div 
+        variants={floatAnim}
+        animate="animate"
+        transition={{ delay: 2.5 }}
+        className="absolute bottom-20 left-0 md:left-0 w-24 md:w-32 opacity-80 pointer-events-none"
+      >
         <img
-          src="/assets/carrot.png" // REPLACE with your Avocado image
+          src="/assets/carrot.png" 
           alt="Avocado Decoration"
           className="w-full h-auto"
         />
-      </div>
+      </motion.div>
 
       {/* --- Main Content --- */}
       <div className="relative z-10 max-w-6xl mx-auto w-full">
-        {/* Header */}
-        {/* Note: Use your 'distressed' font class on this h2 */}
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center uppercase mb-16 tracking-wide">
+        
+        {/* Header (Fade Up) */}
+        <motion.h2 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-5xl font-extrabold text-center uppercase mb-16 tracking-wide"
+        >
           <span className="text-white block">Frequently</span>
           <span className="text-white">Asked </span>
           <span className="text-yellow-500">Question</span>
-        </h2>
+        </motion.h2>
 
-        {/* FAQ List - Wide Layout */}
-        <div className="space-y-5 w-full">
+        {/* FAQ List - Staggered Entrance */}
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerStagger}
+          className="space-y-5 w-full"
+        >
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={fadeInUp}
               className="border border-gray-600 rounded-2xl overflow-hidden bg-black w-full"
             >
               <button
                 onClick={() => toggleFaq(index)}
                 className="w-full flex justify-between items-center p-4 md:p-6 md:p-4 text-left hover:bg-gray-900 transition-colors duration-200"
               >
-                {/* Question Text */}
                 <span className="text-md md:text-xl font-medium text-gray-200 tracking-wide">
                   {faq.question}
                 </span>
 
-                {/* Arrow Icon */}
-                <ChevronDown
-                  size={24}
-                  className={`text-gray-400 transform transition-transform duration-300 ${
-                    openFaq === index ? "rotate-180" : ""
-                  }`}
-                />
+                <motion.div
+                  animate={{ rotate: openFaq === index ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown
+                    size={24}
+                    className="text-gray-400"
+                  />
+                </motion.div>
               </button>
 
-              {/* Accordion Content */}
-              <div
-                className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
-                  openFaq === index ? "max-h-48" : "max-h-0"
-                }`}
-              >
-                <div className="p-6 md:p-5 pt-0 text-gray-400 text-base md:text-lg leading-relaxed">
-                  {faq.answer}
-                </div>
-              </div>
-            </div>
+              <AnimatePresence initial={false}>
+                {openFaq === index && (
+                  <motion.div
+                    key="content"
+                    initial="collapsed"
+                    animate="open"
+                    exit="collapsed"
+                    variants={accordionAnim}
+                    className="overflow-hidden"
+                  >
+                    <div className="p-6 md:p-5 pt-0 text-gray-400 text-base md:text-lg leading-relaxed border-t border-gray-800/50 mt-2">
+                      {faq.answer}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
       
     </section>
