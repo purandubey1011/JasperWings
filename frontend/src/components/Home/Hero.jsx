@@ -42,9 +42,9 @@ const Hero = () => {
     <div className="relative w-full min-h-[95vh] md:h-screen bg-black overflow-hidden flex items-center justify-center">
       {/* Background Rectangle Image (Static Decoration) */}
       <img
-        src="/assets/Rectangle1.png"
+        src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jasper%20wings/jasperherooverlay_vUOkCQw8Mw.png"
         alt="Background Rectangle"
-        className="absolute inset-0 md:w-full h-full object-cover z-0 pointer-events-none opacity-50"
+        className="absolute inset-0 md:w-full h-full object-cover z-20 pointer-events-none "
       />
 
       {/* Main Hero Image Container */}
@@ -53,14 +53,13 @@ const Hero = () => {
           absolute inset-0 z-10
           mx-0 mt-20
           h-[55vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]
-          md:mx-[8%] lg:mx-[12%]
+          
           rounded-none md:rounded-4xl 
           overflow-hidden
 
           /* MOBILE OVERRIDES */
           max-sm:mt-24
           max-sm:h-[80vh]
-          max-sm:mx-3
           max-sm:rounded-3xl
           max-sm:overflow-hidden
         "
@@ -78,7 +77,7 @@ const Hero = () => {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60 max-sm:rounded-3xl" />
+        <div className="absolute inset-0 bg-black/50 max-sm:rounded-3xl" />
       </div>
 
       {/* Content Container */}
