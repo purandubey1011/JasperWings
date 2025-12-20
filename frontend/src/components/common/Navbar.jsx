@@ -130,7 +130,7 @@ const Navbar = ({bg='black'}) => {
             <Link
               to="/order"
               onClick={() => setIsOpen(false)}
-              className="border border-yellow-500 text-yellow-500 px-6 py-3 rounded-full font-bold uppercase w-full inline-block text-center"
+              className="border border-[#d96828] text-[#d96828] px-6 py-3 rounded-full font-bold uppercase w-full inline-block text-center"
             >
               Order Now
             </Link>
