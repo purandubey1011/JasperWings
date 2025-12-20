@@ -41,7 +41,7 @@ const InquiryForm = () => {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:3000/api/v1/franchise-inquiry", // ✅ CORRECT
+        "https://jasperwings.onrender.com/api/v1/franchise-inquiry", // ✅ CORRECT
         {
           method: "POST",
           headers: {
