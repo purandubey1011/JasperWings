@@ -108,7 +108,7 @@ const MenuHero = () => {
           {/* Line 2: Craving (Gradient) */}
           <div className="overflow-hidden relative block">
             <motion.div variants={maskReveal} className="block origin-bottom">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-300 to-amber-500 bg-[length:200%_auto] animate-gradient-flow">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7e380f] via-[#ab4e19] to-[#d97d48] bg-[length:200%_auto] animate-gradient-flow">
                 Craving
               </span>
             </motion.div>
@@ -137,7 +137,7 @@ const MenuHero = () => {
             variants={buttonPop}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-amber-400 hover:bg-amber-500 text-black font-bold py-3 px-6 md:px-8 rounded-full shadow-[0_8px_30px_rgba(251,191,36,0.18)]
+            className="bg-[#d96828] hover:bg-[#d96828] text-black font-bold py-3 px-6 md:px-8 rounded-full shadow-[0_8px_30px_rgba(251,191,36,0.18)]
                        /* MOBILE button */
                        max-sm:w-[86%] max-sm:py-4 max-sm:text-[16px] max-sm:rounded-[9999px]"
           >

@@ -64,7 +64,7 @@ const MenuCard = ({ item }) => (
   <motion.div
     variants={itemVariants}
     whileHover={{ y: -10, scale: 1.02 }}
-    className="bg-[#FFC222] p-6 flex flex-col items-center justify-between min-h-[300px] shadow-lg cursor-pointer transition-shadow hover:shadow-2xl rounded-md"
+    className="bg-[#d96828] p-6 flex flex-col items-center justify-between min-h-[300px] shadow-lg cursor-pointer transition-shadow hover:shadow-2xl rounded-md"
   >
     {/* Text Content at Top */}
     <div className="text-center w-full mb-4 z-10">
@@ -139,11 +139,11 @@ const MenuSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className="text-4xl md:text-5xl font-black text-black leading-tighter font-sans"
+              className="text-4xl md:text-5xl font-black text-black leading-[4vh] font-sans"
             >
               THE HITS EVERYONE
               <span className="hidden md:flex"><br /></span>
-              COMES <span className="text-yellow-500">BACK FOR</span>
+              COMES <span className="text-[#d96828]">BACK FOR</span>
             </motion.h2>
 
             <motion.p 
@@ -151,7 +151,7 @@ const MenuSection = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="mt-2 text-gray-600 font-medium"
+              className="mt-6 text-gray-600 font-medium"
             >
               Our Most-Ordered Picks Of The Week.
             </motion.p>
@@ -224,7 +224,7 @@ const FeatureSection = () => {
               className="flex items-center gap-2 mb-4 md:mb-6"
             >
               <span className="text-xl md:text-2xl">🐻</span>
-              <span className="text-yellow-500 font-bold tracking-wide text-sm md:text-base uppercase">
+              <span className="text-[#d96828] font-bold tracking-wide text-sm md:text-base uppercase">
                 The Jasper Experience
               </span>
             </motion.div>
@@ -238,7 +238,7 @@ const FeatureSection = () => {
             >
               More Than A Bite -
               <br />
-              <span className="text-yellow-500">It's A Mood</span>
+              <span className="text-[#d96828]">It's A Mood</span>
             </motion.h2>
           </div>
 
@@ -275,7 +275,7 @@ const FeatureSection = () => {
               {/* Yellow Circle */}
               <motion.div 
                 whileHover={{ rotate: 15, scale: 1.1 }}
-                className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-yellow-500 text-black flex items-center justify-center mb-6 md:mb-8 border-4 border-yellow-500 ring-4 ring-black ring-inset shadow-lg"
+                className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-[#d96828] text-black flex items-center justify-center mb-6 md:mb-8 border-4 border-[#d96828] ring-4 ring-black ring-inset shadow-lg"
               >
                 {feature.icon}
               </motion.div>

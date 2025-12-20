@@ -85,7 +85,7 @@ const BookTableSection = () => {
           style={{ fontFamily: 'sans-serif', textShadow: '0px 4px 20px rgba(0,0,0,0.6)' }}
         >
           READY TO INDULGE? <br />
-          BOOK YOUR <span className="text-yellow-500">TABLE NOW!</span>
+          BOOK YOUR <span className="text-[#d96828]">TABLE NOW!</span>
         </motion.h2>
 
         {/* Buttons */}
@@ -98,7 +98,7 @@ const BookTableSection = () => {
             initial="rest"
             whileHover="hover"
             whileTap="tap"
-            className="px-10 py-4 bg-yellow-500 text-black font-black rounded-full shadow-lg hover:shadow-yellow-500/50 transition-shadow duration-300 uppercase tracking-widest text-sm"
+            className="px-10 py-4 bg-[#d96828] text-black font-black rounded-full shadow-lg hover:shadow-[#d96828]/50 transition-shadow duration-300 uppercase tracking-widest text-sm"
           >
             ORDER NOW
           </motion.button>

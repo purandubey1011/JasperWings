@@ -90,7 +90,7 @@ const WhatYouGet = () => {
         {/* Animated Badge */}
         <motion.div 
           variants={badgePop}
-          className="absolute h-20 md:h-24 w-56 md:w-80 bottom-1 right-1 bg-[#F5CF5A] text-black px-4 py-3 flex items-center gap-3 shadow-lg z-50 rounded-xl origin-bottom-right"
+          className="absolute h-20 md:h-24 w-56 md:w-80 bottom-1 right-1 bg-[#d96828] text-black px-4 py-3 flex items-center gap-3 shadow-lg z-50 rounded-xl origin-bottom-right"
         >
           <motion.img
             animate={{ rotate: [0, 10, -10, 0] }}
@@ -115,7 +115,7 @@ const WhatYouGet = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="w-full flex flex-col items-start justify-center md:w-1/2 bg-[#FFC222] text-black p-10 md:p-20 relative overflow-hidden z-20"
+        className="w-full flex flex-col items-start justify-center md:w-1/2 bg-[#d96828] text-black p-10 md:p-20 relative overflow-hidden z-20"
       >
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}

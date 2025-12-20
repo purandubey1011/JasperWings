@@ -174,196 +174,189 @@ const ComingSoon = () => {
       </header>
 
       {/* --- CURRENTLY OPEN SECTION --- */}
-      <section className="bg-black py-4 md:py-10 px-6 relative overflow-hidden">
-        {/* Decorative Pizza */}
-        <motion.div 
-          animate={{ rotate: 360 }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="absolute top-14 left-5 opacity-20 pointer-events-none"
-        >
-          <img
-            src="/assets/splaterpizza.png"
-            alt=""
-            className="z-30 h-30"
-          />
+<section className="bg-black py-4 md:py-10 px-6 relative overflow-hidden">
+  {/* Decorative Pizza */}
+  <motion.div
+    animate={{ rotate: 360 }}
+    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+    className="absolute top-14 left-5 opacity-20 pointer-events-none"
+  >
+    <img src="/assets/splaterpizza.png" alt="" className="z-30 h-30" />
+  </motion.div>
+
+  <div className="max-w-7xl mx-auto mt-7 md:mt-8 md:mb-10">
+    {/* Section Header */}
+    <div className="text-center mb-6 md:mb-16 perspective-1000">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={flipReveal}
+      >
+        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight">
+          Currently Open
+        </h2>
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={flipReveal}
+        transition={{ delay: 0.2 }}
+      >
+        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-[#d96828]">
+          Location
+        </h2>
+      </motion.div>
+    </div>
+
+    {/* Content Grid */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Images */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid grid-cols-2 gap-4"
+      >
+        <motion.div className="col-span-2 h-64 md:h-80 overflow-hidden rounded-lg border-2 border-[#333]" variants={fadeInUp}>
+          <img src="/assets/toranto1.jpg" alt="Restaurant Main" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </motion.div>
+        <motion.div className="h-40 md:h-48 overflow-hidden rounded-lg border-2 border-[#333]" variants={fadeInUp} transition={{ delay: 0.1 }}>
+          <img src="/assets/toranto2.jpg" alt="Food Detail" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </motion.div>
+        <motion.div className="h-40 md:h-48 overflow-hidden rounded-lg border-2 border-[#333]" variants={fadeInUp} transition={{ delay: 0.2 }}>
+          <img src="/assets/toranto3.jpg" alt="Dining Atmosphere" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </motion.div>
+      </motion.div>
+
+      {/* Details */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="space-y-2 pl-0 lg:pl-10 max-w-md"
+      >
+        <motion.div initial={{ x: 50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
+          <h3 className="text-3xl md:text-4xl font-extrabold leading-tight mb-1 text-white">
+            Toronto – Downtown
+          </h3>
+          <span className="text-sm md:text-md font-medium text-gray-400">
+            (OPEN)
+          </span>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto mt-7 md:mt-8 md:mb-10">
-          {/* Section Header with 3D Flip Reveal */}
-          <div className="text-center mb-6 md:mb-16 perspective-1000">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={flipReveal}
-            >
-              <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight">
-                Currently Open
-              </h2>
-            </motion.div>
-            
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={flipReveal}
-              transition={{ delay: 0.2 }} // Stagger the second line
-            >
-              <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-[#FFC20E]">
-                Location
-              </h2>
-            </motion.div>
-          </div>
+        <div className="w-full h-px bg-gray-800" />
 
-          {/* Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Images Grid (Staggered Entrance) */}
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-2 gap-4"
-            >
-              <motion.div variants={fadeInUp} className="col-span-2 h-64 md:h-80 overflow-hidden rounded-lg border-2 border-[#333]">
-                <img
-                  src="/assets/toranto1.jpg"
-                  alt="Restaurant Main"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </motion.div>
-              <motion.div variants={fadeInUp} transition={{ delay: 0.1 }} className="h-40 md:h-48 overflow-hidden rounded-lg border-2 border-[#333]">
-                <img
-                  src="/assets/toranto2.jpg"
-                  alt="Food Detail"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </motion.div>
-              <motion.div variants={fadeInUp} transition={{ delay: 0.2 }} className="h-40 md:h-48 overflow-hidden rounded-lg border-2 border-[#333]">
-                <img
-                  src="/assets/toranto3.jpg"
-                  alt="Dining Atmosphere"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </motion.div>
-            </motion.div>
-
-            {/* Right: Details Section */}
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="space-y-2 pl-0 lg:pl-10 max-w-md"
-            >
-              {/* Title Slide */}
-              <motion.div 
-                initial={{ x: 50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6 }}
-              >
-                <h3 className="text-3xl md:text-4xl font-extrabold leading-tight mb-1 text-white">
-                  Toronto – Downtown
-                </h3>
-                <span className="text-sm md:text-md font-medium text-gray-400">
-                  (OPEN)
-                </span>
-              </motion.div>
-
-              <div className="w-full h-px bg-gray-800" />
-
-              {/* Details List (Staggered Fade Up) */}
-              <motion.div 
-                 initial="hidden" 
-                 whileInView="visible" 
-                 viewport={{ once: true }} 
-                 variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-                 className="space-y-4"
-              >
-                {/* Group 1: Address */}
-                <motion.div variants={fadeInUp} className="pt-2">
-                  <div className="flex items-start space-x-4">
-                    <MapPin className="text-[#FFC20E] mt-1 shrink-0" size={24} />
-                    <div>
-                      <h4 className="font-semibold text-lg text-white mb-1">Visit or Reach Out to Us</h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        123 Queen Street West<br />Toronto, Canada
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.div variants={fadeInUp} className="w-full h-px bg-gray-800" />
-
-                {/* Group 2: Hours */}
-                <motion.div variants={fadeInUp} className="pt-2">
-                  <div className="flex items-start space-x-4">
-                    <Clock className="text-[#FFC20E] mt-1 shrink-0" size={24} />
-                    <div>
-                      <h4 className="font-semibold text-lg text-white mb-1">Open Hours</h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        Mon–Thu: 11 AM – 10 PM<br />Fri–Sat: 11 AM – 12 AM<br />Sun: 12 PM – 9 PM
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.div variants={fadeInUp} className="w-full h-px bg-gray-800" />
-
-                {/* Two column contact block */}
-                <motion.div variants={fadeInUp} className="pt-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex items-start space-x-4">
-                    <Phone className="text-[#FFC20E] mt-1 shrink-0" size={24} />
-                    <div>
-                      <h4 className="font-semibold text-lg text-white mb-1">Contact Details</h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        Booking Inquiries:<br />
-                        <a href="tel:+16395550182" className="text-gray-300 hover:text-amber-400">+1 (639) 555-0182</a>
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <Mail className="text-[#FFC20E] mt-1 shrink-0" size={24} />
-                    <div>
-                      <h4 className="font-semibold text-lg text-white mb-1">Email Us</h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        Bookings:<br />
-                        <a href="mailto:contact@jasperwings.ca" className="text-gray-300 hover:text-amber-400 break-all">contact@jasperwings.ca</a>
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-              
-              <div className="w-full h-px bg-gray-800" />
-
-              {/* Order button */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="pt-4"
-              >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-[#FFC20E] text-black font-extrabold uppercase px-8 py-3 rounded-full hover:bg-white transition-colors tracking-wide text-sm"
-                  aria-label="Order Now"
-                >
-                  Order Now
-                </motion.button>
-              </motion.div>
-            </motion.div>
-          </div>
-
-          {/* Decorative Garlic */}
-          <motion.div 
-            variants={floatAnim}
-            animate="animate"
-            className="absolute bottom-3 right-0 opacity-20 pointer-events-none -rotate-12"
-          >
-            <img src="/assets/garlic.png" alt="" />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+          className="space-y-4"
+        >
+          {/* Address */}
+          <motion.div variants={fadeInUp} className="pt-2">
+            <div className="flex items-start space-x-4">
+              <MapPin className="text-[#d96828] mt-1 shrink-0" size={24} />
+              <div>
+                <h4 className="font-semibold text-lg text-white mb-1">
+                  Visit or Reach Out to Us
+                </h4>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  2737 Keele St, Unit 27<br />
+                  North York, ON M3M 2E9
+                </p>
+              </div>
+            </div>
           </motion.div>
-        </div>
-      </section>
+
+          <motion.div variants={fadeInUp} className="w-full h-px bg-gray-800" />
+
+          {/* Hours */}
+          <motion.div variants={fadeInUp} className="pt-2">
+            <div className="flex items-start space-x-4">
+              <Clock className="text-[#d96828] mt-1 shrink-0" size={24} />
+              <div>
+                <h4 className="font-semibold text-lg text-white mb-1">
+                  Open Hours
+                </h4>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Monday – Thursday: 10:30 AM – 12:00 AM<br />
+                  Friday – Saturday: 10:30 AM – 2:00 AM<br />
+                  Sunday: 10:30 AM – 12:00 AM
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div variants={fadeInUp} className="w-full h-px bg-gray-800" />
+
+          {/* Contact */}
+          <motion.div variants={fadeInUp} className="pt-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex items-start space-x-4">
+              <Phone className="text-[#d96828] mt-1 shrink-0" size={24} />
+              <div>
+                <h4 className="font-semibold text-lg text-white mb-1">
+                  Contact Details
+                </h4>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Store Phone:<br />
+                  <a href="tel:+14163983228" className="text-gray-300 hover:text-[#d96828]">
+                    416-398-3228
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4">
+              <Mail className="text-[#d96828] mt-1 shrink-0" size={24} />
+              <div>
+                <h4 className="font-semibold text-lg text-white mb-1">
+                  Email Us
+                </h4>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  <a href="mailto:info@jasperwings.com" className="text-gray-300 hover:text-[#d96828] break-all">
+                    info@jasperwings.com
+                  </a>
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        <div className="w-full h-px bg-gray-800" />
+
+        {/* Order Button */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="pt-4"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-[#d96828] text-black font-extrabold uppercase px-8 py-3 rounded-full hover:bg-white transition-colors tracking-wide text-sm"
+          >
+            Order Now
+          </motion.button>
+        </motion.div>
+      </motion.div>
+    </div>
+
+    {/* Decorative Garlic */}
+    <motion.div
+      variants={floatAnim}
+      animate="animate"
+      className="absolute bottom-3 right-0 opacity-20 pointer-events-none -rotate-12"
+    >
+      <img src="/assets/garlic.png" alt="" />
+    </motion.div>
+  </div>
+</section>
+
 
       {/* --- COMING SOON LOCATIONS --- */}
       <section className="relative w-full h-full mb-6 flex items-center justify-center py-24 overflow-hidden">
@@ -403,35 +396,66 @@ const ComingSoon = () => {
           </div>
 
           {/* CARDS */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center max-sm:gap-4"
-          >
-            {[
-              { img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop", city: "Mississauga", date: "Summer 2025" },
-              { img: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop", city: "Vancouver", date: "Late 2025" }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                variants={cardPop}
-                whileHover={{ y: -10 }}
-                className="w-full max-w-[450px] p-2 bg-white rounded-xl overflow-hidden shadow-2xl transition-transform duration-300 max-sm:max-w-[96%] max-sm:p-3 max-sm:rounded-lg"
-              >
-                <div className="h-60 overflow-hidden relative rounded-xl max-sm:h-[220px] max-sm:rounded-lg">
-                  <img src={item.img} alt={item.city} className="w-full h-full object-cover rounded-xl max-sm:rounded-lg hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-black/20"></div>
-                </div>
-                <div className="p-6 text-center max-sm:p-4">
-                  <h3 className="text-black font-black text-2xl mb-2 max-sm:text-xl">{item.city} – Coming Soon</h3>
-                  <p className="text-[#FFC20E] font-bold uppercase tracking-wider mb-6 max-sm:mb-4 max-sm:text-sm">Opening {item.date}</p>
-                  <motion.button whileHover={{ scale: 1.05, backgroundColor: "#000", color: "#FFC20E" }} whileTap={{ scale: 0.95 }} className="border-2 border-black text-black font-bold uppercase px-8 py-2 rounded-full transition-colors w-full max-sm:px-6 max-sm:py-2 max-sm:text-sm">Notify Me</motion.button>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center max-sm:gap-4"
+>
+  {[
+    {
+      img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop",
+      city: "Monticello",
+      date: "Coming Soon",
+    },
+    {
+      img: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop",
+      city: "Brampton",
+      date: "Summer 2026",
+    },
+    {
+       img: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop",
+      city: "Mississauga",
+      date: "Late 2026",
+    },
+  ].map((item, index) => (
+    <motion.div
+      key={index}
+      variants={cardPop}
+      whileHover={{ y: -10 }}
+      className="w-full max-w-[450px] p-2 bg-white rounded-xl overflow-hidden shadow-2xl transition-transform duration-300 max-sm:max-w-[96%] max-sm:p-3 max-sm:rounded-lg"
+    >
+      <div className="h-60 overflow-hidden relative rounded-xl max-sm:h-[220px] max-sm:rounded-lg">
+        <img
+          src={item.img}
+          alt={item.city}
+          className="w-full h-full object-cover rounded-xl max-sm:rounded-lg hover:scale-110 transition-transform duration-700"
+        />
+        <div className="absolute inset-0 bg-black/20"></div>
+      </div>
+
+      <div className="p-6 text-center max-sm:p-4">
+        <h3 className="text-black font-black text-2xl mb-2 max-sm:text-xl">
+          {item.city} – Coming Soon
+        </h3>
+
+        <p className="text-[#d96828] font-bold uppercase tracking-wider mb-6 max-sm:mb-4 max-sm:text-sm">
+          {item.date}
+        </p>
+
+        <motion.button
+          whileHover={{ scale: 1.05, backgroundColor: "#000", color: "#FFC20E" }}
+          whileTap={{ scale: 0.95 }}
+          className="border-2 border-black text-black font-bold uppercase px-8 py-2 rounded-full transition-colors w-full max-sm:px-6 max-sm:py-2 max-sm:text-sm"
+        >
+          Notify Me
+        </motion.button>
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
+
         </div>
       </section>
 
@@ -462,12 +486,12 @@ const ComingSoon = () => {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold uppercase mb-2 leading-tighter">
-            Want Jasper Wings in your <br /> <span className="text-[#FFC20E]">City Next?</span>
+            Want Jasper Wings in your <br /> <span className="text-[#d96828]">City Next?</span>
           </h2>
           <motion.button 
             whileHover={{ scale: 1.05, backgroundColor: "#fff", color: "#000" }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#FFC20E] text-black font-medium uppercase px-5 py-3 rounded-full transition-colors tracking-wide mt-6"
+            className="bg-[#d96828] text-black font-medium uppercase px-5 py-3 rounded-full transition-colors tracking-wide mt-6"
           >
             Become a Franchise Partner
           </motion.button>

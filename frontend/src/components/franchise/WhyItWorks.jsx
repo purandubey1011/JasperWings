@@ -75,7 +75,7 @@ const WhyItWorks = () => {
               alt="Mascot"
               className="w-5 h-5 md:w-5 md:h-5 object-contain"
             />
-            <span className="text-yellow-500 text-xs md:text-sm font-bold uppercase">
+            <span className="text-[#d96828] text-xs md:text-sm font-bold uppercase">
               Why Franchise With Us
             </span>
           </div>
@@ -87,7 +87,7 @@ const WhyItWorks = () => {
             >
               <span className="text-white">Why Jasper Wings </span>
               <br />
-              <span className="text-yellow-500">Works</span>
+              <span className="text-[#d96828]">Works</span>
             </h2>
           </div>
         </motion.div>
@@ -117,9 +117,9 @@ const WhyItWorks = () => {
               className="flex flex-col items-center text-center group
                          max-sm:items-start max-sm:text-left"
             >
-              <div className="w-32 h-32 md:w-32 md:h-32 rounded-full bg-yellow-500 flex items-center justify-center mb-8
-                              border-[6px] border-black ring-[3px] ring-yellow-500
-                              shadow-[0_0_20px_rgba(234,179,8,0.2)]
+              <div className="w-32 h-32 md:w-32 md:h-32 rounded-full bg-[#d96828] flex items-center justify-center mb-8
+                              border-[6px] border-black ring-[3px] ring-[#d96828]
+                              shadow-[0_0_20px_rgba(217,104,40,0.2)]
                               transition-transform duration-300 group-hover:scale-105
                               max-sm:w-20 max-sm:h-20 max-sm:border-[4px] max-sm:ring-[2px] max-sm:mb-4">
                 <img

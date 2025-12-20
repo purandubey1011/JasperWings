@@ -125,7 +125,7 @@ const AboutSection = () => {
           {/* Bottom-right teddy + Badge */}
           <motion.div 
             variants={badgePop}
-            className="absolute -bottom-1 -right-1 flex items-center gap-2 bg-[#F5CF5A] text-black px-3 py-1 rounded shadow-lg origin-bottom-right"
+            className="absolute -bottom-1 -right-1 flex items-center gap-2 bg-[#d96828] text-black px-3 py-1 rounded shadow-lg origin-bottom-right"
           >
             <img
               src="/assets/franchiseBear.png"
@@ -156,7 +156,7 @@ const AboutSection = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           {/* Label */}
-          <motion.div variants={fadeInUp} className="flex items-center gap-2 text-yellow-400 mb-4">
+          <motion.div variants={fadeInUp} className="flex items-center gap-2 text-[#d96828] mb-4">
             <img src={aboutteddy} alt="" className="h-5" />
             <span className="uppercase font-bold tracking-widest">
                About Jasper Wings
@@ -197,7 +197,7 @@ const AboutSection = () => {
                 whileHover={{ scale: 1.05, originX: 0 }} // Items pop slightly on hover
                 className="flex items-center gap-4 cursor-default"
               >
-                <div className="bg-yellow-400 w-10 h-10 rounded-full flex items-center justify-center shadow-lg text-black">
+                <div className="bg-[#d96828] w-10 h-10 rounded-full flex items-center justify-center shadow-lg text-black">
                   {item.icon}
                 </div>
 

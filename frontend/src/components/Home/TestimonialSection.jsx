@@ -83,7 +83,7 @@ function TestimonialCard({ item }) {
         animate="animate"
         className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 bg-[#0f0e0e] rounded-full flex items-center justify-center border-4 border-[#0d0d0d] z-20"
       >
-        <Quote className="w-6 h-6 text-[#f59e0b] fill-[#f59e0b]" />
+        <Quote className="w-6 h-6 text-[#d96828] fill-[#d96828]" />
       </motion.div>
 
       {/* Content */}
@@ -102,7 +102,7 @@ function TestimonialCard({ item }) {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1 * i, type: "spring" }}
           >
-            <Star className="w-4 h-4 text-[#f59e0b] fill-[#f59e0b]" />
+            <Star className="w-4 h-4 text-[#d96828] fill-[#d96828]" />
           </motion.div>
         ))}
       </div>
@@ -185,7 +185,7 @@ const TestimonialSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center gap-2 text-orange-500 font-bold mb-4"
+            className="flex items-center justify-center gap-2 text-[#d96828] font-bold mb-4"
           >
             <FaPaw className="text-xl" />
             <span className="tracking-widest text-sm">TESTIMONIALS</span>
@@ -255,7 +255,7 @@ const TestimonialSection = () => {
               onClick={() => setSpecificIndex(i)}
               className={`rounded-full transition-all focus:outline-none ${
                 i === index 
-                  ? "w-8 h-2 bg-[#f59e0b]" 
+                  ? "w-8 h-2 bg-[#d96828]" 
                   : "w-2 h-2 bg-gray-700 hover:bg-gray-500"
               }`}
             />

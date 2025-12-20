@@ -113,193 +113,203 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="bg-neutral-950 font-sans selection:bg-amber-400 selection:text-black">
+    <div className="bg-neutral-950 font-sans selection:bg-[#d96828] selection:text-black">
       <Navbar />
       
       {/* MAIN HERO */}
-      <main className="bg-black flex justify-center items-start pt-24 md:pt-30 pb-10">
-        <div className="w-full max-w-[95vw] px-4">
+<main className="bg-black flex justify-center items-start pt-24 md:pt-30 pb-10">
+  <div className="w-full max-w-[95vw] px-4">
+    
+    {/* Main Card Container */}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      className="relative mx-auto rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl"
+      style={{ minHeight: "90vh" }}
+    >
+      {/* Background Image */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          variants={bgPan}
+          animate="animate"
+          className="w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/assets/contacthero.jpg')",
+            filter: "saturate(0.9) contrast(0.9) brightness(0.8)",
+          }}
+        />
+      </div>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      {/* Content */}
+      <div className="relative z-10 h-full w-full p-6 md:p-10 lg:p-14">
+        <div className="flex flex-col lg:flex-row h-full gap-12 lg:gap-24">
           
-          {/* Main Card Container */}
+          {/* LEFT COLUMN */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative mx-auto rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl"
-            style={{ minHeight: "90vh" }}
+            initial="hidden"
+            animate="visible"
+            transition={{ staggerChildren: 0.2, delayChildren: 0.3 }}
+            className="flex-1 flex flex-col justify-start md:justify-center text-white"
           >
-            {/* Background Image (Slow Pan) */}
-            <div className="absolute inset-0 overflow-hidden">
-              <motion.div
-                variants={bgPan}
-                animate="animate"
-                className="w-full h-full bg-cover bg-center"
+            
+            {/* Heading */}
+            <div className="overflow-hidden mb-4">
+              <motion.h1
+                variants={maskReveal}
+                className="text-4xl sm:text-5xl md:text-6xl font-medium uppercase tracking-wide"
                 style={{
-                  backgroundImage: "url('/assets/contacthero.jpg')",
-                  filter: "saturate(0.9) contrast(0.9) brightness(0.8)",
+                  fontFamily: '"Impact","Oswald",sans-serif',
+                  filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.6))",
+                  lineHeight: 1,
                 }}
-              />
+              >
+                LET&apos;S TALK FLAVOUR
+              </motion.h1>
             </div>
 
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/50" />
+            <motion.p
+              variants={slowFadeUp}
+              className="text-gray-200 text-sm md:text-lg font-light tracking-wide max-w-xl mb-2"
+            >
+              Reach out for orders, catering, feedback, or collabs — we&apos;re listening.
+            </motion.p>
 
-            {/* Content (left + right) */}
-            <div className="relative z-10 h-full w-full p-6 md:p-10 lg:p-14">
-              <div className="flex flex-col lg:flex-row h-full gap-12 lg:gap-24"> {/* INCREASED GAP HERE */}
-                
-                {/* LEFT COLUMN — content block */}
-                <motion.div 
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ staggerChildren: 0.2, delayChildren: 0.3 }}
-                  className="flex-1 flex flex-col justify-start md:justify-center text-white pr-0"
-                >
-                  
-                  {/* Cinematic Heading (Masked) */}
-                  <div className="overflow-hidden mb-4">
-                    <motion.h1
-                      variants={maskReveal}
-                      className="text-4xl sm:text-5xl md:text-6xl font-medium uppercase tracking-wide"
-                      style={{
-                        fontFamily: '"Impact","Oswald",sans-serif',
-                        filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.6))",
-                        lineHeight: 1,
-                      }}
-                    >
-                      LET&apos;S TALK FLAVOUR
-                    </motion.h1>
-                  </div>
+            <motion.hr variants={lineDraw} className="border-white/30 my-6 w-full max-w-xl origin-left" />
 
-                  <motion.p variants={slowFadeUp} className="text-gray-200 text-sm md:text-lg font-light tracking-wide max-w-xl mb-2">
-                    Reach out for orders, catering, feedback, or collabs — we&apos;re listening.
-                  </motion.p>
-
-                  <motion.hr variants={lineDraw} className="border-white/30 my-6 w-full max-w-xl origin-left" />
-
-                  {/* Visit / Address */}
-                  <motion.div variants={slowFadeUp} className="flex items-start gap-5 mb-2">
-                    <div className="p-3 border border-white/20 rounded-full shrink-0 bg-black/20 backdrop-blur-md">
-                      <MapPin size={20} className="text-amber-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white tracking-tight">Visit or Reach Out to Us</h3>
-                      <p className="text-gray-300 text-sm md:text-base mt-1 leading-relaxed">
-                        123 Queen Street West<br />Toronto, Canada
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  <motion.hr variants={lineDraw} className="border-white/30 my-6 w-full max-w-xl origin-left" />
-
-                  {/* Open Hours */}
-                  <motion.div variants={slowFadeUp} className="flex items-start gap-5 mb-2">
-                    <div className="p-3 border border-white/20 rounded-full shrink-0 bg-black/20 backdrop-blur-md">
-                      <Clock size={20} className="text-amber-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-2 tracking-tight">Open Hours</h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-300 text-sm md:text-base">
-                        <p><span className="font-medium text-white">Mon–Thu:</span> 11 AM – 10 PM</p>
-                        <p><span className="font-medium text-white">Fri–Sat:</span> 11 AM – 12 AM</p>
-                        <p><span className="font-medium text-white">Sun:</span> 12 PM – 9 PM</p>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  <motion.hr variants={lineDraw} className="border-white/30 my-6 w-full max-w-xl origin-left" />
-
-                  {/* Contact details */}
-                  <motion.div variants={slowFadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-xl">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 border border-white/20 rounded-full shrink-0 bg-black/20 backdrop-blur-md">
-                        <Phone size={20} className="text-amber-400" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-white">Call Us</h3>
-                        <a className="text-gray-300 hover:text-white transition-colors text-sm mt-1 block" href="tel:+14165550192">
-                          +1 (416) 555-0192
-                        </a>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 border border-white/20 rounded-full shrink-0 bg-black/20 backdrop-blur-md">
-                        <Mail size={20} className="text-amber-400" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-white">Email Us</h3>
-                        <a className="text-gray-300 hover:text-white transition-colors text-sm mt-1 block" href="mailto:contact@jasperwings.ca">
-                          contact@jasperwings.ca
-                        </a>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  <motion.hr variants={lineDraw} className="border-white/30 my-6 w-full max-w-xl origin-left" />
-
-                  {/* Social icons */}
-                  <motion.div variants={slowFadeUp} className="flex items-center gap-4">
-                    <span className="text-gray-300 font-medium tracking-wider text-sm uppercase">Follow Us</span>
-                    <div className="h-px w-10 bg-gray-500"></div>
-                    <div className="flex gap-3">
-                        <SocialIcon Icon={Facebook} index={0} />
-                        <SocialIcon Icon={Instagram} index={1} />
-                        <SocialIcon Icon={Twitter} index={2} />
-                        <SocialIcon Icon={Linkedin} index={3} />
-                    </div>
-                  </motion.div>
-                </motion.div>
-
-                {/* RIGHT COLUMN — Map card (3D Swing Entrance) */}
-                <div className="w-full md:w-[380px] lg:w-[450px] flex-shrink-0 flex items-center justify-center perspective-1000">
-                  <motion.div 
-                    variants={map3D}
-                    initial="hidden"
-                    animate="visible"
-                    whileHover={{ 
-                      y: -10, 
-                      rotateX: 2, 
-                      boxShadow: "0px 20px 40px rgba(0,0,0,0.6)" 
-                    }}
-                    className="rounded-[2rem] overflow-hidden p-3 bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl w-full transition-shadow duration-500"
-                  >
-                    <div className="relative w-full aspect-square rounded-[1.5rem] overflow-hidden bg-gray-900">
-                      <motion.img
-                        initial={{ scale: 1.2 }}
-                        animate={{ scale: 1 }}
-                        transition={{ duration: 2, ease: "easeOut" }}
-                        src="/assets/map.png"
-                        alt="map"
-                        className="w-full h-full object-cover opacity-90"
-                      />
-                      
-                      {/* Bouncing Pin */}
-                      <motion.div
-                        animate={{ y: [0, -15, 0] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                      >
-                         <MapPin
-                            size={48}
-                            className="text-red-600 drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]"
-                            fill="currentColor"
-                          />
-                      </motion.div>
-                    </div>
-
-                    <div className="mt-5 px-3 pb-2">
-                      <h4 className="text-white font-bold text-xl tracking-tight">Our HQ</h4>
-                      <p className="text-gray-400 text-sm mt-1">123 Queen Street West, Toronto</p>
-                    </div>
-                  </motion.div>
-                </div>
-
+            {/* Address */}
+            <motion.div variants={slowFadeUp} className="flex items-start gap-5 mb-2">
+              <div className="p-3 border border-white/20 rounded-full bg-black/20 backdrop-blur-md">
+                <MapPin size={20} className="text-[#d96828]" />
               </div>
-            </div>
+              <div>
+                <h3 className="text-xl font-bold text-white tracking-tight">
+                  Visit or Reach Out to Us
+                </h3>
+                <p className="text-gray-300 text-sm md:text-base mt-1 leading-relaxed">
+                  2737 Keele St, Unit 27<br />
+                  North York, ON M3M 2E9
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.hr variants={lineDraw} className="border-white/30 my-6 w-full max-w-xl origin-left" />
+
+            {/* Hours */}
+            <motion.div variants={slowFadeUp} className="flex items-start gap-5 mb-2">
+              <div className="p-3 border border-white/20 rounded-full bg-black/20 backdrop-blur-md">
+                <Clock size={20} className="text-[#d96828]" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
+                  Open Hours
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-300 text-sm md:text-base">
+                  <p><span className="font-medium text-white">Mon–Thu:</span> 10:30 AM – 12:00 AM</p>
+                  <p><span className="font-medium text-white">Fri–Sat:</span> 10:30 AM – 2:00 AM</p>
+                  <p><span className="font-medium text-white">Sun:</span> 10:30 AM – 12:00 AM</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.hr variants={lineDraw} className="border-white/30 my-6 w-full max-w-xl origin-left" />
+
+            {/* Contact */}
+            <motion.div variants={slowFadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-xl">
+              <div className="flex items-start gap-4">
+                <div className="p-3 border border-white/20 rounded-full bg-black/20 backdrop-blur-md">
+                  <Phone size={20} className="text-[#d96828]" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">Call Us</h3>
+                  <a
+                    href="tel:+14163983228"
+                    className="text-gray-300 hover:text-white transition-colors text-sm mt-1 block"
+                  >
+                    416-398-3228
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="p-3 border border-white/20 rounded-full bg-black/20 backdrop-blur-md">
+                  <Mail size={20} className="text-[#d96828]" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">Email Us</h3>
+                  <a
+                    href="mailto:info@jasperwings.com"
+                    className="text-gray-300 hover:text-white transition-colors text-sm mt-1 block"
+                  >
+                    info@jasperwings.com
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.hr variants={lineDraw} className="border-white/30 my-6 w-full max-w-xl origin-left" />
+
+            {/* Social */}
+            <motion.div variants={slowFadeUp} className="flex items-center gap-4">
+              <span className="text-gray-300 font-medium tracking-wider text-sm uppercase">
+                Follow Us
+              </span>
+              <div className="h-px w-10 bg-gray-500"></div>
+              <div className="flex gap-3">
+                <SocialIcon Icon={Facebook} index={0} />
+                <SocialIcon Icon={Instagram} index={1} />
+                <SocialIcon Icon={Twitter} index={2} />
+                <SocialIcon Icon={Linkedin} index={3} />
+              </div>
+            </motion.div>
           </motion.div>
+
+          {/* RIGHT COLUMN – MAP */}
+          <div className="w-full md:w-[380px] lg:w-[450px] flex-shrink-0 flex items-center justify-center perspective-1000">
+            <motion.div
+              variants={map3D}
+              initial="hidden"
+              animate="visible"
+              whileHover={{ y: -10, rotateX: 2, boxShadow: "0px 20px 40px rgba(0,0,0,0.6)" }}
+              className="rounded-[2rem] overflow-hidden p-3 bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl w-full"
+            >
+              <div className="relative w-full aspect-square rounded-[1.5rem] overflow-hidden bg-gray-900">
+                <motion.img
+                  initial={{ scale: 1.2 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 2, ease: "easeOut" }}
+                  src="/assets/map.png"
+                  alt="map"
+                  className="w-full h-full object-cover opacity-90"
+                />
+
+                <motion.div
+                  animate={{ y: [0, -15, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                >
+                  <MapPin size={48} className="text-red-600" fill="currentColor" />
+                </motion.div>
+              </div>
+
+              <div className="mt-5 px-3 pb-2">
+                <h4 className="text-white font-bold text-xl tracking-tight">Our HQ</h4>
+                <p className="text-gray-400 text-sm mt-1">
+                  2737 Keele St, Unit 27, North York
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
         </div>
-      </main>
+      </div>
+    </motion.div>
+  </div>
+</main>
+
 
       <BookTableSection />
       <Footer />

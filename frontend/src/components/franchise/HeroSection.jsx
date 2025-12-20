@@ -104,7 +104,7 @@ const HeroSection = () => {
             custom={i}
             variants={emberAnim}
             animate="animate"
-            className="absolute bg-orange-500 rounded-full blur-[1px]"
+            className="absolute bg-[#d96828] rounded-full blur-[1px]"
             style={{
               width: Math.random() * 4 + 2 + "px",
               height: Math.random() * 4 + 2 + "px",
@@ -127,7 +127,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="flex items-center gap-2 mb-6 text-sm font-bold tracking-[0.2em] text-[#FFC222] border border-[#FFC222]/30 px-4 py-2 rounded-full bg-black/30 backdrop-blur-sm"
+          className="flex items-center gap-2 mb-6 text-sm font-bold tracking-[0.2em] text-[#d96828] border border-[#d96828]/30 px-4 py-2 rounded-full bg-black/30 backdrop-blur-sm"
         >
           <span className="text-xl animate-pulse">☕</span> FRANCHISE JASPER WINGS
         </motion.div>
@@ -146,7 +146,7 @@ const HeroSection = () => {
               >
                 Heat
                 {/* Fire glow underlay */}
-                <span className="absolute inset-0 blur-lg bg-orange-600/50 -z-10 rounded-full opacity-50"></span>
+                <span className="absolute inset-0 blur-lg bg-[#d96828]/50 -z-10 rounded-full opacity-50"></span>
               </motion.span>
             </motion.div>
           </div>
@@ -175,7 +175,7 @@ const HeroSection = () => {
            animate={{ scale: 1, opacity: 1 }}
            transition={{ delay: 1.2, type: "spring", stiffness: 200, damping: 15 }}
         >
-          <button className="relative group bg-[#FFC222] text-black px-10 py-4 rounded-full font-black text-sm uppercase tracking-widest overflow-hidden">
+          <button className="relative group bg-[#d96828] text-black px-10 py-4 rounded-full font-black text-sm uppercase tracking-widest overflow-hidden">
             <span className="relative z-10 group-hover:text-black transition-colors duration-300">
               Apply For Franchise
             </span>

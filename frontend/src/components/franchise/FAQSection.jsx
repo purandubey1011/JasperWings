@@ -115,7 +115,7 @@ const FAQSection = () => {
         >
           <span className="text-white block">Frequently</span>
           <span className="text-white">Asked </span>
-          <span className="text-yellow-500">Question</span>
+          <span className="text-[#d96828]">Question</span>
         </motion.h2>
 
         {/* FAQ List - Staggered Entrance */}

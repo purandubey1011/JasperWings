@@ -108,7 +108,7 @@ const CategoryCard = ({ category }) => (
     {/* Text */}
     <div className="mt-1 text-center z-10 bg-white/80 backdrop-blur-sm px-4 py-1 rounded-lg md:bg-transparent">
       <h3 className="text-xl font-bold text-gray-900">{category.name}</h3>
-      <p className="text-yellow-500 text-xs font-medium uppercase tracking-wide mt-1">
+      <p className="text-[#d96828] text-xs font-medium uppercase tracking-wide mt-1">
         {category.count}
       </p>
     </div>
@@ -119,7 +119,7 @@ const ProductCard = ({ product }) => (
   <motion.div 
     variants={scaleIn}
     whileHover={{ y: -10, boxShadow: "0px 15px 30px rgba(0,0,0,0.1)" }}
-    className="bg-[#FFC629] rounded-md overflow-hidden flex flex-col items-center p-4 sm:p-5 transition-shadow duration-300"
+    className="bg-[#d96828] rounded-md overflow-hidden flex flex-col items-center p-4 sm:p-5 transition-shadow duration-300"
   >
     {/* Image container */}
     <div className="w-full flex-grow flex items-center justify-center">
@@ -163,7 +163,7 @@ const ViewFullMenuButton = () => (
     <motion.button 
       whileHover={{ scale: 1.05, backgroundColor: "#FACC15", color: "#fff" }}
       whileTap={{ scale: 0.95 }}
-      className="px-8 py-3 bg-white border-2 border-yellow-400 text-yellow-500 font-bold rounded-full uppercase tracking-wider text-sm shadow-sm transition-colors duration-300"
+      className="px-8 py-3 bg-white border-2 border-[#d96828] text-[#d96828] font-bold rounded-full uppercase tracking-wider text-sm shadow-sm transition-colors duration-300"
     >
       View Full Menu
     </motion.button>
@@ -205,8 +205,8 @@ const WhatHotNow = () => {
         >
           {/* Top small label */}
           <motion.p variants={fadeInUp} className="text-sm font-semibold tracking-wide text-gray-700 flex items-center mb-4">
-            <Utensils size={20} className="text-amber-400" />
-            <span className=" ml-2  text-amber-400 uppercase font-bold text-xs">
+            <Utensils size={20} className="text-[#d96828]" />
+            <span className=" ml-2  text-[#d96828] uppercase font-bold text-xs">
               Explore the Menu
             </span>
           </motion.p>
@@ -215,7 +215,7 @@ const WhatHotNow = () => {
           <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl text-black font-extrabold text-center leading-tighter">
             Whats Hot <br />
             Right
-            <span className="text-yellow-500 ml-3">Now</span>
+            <span className="text-[#d96828] ml-3">Now</span>
           </motion.h2>
 
           {/* Subtitle */}

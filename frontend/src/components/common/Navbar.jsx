@@ -10,12 +10,12 @@ const Navbar = ({bg='black'}) => {
     <nav className={`bg-${bg} text-white py-5 px-6 w-full fixed top-0 z-50`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo (clickable -> home) */}
-        <div className="flex flex-col leading-none w-52">
+        <div className="">
           <Link to="/" onClick={() => setIsOpen(false)}>
             <img
-              src="/assets/logo.jpg"
+              src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jasper%20wings/logojasper2.png"
               alt="Unyfer Logo"
-              className="w-full h-auto"
+              className="h-7"
             />
           </Link>
         </div>
@@ -24,31 +24,31 @@ const Navbar = ({bg='black'}) => {
         <div className="hidden md:flex gap-12 font-bold text-sm tracking-wider items-center absolute left-1/2 transform -translate-x-1/2">
           <Link
             to="/"
-            className="hover:text-yellow-400 transition-colors uppercase"
+            className="hover:text-[#d96828] transition-colors uppercase"
           >
             Home
           </Link>
           <Link
             to="/menu"
-            className="hover:text-yellow-400 transition-colors uppercase"
+            className="hover:text-[#d96828] transition-colors uppercase"
           >
             Menu
           </Link>
           <Link
             to="/coming-soon"
-            className="hover:text-yellow-400 transition-colors uppercase"
+            className="hover:text-[#d96828] transition-colors uppercase"
           >
             Coming Soon
           </Link>
           <Link
             to="/contact"
-            className="hover:text-yellow-400 transition-colors uppercase"
+            className="hover:text-[#d96828] transition-colors uppercase"
           >
             Contact
           </Link>
           <Link
             to="/franchizy"
-            className="hover:text-yellow-400 transition-colors uppercase"
+            className="hover:text-[#d96828] transition-colors uppercase"
           >
             Franshise
           </Link>
@@ -59,7 +59,7 @@ const Navbar = ({bg='black'}) => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest transition-all"
+            className="border border-[#d96828] text-[#d96828] hover:bg-[#d96828] hover:text-black px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest transition-all"
             onClick={() => {
               setIsOpen(false);
               // optional: navigate to order page if you have one
@@ -72,7 +72,7 @@ const Navbar = ({bg='black'}) => {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-yellow-400"
+          className="md:hidden text-[#d96828]"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
@@ -93,35 +93,35 @@ const Navbar = ({bg='black'}) => {
           >
             <Link
               to="/"
-              className="hover:text-yellow-400 uppercase font-bold"
+              className="hover:text-[#d96828] uppercase font-bold"
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/menu"
-              className="hover:text-yellow-400 uppercase font-bold"
+              className="hover:text-[#d96828] uppercase font-bold"
               onClick={() => setIsOpen(false)}
             >
               Menu
             </Link>
             <Link
               to="/contact"
-              className="hover:text-yellow-400 uppercase font-bold"
+              className="hover:text-[#d96828] uppercase font-bold"
               onClick={() => setIsOpen(false)}
             >
               Contact
             </Link>
             <Link
               to="/coming-soon"
-              className="hover:text-yellow-400 transition-colors uppercase"
+              className="hover:text-[#d96828] transition-colors uppercase"
               onClick={() => setIsOpen(false)}
             >
               Coming Soon
             </Link>
             <Link
               to="/franchizy"
-              className="hover:text-yellow-400 transition-colors uppercase"
+              className="hover:text-[#d96828] transition-colors uppercase"
               onClick={() => setIsOpen(false)}
             >
               Franshise

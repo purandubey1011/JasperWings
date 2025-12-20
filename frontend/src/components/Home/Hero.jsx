@@ -153,11 +153,11 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="
-                bg-[#FFC222] text-black 
+                bg-[#d96828] text-black 
                 px-10 py-3 sm:py-3 
                 rounded-full font-bold 
                 text-sm sm:text-base uppercase tracking-widest 
-                shadow-lg hover:bg-yellow-300 transition-colors
+                shadow-lg hover:bg-[#dd6520] transition-colors
 
                 /* mobile button -> full width, exact height, font size */
                 max-sm:w-[86%] max-sm:px-6 max-sm:py-4 max-sm:text-[16px] max-sm:leading-[20px] max-sm:rounded-[9999px]

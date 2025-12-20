@@ -302,7 +302,7 @@ const CategoryRail = ({ activeCategory, setActiveCategory }) => (
             <div
               className={`
                 w-24 h-24 rounded-full p-1 border-[3px] overflow-hidden transition-all
-                ${activeCategory === cat.id ? "border-amber-400" : "border-transparent group-hover:border-white/40"}
+                ${activeCategory === cat.id ? "border-[#d96828]" : "border-transparent group-hover:border-white/40"}
 
                 /* MOBILE: slightly larger circles and thicker border to match screenshot */
                 max-sm:w-20 max-sm:h-20 max-sm:p-0 max-sm:border-[4px] max-sm:rounded-full
@@ -389,7 +389,7 @@ const ProductCard = ({ product }) => (
     variants={cardEntranceVariants}
     whileHover="hover"
     initial="rest"
-    className="bg-[#FFC629] rounded-md overflow-visible flex flex-col items-center p-4 sm:p-5 transition-shadow duration-300 hover:shadow-2xl min-h-[280px] md:min-h-[340px] cursor-pointer group"
+    className="bg-[#d96828] rounded-md overflow-visible flex flex-col items-center p-4 sm:p-5 transition-shadow duration-300 hover:shadow-2xl min-h-[280px] md:min-h-[340px] cursor-pointer group"
   >
     {/* Image container - Animate image independently on hover */}
     <div className="flex-grow flex items-center justify-center relative z-10">
@@ -459,7 +459,7 @@ const MenuSection = ({ title, items, id }) => (
         {/* Animated Line */}
         <motion.div 
           variants={lineVariants}
-          className="h-1 bg-amber-400 mt-2"
+          className="h-1 bg-[#d96828] mt-2"
         />
       </div>
 
