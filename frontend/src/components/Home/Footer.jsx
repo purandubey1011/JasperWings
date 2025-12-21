@@ -13,6 +13,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   // --- Animation Variants ---
@@ -45,30 +46,29 @@ const Footer = () => {
   // 3. Fade Up Item
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.6, ease: "easeOut" } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
   // 4. Social Icon Hover
   const iconHover = {
     rest: { scale: 1, color: "#9ca3af" }, // text-gray-400
-    hover: { 
-      scale: 1.2, 
+    hover: {
+      scale: 1.2,
       color: "#ffffff",
-      transition: { type: "spring", stiffness: 300 } 
+      transition: { type: "spring", stiffness: 300 },
     },
   };
 
   return (
     <footer className="relative w-full bg-[#080808] text-gray-400 font-sans overflow-hidden py-16 md:py-14">
-
       {/* ===================== DECOR IMAGES (Floating) ===================== */}
 
       {/* Top Left Image */}
-      <motion.div 
+      <motion.div
         variants={floatAnim}
         animate="animate"
         className="absolute top-10 -left-12 opacity-60 pointer-events-none hidden sm:block"
@@ -81,7 +81,7 @@ const Footer = () => {
       </motion.div>
 
       {/* Right Side Image */}
-      <motion.div 
+      <motion.div
         variants={floatAnim}
         animate="animate"
         transition={{ delay: 2 }} // Offset animation
@@ -96,16 +96,15 @@ const Footer = () => {
 
       {/* ===================== MAIN CONTENT ===================== */}
 
-      <motion.div 
+      <motion.div
         variants={containerStagger}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 relative z-10"
       >
-
         {/* Top Border (Animated Width) */}
-        <motion.div 
+        <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "100%" }}
           viewport={{ once: true }}
@@ -114,51 +113,58 @@ const Footer = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-
           {/* ================= LEFT SIDE ================= */}
           <div>
             {/* Logo */}
             <motion.div variants={fadeInUp} className="mb-8">
               <div className="inline-flex p-2 border border-gray-700 rounded bg-black w-40 sm:w-48">
-                <img src="/assets/logo.jpg" alt="Jasper Wings" className="w-full" />
+                <img
+                  src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jasper%20wings/logojasper2.png"
+                  alt="Unyfer Logo"
+                  className="h-7"
+                />
               </div>
             </motion.div>
 
             {/* Opening Hours */}
-            <motion.div variants={fadeInUp} className="space-y-2 text-sm sm:text-base text-gray-300">
-              <p>Monday–Thursday: 11 AM – 10 PM</p>
-              <p>Friday–Saturday: 11 AM – 12 AM</p>
-              <p>Sunday: 12 PM – 11 PM</p>
+            <motion.div
+              variants={fadeInUp}
+              className="space-y-2 text-sm sm:text-base text-gray-300"
+            >
+              <p>Monday–Thursday: 10:30 AM – 12 AM</p>
+              <p>Friday–Saturday: 10:30 AM – 2 PM</p>
+              <p>Sunday: 10:30 AM – 12 AM</p>
             </motion.div>
           </div>
 
           {/* ================= RIGHT SIDE ================= */}
           <div className="lg:flex lg:flex-col lg:items-end">
-
             {/* Address */}
             <motion.div variants={fadeInUp} className="flex items-start mb-4">
               <MdLocationOn className="text-white text-lg mt-0.5 mr-3" />
               <span className="text-sm sm:text-base text-gray-300">
-                123 Queen Street West, Toronto, Canada
+                2737 Keele St, Unit 27, North York
               </span>
             </motion.div>
 
             {/* Contact Info */}
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 mb-8 text-sm text-gray-300">
-
+            <motion.div
+              variants={fadeInUp}
+              className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 mb-8 text-sm text-gray-300"
+            >
               <div className="flex items-center">
                 <FaPhoneAlt className="text-white mr-3" />
-                <span>+1 (416) 555-0192</span>
+                <span>+1 416-398-3228</span>
               </div>
 
               <div className="flex items-center">
                 <FaEnvelope className="text-white mr-3" />
-                <span>contact@jasperwings.ca</span>
+                <span>info@jasperwings.com</span>
               </div>
             </motion.div>
 
             {/* Social Icons (Staggered Pop) */}
-            <motion.div 
+            {/* <motion.div 
               variants={containerStagger} 
               className="flex items-center gap-4 text-gray-400"
             >
@@ -180,12 +186,12 @@ const Footer = () => {
                   </motion.a>
                 )
               )}
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
 
         {/* Bottom Border (Animated Width) */}
-        <motion.div 
+        <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "100%" }}
           viewport={{ once: true }}
@@ -194,35 +200,33 @@ const Footer = () => {
         />
 
         {/* ================== BOTTOM BAR ================== */}
-        <motion.div 
+        <motion.div
           variants={fadeInUp}
           className="flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-gray-400 tracking-wide"
         >
-
+          {/* Pages */}
           {/* Pages */}
           <div className="flex flex-wrap justify-center md:justify-start gap-4 sm:gap-6 mb-4 md:mb-0">
             {[
-              "About Us",
-              "Menu",
-              "Contact Us",
-              "Order Online",
-              "Privacy Policy",
-              "Disclaimer",
-            ].map((link) => (
-              <a 
-                key={link} 
-                href="#" 
+              { label: "Home", path: "/" },
+              { label: "Menu", path: "/menu" },
+              { label: "Coming Soon", path: "/coming-soon" },
+              { label: "Contact", path: "/contact" },
+              { label: "Franchise", path: "/franchizy" },
+              { label: "Order Now", path: "/menu" }, // ya external link
+            ].map((item) => (
+              <Link
+                key={item.label}
+                to={item.path}
                 className="hover:text-white transition-colors duration-300"
               >
-                {link}
-              </a>
+                {item.label}
+              </Link>
             ))}
           </div>
 
           {/* Copyright */}
-          <p className="text-center md:text-right">
-            © 2025 • Falverra
-          </p>
+          <p className="text-center md:text-right">© 2025 • Falverra</p>
         </motion.div>
       </motion.div>
     </footer>
