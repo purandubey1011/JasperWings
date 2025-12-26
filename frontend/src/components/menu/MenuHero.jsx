@@ -141,7 +141,7 @@ const MenuHero = () => {
                        /* MOBILE button */
                        max-sm:w-[86%] max-sm:py-4 max-sm:text-[16px] max-sm:rounded-[9999px]"
           >
-            ORDER NOW
+            EXPLORE MENU
           </motion.button>
 
           <motion.button
@@ -152,7 +152,7 @@ const MenuHero = () => {
                        /* MOBILE button */
                        max-sm:w-[86%] max-sm:py-3.5 max-sm:text-[15px] max-sm:rounded-[9999px]"
           >
-            EXPLORE MENU
+            SEE FLAVOURS
           </motion.button>
         </div>
       </motion.div>
