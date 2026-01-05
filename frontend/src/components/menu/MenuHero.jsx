@@ -1,8 +1,16 @@
 import React from "react";
 import { Utensils } from "lucide-react";
 import { motion } from "framer-motion";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const MenuHero = () => {
+   const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  
+  const isExplore = location.pathname === "/menu";
+  const isFlavours = location.pathname === "/menu/flavours";
+
   // --- Animation Variants ---
 
   // 1. Camera Focus Effect (Blur -> Sharp + Zoom)
@@ -133,27 +141,44 @@ const MenuHero = () => {
                      /* MOBILE: stack buttons */
                      max-sm:flex-col max-sm:w-full max-sm:items-center max-sm:gap-3"
         >
-          <motion.button
-            variants={buttonPop}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-[#d96828] hover:bg-[#d96828] text-black font-bold py-3 px-6 md:px-8 rounded-full shadow-[0_8px_30px_rgba(251,191,36,0.18)]
-                       /* MOBILE button */
-                       max-sm:w-[86%] max-sm:py-4 max-sm:text-[16px] max-sm:rounded-[9999px]"
-          >
-            EXPLORE MENU
-          </motion.button>
+           {/* EXPLORE MENU */}
+      <motion.button
+        variants={buttonPop}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => navigate("/menu")}
+        className={`
+          font-bold py-3 px-6 md:px-8 rounded-full transition
+          shadow-[0_8px_30px_rgba(251,191,36,0.18)]
+          max-sm:w-[86%] max-sm:py-4 max-sm:text-[16px] max-sm:rounded-[9999px]
+          ${
+            isExplore
+              ? "bg-[#d96828] text-black"
+              : "bg-[#d96828]/80 text-black hover:bg-[#d96828]"
+          }
+        `}
+      >
+        EXPLORE MENU
+      </motion.button>
 
-          <motion.button
-            variants={buttonPop}
-            whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
-            whileTap={{ scale: 0.95 }}
-            className="border border-white/40 text-white/90 px-6 md:px-8 py-3 rounded-full font-semibold transition
-                       /* MOBILE button */
-                       max-sm:w-[86%] max-sm:py-3.5 max-sm:text-[15px] max-sm:rounded-[9999px]"
-          >
-            SEE FLAVOURS
-          </motion.button>
+      {/* SEE FLAVOURS */}
+      <motion.button
+        variants={buttonPop}
+        whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => navigate("/menu/flavours")}
+        className={`
+          px-6 md:px-8 py-3 rounded-full font-semibold transition
+          max-sm:w-[86%] max-sm:py-3.5 max-sm:text-[15px] max-sm:rounded-[9999px]
+          ${
+            isFlavours
+              ? "border border-white text-white bg-white/10"
+              : "border border-white/40 text-white/90"
+          }
+        `}
+      >
+        SEE FLAVOURS
+      </motion.button>
         </div>
       </motion.div>
 
