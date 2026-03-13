@@ -1,31 +1,66 @@
 import { Quote, Star } from "lucide-react";
-import React, { useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { FaPaw } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
     id: 1,
-    text: "Lorem ipsum dolor sit amet consectetur. Suspendisse aliquet tellus adipiscing condimentum donec blandit. Dignissim nunc facilisi pretium id molestie lectus duis.",
-    name: "John",
-    title: "Business Man",
+    text: "Absolutely loved the wings here! The flavour options are insane — with 73 different flavours, there's something for everyone. The wings were crispy, juicy, and perfectly sauced. Definitely my new go-to spot in North York.",
+    name: "Ryan Mitchell",
     rating: 5,
   },
   {
     id: 2,
-    text: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
-    name: "Sofia",
-    title: "Food Critic",
+    text: "Tried the wings and loaded fries and both were amazing. The wings were fresh and the sauces had a perfect balance of sweet and spicy. The staff were friendly and the service was quick. Highly recommend!",
+    name: "Emily Carter",
     rating: 5,
   },
   {
     id: 3,
-    text: "Integer congue, ipsum id tempor dictum, nisl purus faucibus lacus, at posuere arcu nibh non quam. Curabitur facilisis.",
-    name: "Ayesha",
-    title: "Blogger",
+    text: "If you're a wing lover, Jasper Wings is a must-visit. The variety of flavours is crazy and the quality is top-notch. Also tried their chicken tenders and they were super tender and well seasoned.",
+    name: "Daniel Thompson",
+    rating: 5,
+  },
+  {
+    id: 4,
+    text: "Great place for wings and burgers! The burger was juicy and the fries were crispy. Lots of flavour options for the wings which makes it fun to try something new every time.",
+    name: "Olivia Bennett",
+    rating: 4,
+  },
+  {
+    id: 5,
+    text: "Amazing food and great portion sizes. The wings were cooked perfectly and the sauces were packed with flavour. The atmosphere is casual and perfect for hanging out with friends.",
+    name: "Jacob Anderson",
+    rating: 5,
+  },
+  {
+    id: 6,
+    text: "One of the best wing spots in North York. The wings are fresh and you can tell they put effort into their flavours. The burgers and tenders are also worth trying.",
+    name: "Sophie Richardson",
+    rating: 5,
+  },
+  {
+    id: 7,
+    text: "Really enjoyed the food here. The wings were crispy and well coated with sauce. The fries were seasoned perfectly and the portions were generous.",
+    name: "Michael Parker",
+    rating: 4,
+  },
+  {
+    id: 8,
+    text: "Tried a few different flavours and each one was delicious. The variety is incredible and everything tasted fresh. Great place if you want quality wings and comfort food.",
+    name: "Lauren Hughes",
+    rating: 5,
+  },
+  {
+    id: 9,
+    text: "Fantastic experience! The wings were hot, crispy, and full of flavour. The staff were welcoming and the service was quick. Definitely coming back to try more flavours.",
+    name: "Ethan Campbell",
     rating: 5,
   },
 ];
+
+const DESKTOP_SLIDE_SIZE = 3;
 
 // --- Animation Variants ---
 
@@ -47,26 +82,6 @@ const quoteFloat = {
       ease: "easeInOut",
     },
   },
-};
-
-const slideVariants = {
-  enter: (direction) => ({
-    x: direction > 0 ? "100%" : "-100%", // Use percentages for accurate sliding
-    opacity: 0,
-    scale: 0.9,
-  }),
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1,
-    scale: 1,
-  },
-  exit: (direction) => ({
-    zIndex: 0,
-    x: direction < 0 ? "100%" : "-100%",
-    opacity: 0,
-    scale: 0.9,
-  }),
 };
 
 function TestimonialCard({ item }) {
@@ -110,9 +125,6 @@ function TestimonialCard({ item }) {
       {/* Author Info */}
       <div className="mt-auto">
         <h4 className="text-white font-bold text-lg">{item.name}</h4>
-        <p className="text-gray-500 text-xs uppercase tracking-widest mt-1">
-          {item.title}
-        </p>
       </div>
     </motion.div>
   );
@@ -120,8 +132,27 @@ function TestimonialCard({ item }) {
 
 const TestimonialSection = () => {
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(0); 
   const containerRef = useRef(null);
+  const desktopSlideCount = Math.ceil(testimonials.length / DESKTOP_SLIDE_SIZE);
+  const desktopIndex = Math.floor(index / DESKTOP_SLIDE_SIZE);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setIndex((prev) => {
+        const isDesktop = window.innerWidth >= 768;
+
+        if (isDesktop) {
+          const nextSlide =
+            (Math.floor(prev / DESKTOP_SLIDE_SIZE) + 1) % desktopSlideCount;
+          return nextSlide * DESKTOP_SLIDE_SIZE;
+        }
+
+        return (prev + 1) % testimonials.length;
+      });
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, [desktopSlideCount]);
 
   // Touch Swipe Logic
   const touchStartX = useRef(0);
@@ -146,18 +177,19 @@ const TestimonialSection = () => {
   };
 
   const nextTestimonial = () => {
-    setDirection(1);
-    setIndex((prev) => Math.min(prev + 1, testimonials.length - 1));
+    setIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevTestimonial = () => {
-    setDirection(-1);
-    setIndex((prev) => Math.max(prev - 1, 0));
+    setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   const setSpecificIndex = (i) => {
-    setDirection(i > index ? 1 : -1);
     setIndex(i);
+  };
+
+  const setDesktopIndex = (i) => {
+    setIndex(i * DESKTOP_SLIDE_SIZE);
   };
 
   return (
@@ -203,18 +235,40 @@ const TestimonialSection = () => {
         </div>
 
         {/* --- DESKTOP VIEW (Grid) --- */}
-        <div className="hidden md:grid grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={t.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2, duration: 0.5 }}
-            >
-              <TestimonialCard item={t} />
-            </motion.div>
-          ))}
+        <div className="hidden md:block max-w-7xl mx-auto overflow-hidden">
+          <motion.div
+            animate={{ x: `-${desktopIndex * (100 / desktopSlideCount)}%` }}
+            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+            className="flex"
+            style={{ width: `${desktopSlideCount * 100}%` }}
+          >
+            {Array.from({ length: desktopSlideCount }).map((_, slideIdx) => {
+              const slideTestimonials = testimonials.slice(
+                slideIdx * DESKTOP_SLIDE_SIZE,
+                slideIdx * DESKTOP_SLIDE_SIZE + DESKTOP_SLIDE_SIZE
+              );
+
+              return (
+                <div
+                  key={slideIdx}
+                  className="grid grid-cols-3 gap-6"
+                  style={{ width: `${100 / desktopSlideCount}%`, flexShrink: 0 }}
+                >
+                  {slideTestimonials.map((t, i) => (
+                    <motion.div
+                      key={t.id}
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.12, duration: 0.35 }}
+                    >
+                      <TestimonialCard item={t} />
+                    </motion.div>
+                  ))}
+                </div>
+              );
+            })}
+          </motion.div>
         </div>
 
         {/* --- MOBILE VIEW (Carousel with Swipe) --- */}
@@ -226,27 +280,36 @@ const TestimonialSection = () => {
           className="md:hidden relative min-h-[420px] max-w-sm mx-auto overflow-hidden" // Added overflow-hidden to prevent scrollbar during slide
         >
           {/* Changed mode="wait" to mode="popLayout" so cards slide instantly without waiting for exit */}
-          <AnimatePresence initial={false} custom={direction} mode="popLayout">
-            <motion.div
-              key={index}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 },
-              }}
-              className="absolute top-0 left-0 w-full h-full p-2" // Ensures correct positioning
-            >
+          <motion.div
+            key={index}
+            initial={{ x: 60, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -60, opacity: 0 }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="absolute top-0 left-0 w-full h-full p-2"
+          >
               <TestimonialCard item={testimonials[index]} />
-            </motion.div>
-          </AnimatePresence>
+          </motion.div>
         </div>
 
         {/* Pagination Dots */}
-        <div className="flex gap-3 mt-4 md:mt-8 z-10 justify-center items-center">
+        <div className="hidden md:flex gap-3 mt-8 z-10 justify-center items-center">
+          {Array.from({ length: desktopSlideCount }).map((_, i) => (
+            <motion.button
+              key={i}
+              whileTap={{ scale: 0.8 }}
+              aria-label={`Show testimonial slide ${i + 1}`}
+              onClick={() => setDesktopIndex(i)}
+              className={`rounded-full transition-all focus:outline-none ${
+                i === desktopIndex
+                  ? "w-8 h-2 bg-[#d96828]"
+                  : "w-2 h-2 bg-gray-700 hover:bg-gray-500"
+              }`}
+            />
+          ))}
+        </div>
+
+        <div className="flex md:hidden gap-3 mt-4 z-10 justify-center items-center">
           {testimonials.map((_, i) => (
             <motion.button
               key={i}

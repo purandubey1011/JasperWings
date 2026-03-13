@@ -79,11 +79,11 @@ const WhatYouGet = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="w-full md:w-1/2 h-[350px] md:h-[500px] md:h-auto relative z-10"
+        className="w-full md:w-1/2 h-[270px] md:h-[400px] relative z-10"
       >
         <img
-          src="/assets/pizza.jpg"
-          alt="Delicious Pizza"
+          src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=1200&q=80"
+          alt="Jasper Wings platter"
           className="w-full h-full object-cover"
         />
         
@@ -115,13 +115,13 @@ const WhatYouGet = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="w-full flex flex-col items-start justify-center md:w-1/2 bg-[#d96828] text-black p-10 md:p-20 relative overflow-hidden z-20"
+        className="w-full flex flex-col items-start justify-center md:w-1/2 bg-[#d96828] text-black px-8 py-12 md:px-14 md:py-14 relative overflow-hidden z-20"
       >
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-5xl font-extrabold uppercase mb-10 text-left leading-none relative z-10"
+          className="text-4xl md:text-5xl font-extrabold uppercase mb-8 text-left leading-none relative z-10"
         >
           What <br /> You Get
         </motion.h2>
@@ -130,7 +130,7 @@ const WhatYouGet = () => {
           variants={listStagger}
           initial="hidden"
           whileInView="visible"
-          className="space-y-4 font-semibold text-sm relative z-10"
+          className="space-y-3 font-semibold text-sm relative z-10"
         >
           {benefits.map((item, index) => (
             <motion.li 
@@ -149,7 +149,7 @@ const WhatYouGet = () => {
         {/* Mascot Image (Bottom Right) */}
         <motion.div 
           variants={bearSlide}
-          className="absolute bottom-0 right-10 w-40 md:w-72 opacity-90 pointer-events-none z-0"
+          className="absolute bottom-0 right-6 w-28 md:w-52 opacity-90 pointer-events-none z-0"
         >
           <img src="/assets/bear.png" alt="Bear Mascot" />
         </motion.div>

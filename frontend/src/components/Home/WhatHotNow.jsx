@@ -132,15 +132,10 @@ const ProductCard = ({ product }) => (
       />
     </div>
 
-    {/* Discount + Price pills */}
-    <div className="w-full flex items-center justify-center gap-3 mt-4">
+    {/* Discount pill */}
+    <div className="w-full flex items-center justify-center mt-4">
       <div className="bg-white text-xs font-bold text-gray-900 px-2 py-1 rounded-md shadow-sm">
         {product.discount}
-      </div>
-
-      <div className="px-2 py-1 rounded-md flex items-center gap-2 text-white">
-        <span className="text-sm font-extrabold ">₹{product.price}</span>
-        <span className="text-xs line-through">₹{product.oldPrice}</span>
       </div>
     </div>
 

@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL ?? "https://jasperwings.onrender.com";
+
 const InquiryForm = () => {
   // ---------------- STATE ----------------
   const [formData, setFormData] = useState({
@@ -40,16 +43,13 @@ const InquiryForm = () => {
     try {
       setLoading(true);
 
-      const response = await fetch(
-        "https://jasperwings.onrender.com/api/v1/franchise-inquiry", // ✅ CORRECT
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}/api/v1/franchise-inquiry`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       const data = await response.json();
 

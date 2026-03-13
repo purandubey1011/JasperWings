@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { CLOVER_ORDER_URL } from "../../utils/externalLinks";
 
 const Footer = () => {
   // --- Animation Variants ---
@@ -131,9 +132,9 @@ const Footer = () => {
               variants={fadeInUp}
               className="space-y-2 text-sm sm:text-base text-gray-300"
             >
-              <p>Monday–Thursday: 10:30 AM – 12 AM</p>
-              <p>Friday–Saturday: 10:30 AM – 2 PM</p>
-              <p>Sunday: 10:30 AM – 12 AM</p>
+              <p>Monday–Thursday: 11:00 AM – 12 AM</p>
+              <p>Friday–Saturday: 11:00 AM – 2 PM</p>
+              <p>Sunday: 11:00 AM – 12 AM</p>
             </motion.div>
           </div>
 
@@ -213,15 +214,27 @@ const Footer = () => {
               { label: "Coming Soon", path: "/coming-soon" },
               { label: "Contact", path: "/contact" },
               { label: "Franchise", path: "/franchizy" },
-              { label: "Order Now", path: "/menu" }, // ya external link
+              { label: "Order Now", path: CLOVER_ORDER_URL, external: true },
             ].map((item) => (
-              <Link
-                key={item.label}
-                to={item.path}
-                className="hover:text-white transition-colors duration-300"
-              >
-                {item.label}
-              </Link>
+              item.external ? (
+                <a
+                  key={item.label}
+                  href={item.path}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </div>
 

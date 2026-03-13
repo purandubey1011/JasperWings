@@ -186,10 +186,10 @@ const AboutSection = () => {
           {/* Feature List */}
           <motion.ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
             {[
-              { icon: <Soup size={18} />, text: "12+ Signature Wing Sauces" },
+              { icon: <Soup size={18} />, text: "73 Flavours Of Wings" },
               { icon: <Drumstick size={18} />, text: "Hand-Breaded Tenders" },
-              { icon: <Sandwich size={18} />, text: "Premium Canadian Beef Patties" },
-              { icon: <ChefHat size={18} />, text: "Fresh-Cut Fries Daily" },
+              { icon: <Sandwich size={18} />, text: "Premium Canadian Chicken Patties" },
+              { icon: <ChefHat size={18} />, text: "Never Frozen Hand Dusted Wings" },
             ].map((item, index) => (
               <motion.li 
                 key={index} 

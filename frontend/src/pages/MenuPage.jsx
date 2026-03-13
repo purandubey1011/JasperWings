@@ -394,7 +394,7 @@ const MenuPage = () => {
   const [activeCategory, setActiveCategory] = useState(null);
   return (
     <div className="bg-neutral-950">
-      <Navbar bg="transparent" />
+      <Navbar />
       <MenuHero />
 
       <CategoryRail activeCategory={activeCategory} setActiveCategory={setActiveCategory} />

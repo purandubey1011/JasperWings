@@ -6,8 +6,10 @@ import {
   Mail,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/Home/Footer";
+import { CLOVER_ORDER_URL } from "../utils/externalLinks";
 
 const ComingSoon = () => {
   // --- Animation Variants ---
@@ -98,7 +100,7 @@ const ComingSoon = () => {
 
   return (
     <div className="min-h-screen bg-black font-sans text-white overflow-x-hidden selection:bg-[#FFC20E] selection:text-black">
-      <Navbar bg={"trasparent"} />
+      <Navbar />
 
       <header className="relative w-full h-[75vh] lg:h-[100vh] md:h-[80vh] overflow-hidden">
         {/* ---------------- BACKGROUND IMAGE ---------------- */}
@@ -240,7 +242,7 @@ const ComingSoon = () => {
       >
         <motion.div initial={{ x: 50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
           <h3 className="text-3xl md:text-4xl font-extrabold leading-tight mb-1 text-white">
-            Toronto – Downtown
+            North York
           </h3>
           <span className="text-sm md:text-md font-medium text-gray-400">
             (OPEN)
@@ -283,9 +285,9 @@ const ComingSoon = () => {
                   Open Hours
                 </h4>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Monday – Thursday: 10:30 AM – 12:00 AM<br />
-                  Friday – Saturday: 10:30 AM – 2:00 AM<br />
-                  Sunday: 10:30 AM – 12:00 AM
+                  Monday – Thursday: 11:00 AM – 12:00 AM<br />
+                  Friday – Saturday: 11:00 AM – 2:00 AM<br />
+                  Sunday: 11:00 AM – 12:00 AM
                 </p>
               </div>
             </div>
@@ -335,13 +337,16 @@ const ComingSoon = () => {
           viewport={{ once: true }}
           className="pt-4"
         >
-          <motion.button
+          <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            href={CLOVER_ORDER_URL}
+            target="_blank"
+            rel="noreferrer"
             className="bg-[#d96828] text-black font-extrabold uppercase px-8 py-3 rounded-full hover:bg-white transition-colors tracking-wide text-sm"
           >
             Order Now
-          </motion.button>
+          </motion.a>
         </motion.div>
       </motion.div>
     </div>
@@ -381,15 +386,6 @@ const ComingSoon = () => {
                  transition={{ duration: 1 }}
                  viewport={{ once: true }}
               >
-                Coming Soon
-              </motion.span> 
-              <br /> 
-              <motion.span 
-                 initial={{ opacity: 0, filter: "blur(10px)" }}
-                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                 transition={{ duration: 1, delay: 0.3 }}
-                 viewport={{ once: true }}
-              >
                 Locations
               </motion.span>
             </h2>
@@ -405,19 +401,19 @@ const ComingSoon = () => {
 >
   {[
     {
-      img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop",
-      city: "Monticello",
-      date: "Coming Soon",
+      img: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop",
+      city: "Brampton",
+      date: "2026",
     },
     {
       img: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop",
-      city: "Brampton",
-      date: "Summer 2026",
+      city: "Mississauga",
+      date: "2026",
     },
     {
-       img: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop",
-      city: "Mississauga",
-      date: "Late 2026",
+      img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop",
+      city: "Delhi",
+      date: "2027",
     },
   ].map((item, index) => (
     <motion.div
@@ -437,7 +433,7 @@ const ComingSoon = () => {
 
       <div className="p-6 text-center max-sm:p-4">
         <h3 className="text-black font-black text-2xl mb-2 max-sm:text-xl">
-          {item.city} – Coming Soon
+          {item.city}
         </h3>
 
         <p className="text-[#d96828] font-bold uppercase tracking-wider mb-6 max-sm:mb-4 max-sm:text-sm">
@@ -488,13 +484,18 @@ const ComingSoon = () => {
           <h2 className="text-4xl md:text-5xl font-bold uppercase mb-2 leading-tighter">
             Want Jasper Wings in your <br /> <span className="text-[#d96828]">City Next?</span>
           </h2>
-          <motion.button 
+          <motion.div
             whileHover={{ scale: 1.05, backgroundColor: "#fff", color: "#000" }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#d96828] text-black font-medium uppercase px-5 py-3 rounded-full transition-colors tracking-wide mt-6"
+            className="mt-6 inline-flex"
           >
-            Become a Franchise Partner
-          </motion.button>
+            <Link
+              to="/franchizy"
+              className="bg-[#d96828] text-black font-medium uppercase px-5 py-3 rounded-full transition-colors tracking-wide"
+            >
+              Become a Franchise Partner
+            </Link>
+          </motion.div>
         </motion.div>
       </section>
 

@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ChefHat } from "lucide-react";
 import { Link } from "react-router-dom";
+import { CLOVER_ORDER_URL } from "../../utils/externalLinks";
 
 const Hero = () => {
   // --- Animation Variants ---
@@ -68,7 +69,7 @@ const Hero = () => {
           variants={imageZoomVariants}
           initial="hidden"
           animate="visible"
-          src="/assets/hero.jpg"
+          src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/jasperhero.jpg"
           alt="Restaurant Interior"
           className="
             w-full h-full object-cover
@@ -149,9 +150,12 @@ const Hero = () => {
                        max-sm:gap-3 max-sm:items-center max-sm:px-2"
           >
             {/* Primary Button */}
-            <motion.button
+            <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              href={CLOVER_ORDER_URL}
+              target="_blank"
+              rel="noreferrer"
               className="
                 bg-[#d96828] text-black 
                 px-10 py-3 sm:py-3 
@@ -164,7 +168,7 @@ const Hero = () => {
               "
             >
               Order Now
-            </motion.button>
+            </motion.a>
 
             {/* Secondary Button */}
             <motion.div

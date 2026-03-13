@@ -14,6 +14,11 @@ import {
   Twitter,
 } from "lucide-react";
 
+const GOOGLE_MAPS_EMBED_URL =
+  "https://maps.google.com/maps?q=2737%20Keele%20St%20unit%2027%2C%20North%20York%2C%20ON%20M3M%202E9%2C%20Canada&z=16&output=embed";
+const GOOGLE_MAPS_PLACE_URL =
+  "https://maps.google.com/?q=2737%20Keele%20St%20unit%2027%2C%20North%20York%2C%20ON%20M3M%202E9%2C%20Canada";
+
 // --- Premium Animation Variants ---
 
 // 1. Slow, Heavy Fade Up (For body text)
@@ -208,9 +213,9 @@ const ContactPage = () => {
                   Open Hours
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-300 text-sm md:text-base">
-                  <p><span className="font-medium text-white">Mon–Thu:</span> 10:30 AM – 12:00 AM</p>
-                  <p><span className="font-medium text-white">Fri–Sat:</span> 10:30 AM – 2:00 AM</p>
-                  <p><span className="font-medium text-white">Sun:</span> 10:30 AM – 12:00 AM</p>
+                  <p><span className="font-medium text-white">Mon–Thu:</span> 11:00 AM – 12:00 AM</p>
+                  <p><span className="font-medium text-white">Fri–Sat:</span> 11:00 AM – 2:00 AM</p>
+                  <p><span className="font-medium text-white">Sun:</span> 11:00 AM – 12:00 AM</p>
                 </div>
               </div>
             </motion.div>
@@ -277,29 +282,33 @@ const ContactPage = () => {
               className="rounded-[2rem] overflow-hidden p-3 bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl w-full"
             >
               <div className="relative w-full aspect-square rounded-[1.5rem] overflow-hidden bg-gray-900">
-                <motion.img
-                  initial={{ scale: 1.2 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 2, ease: "easeOut" }}
-                  src="/assets/map.png"
-                  alt="map"
-                  className="w-full h-full object-cover opacity-90"
+                <motion.iframe
+                  initial={{ scale: 1.05, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  src={GOOGLE_MAPS_EMBED_URL}
+                  title="Jasper Wings location map"
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
                 />
-
-                <motion.div
-                  animate={{ y: [0, -15, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                >
-                  <MapPin size={48} className="text-red-600" fill="currentColor" />
-                </motion.div>
               </div>
 
               <div className="mt-5 px-3 pb-2">
                 <h4 className="text-white font-bold text-xl tracking-tight">Our HQ</h4>
                 <p className="text-gray-400 text-sm mt-1">
-                  2737 Keele St, Unit 27, North York
+                  2737 Keele St, Unit 27, North York, ON M3M 2E9, Canada
                 </p>
+                <a
+                  href={GOOGLE_MAPS_PLACE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[#d96828] hover:text-white transition-colors"
+                >
+                  <MapPin size={16} />
+                  Open in Google Maps
+                </a>
               </div>
             </motion.div>
           </div>

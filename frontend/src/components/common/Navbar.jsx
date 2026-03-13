@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { CLOVER_ORDER_URL } from "../../utils/externalLinks";
 
-const Navbar = ({bg='black'}) => {
+const NAVBAR_BG_CLASSES = {
+  black: "bg-black",
+  transparent: "bg-transparent",
+};
+
+const Navbar = ({ bg = "black" }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const navbarBgClass = NAVBAR_BG_CLASSES[bg] ?? NAVBAR_BG_CLASSES.black;
 
   return (
-    <nav className={`bg-${bg} text-white py-5 px-6 w-full fixed top-0 z-50`}>
+    <nav className={`${navbarBgClass} font-sans text-white py-5 px-6 w-full fixed top-0 z-50`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo (clickable -> home) */}
         <div className="">
@@ -21,7 +28,7 @@ const Navbar = ({bg='black'}) => {
         </div>
 
         {/* Desktop Menu - Centered as per image */}
-        <div className="hidden md:flex gap-12 font-bold text-sm tracking-wider items-center absolute left-1/2 transform -translate-x-1/2">
+        <div className="hidden md:flex gap-12 font-sans font-bold text-sm tracking-wider items-center absolute left-1/2 transform -translate-x-1/2">
           <Link
             to="/"
             className="hover:text-[#d96828] transition-colors uppercase"
@@ -33,6 +40,12 @@ const Navbar = ({bg='black'}) => {
             className="hover:text-[#d96828] transition-colors uppercase"
           >
             Menu
+          </Link>
+          <Link
+            to="/menu/flavours"
+            className="hover:text-[#d96828] transition-colors uppercase"
+          >
+            Flavours
           </Link>
           <Link
             to="/coming-soon"
@@ -56,18 +69,19 @@ const Navbar = ({bg='black'}) => {
 
         {/* CTA Button - Outlined as per image */}
         <div className="hidden md:block">
-          <motion.button
+          <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="border border-[#d96828] text-[#d96828] hover:bg-[#d96828] hover:text-black px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest transition-all"
+            href={CLOVER_ORDER_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="border border-[#d96828] text-[#d96828] hover:bg-[#d96828] hover:text-black px-8 py-3 rounded-full font-sans font-bold uppercase text-xs tracking-widest transition-all"
             onClick={() => {
               setIsOpen(false);
-              // optional: navigate to order page if you have one
-              // navigate('/order');
             }}
           >
             Order Now
-          </motion.button>
+          </motion.a>
         </div>
 
         {/* Mobile Toggle */}
@@ -89,7 +103,7 @@ const Navbar = ({bg='black'}) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="md:hidden absolute top-full left-0 w-full bg-zinc-900 border-b border-gray-800 p-6 flex flex-col gap-4 text-center"
+            className="md:hidden absolute top-full left-0 w-full bg-zinc-900 border-b border-gray-800 p-6 flex flex-col gap-4 text-center font-sans"
           >
             <Link
               to="/"
@@ -104,6 +118,13 @@ const Navbar = ({bg='black'}) => {
               onClick={() => setIsOpen(false)}
             >
               Menu
+            </Link>
+            <Link
+              to="/menu/flavours"
+              className="hover:text-[#d96828] uppercase font-bold"
+              onClick={() => setIsOpen(false)}
+            >
+              Flavours
             </Link>
             <Link
               to="/contact"
@@ -127,13 +148,15 @@ const Navbar = ({bg='black'}) => {
               Franshise
             </Link>
 
-            <Link
-              to="/order"
+            <a
+              href={CLOVER_ORDER_URL}
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setIsOpen(false)}
-              className="border border-[#d96828] text-[#d96828] px-6 py-3 rounded-full font-bold uppercase w-full inline-block text-center"
+              className="border border-[#d96828] text-[#d96828] px-6 py-3 rounded-full font-sans font-bold uppercase w-full inline-block text-center"
             >
               Order Now
-            </Link>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

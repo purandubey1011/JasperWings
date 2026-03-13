@@ -383,9 +383,6 @@ const ExploreMenu = () => {
         className="w-full max-h-32 object-contain mb-3"
       />
 
-      {/* PRICE */}
-      <div className="text-white font-black text-xl mb-1">{item.price}</div>
-
       {/* TITLE */}
       <div className="text-black font-extrabold text-sm md:text-base">
         {item.title}
@@ -497,13 +494,13 @@ const ExploreMenu = () => {
   };
 
   return (
-    <div>
+    <div className="font-sans">
       <CategoryRail
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
       />
 
-      <main className="max-w-7xl mx-auto px-4">
+      <main className="max-w-7xl mx-auto px-4 font-sans">
         <MenuSection
           id="wings"
           title="WINGS (Bone-In or Boneless)"

@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaPaw } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { CLOVER_ORDER_URL } from '../../utils/externalLinks';
 
 const BookTableSection = () => {
   // --- Animation Variants ---
@@ -93,25 +95,33 @@ const BookTableSection = () => {
           variants={fadeInUp}
           className="flex flex-col sm:flex-row gap-5 justify-center"
         >
-          <motion.button 
+          <motion.a 
             variants={buttonHover}
             initial="rest"
             whileHover="hover"
             whileTap="tap"
+            href={CLOVER_ORDER_URL}
+            target="_blank"
+            rel="noreferrer"
             className="px-10 py-4 bg-[#d96828] text-black font-black rounded-full shadow-lg hover:shadow-[#d96828]/50 transition-shadow duration-300 uppercase tracking-widest text-sm"
           >
             ORDER NOW
-          </motion.button>
+          </motion.a>
           
-          <motion.button 
+          <motion.div 
             variants={buttonHover}
             initial="rest"
             whileHover="hover"
             whileTap="tap"
-            className="px-10 py-4 bg-transparent text-white font-black border-2 border-white rounded-full hover:bg-white hover:text-black transition-colors duration-300 uppercase tracking-widest text-sm"
+            className="flex"
           >
-            RESERVE TABLE
-          </motion.button>
+            <Link
+              to="/menu"
+              className="px-10 py-4 bg-transparent text-white font-black border-2 border-white rounded-full hover:bg-white hover:text-black transition-colors duration-300 uppercase tracking-widest text-sm"
+            >
+              EXPLORE MENU
+            </Link>
+          </motion.div>
         </motion.div>
       </motion.div>
     </section>

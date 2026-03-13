@@ -71,14 +71,6 @@ const MenuCard = ({ item }) => (
       <h3 className="font-black text-xl leading-tight mb-2 text-black">
         {item.name}
       </h3>
-      <div className="flex items-center justify-center gap-2 font-bold">
-        <span className="text-white text-md font-medium">₹{item.price}</span>
-        {item.oldPrice && (
-          <span className="text-white opacity-60 text-sm line-through">
-            ₹{item.oldPrice}
-          </span>
-        )}
-      </div>
     </div>
 
     {/* Image Centered/Bottom */}

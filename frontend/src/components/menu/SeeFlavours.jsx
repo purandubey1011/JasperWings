@@ -316,7 +316,7 @@ const SeeFlavours = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 
   return (
-    <div>
+    <div className="font-sans">
       <FlavourCategoryRail
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
@@ -335,7 +335,7 @@ const SeeFlavours = () => {
         </div>
       </div>
 
-      <main className="max-w-7xl mx-auto px-4">
+      <main className="max-w-7xl mx-auto px-4 font-sans">
         <FlavourSection id="hottest" title="HOTTEST" items={FLAVOURS.hottest} />
         <FlavourSection id="hot" title="HOT" items={FLAVOURS.hot} />
         <FlavourSection

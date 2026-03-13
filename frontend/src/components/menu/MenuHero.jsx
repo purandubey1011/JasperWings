@@ -1,15 +1,17 @@
 import React from "react";
 import { Utensils } from "lucide-react";
 import { motion } from "framer-motion";
-import { useNavigate, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const MenuHero = () => {
-   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  
-  const isExplore = location.pathname === "/menu";
-  const isFlavours = location.pathname === "/menu/flavours";
+  const isExplore = pathname === "/menu" || pathname === "/menu/";
+  const isFlavours = pathname.startsWith("/menu/flavours");
+  const activeTabClass =
+    "bg-[#d96828] text-black border border-[#d96828] shadow-[0_8px_30px_rgba(251,191,36,0.18)]";
+  const inactiveTabClass =
+    "border border-white/40 text-white/90 bg-transparent hover:bg-white/10";
 
   // --- Animation Variants ---
 
@@ -56,7 +58,7 @@ const MenuHero = () => {
 
   return (
     <div
-      className="relative lg:h-screen md:h-[70vh] w-full bg-neutral-900 overflow-hidden
+      className="relative lg:h-screen md:h-[70vh] w-full bg-neutral-900 overflow-hidden font-sans
                  /* MOBILE: ensure hero fits mobile viewport and scales */
                  max-sm:h-[85vh] max-sm:flex max-sm:items-start max-sm:pt-6"
     >
@@ -142,43 +144,43 @@ const MenuHero = () => {
                      max-sm:flex-col max-sm:w-full max-sm:items-center max-sm:gap-3"
         >
            {/* EXPLORE MENU */}
-      <motion.button
+      <motion.div
         variants={buttonPop}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        onClick={() => navigate("/menu")}
         className={`
-          font-bold py-3 px-6 md:px-8 rounded-full transition
-          shadow-[0_8px_30px_rgba(251,191,36,0.18)]
-          max-sm:w-[86%] max-sm:py-4 max-sm:text-[16px] max-sm:rounded-[9999px]
-          ${
-            isExplore
-              ? "bg-[#d96828] text-black"
-              : "bg-[#d96828]/80 text-black hover:bg-[#d96828]"
-          }
+          max-sm:w-[86%]
         `}
       >
-        EXPLORE MENU
-      </motion.button>
+        <NavLink
+          to="/menu"
+          end
+          className={`block font-bold py-3 px-6 md:px-8 rounded-full transition max-sm:w-full max-sm:py-4 max-sm:text-[16px] max-sm:rounded-[9999px] ${
+            isExplore ? activeTabClass : inactiveTabClass
+          }`}
+        >
+          EXPLORE MENU
+        </NavLink>
+      </motion.div>
 
       {/* SEE FLAVOURS */}
-      <motion.button
+      <motion.div
         variants={buttonPop}
-        whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        onClick={() => navigate("/menu/flavours")}
         className={`
-          px-6 md:px-8 py-3 rounded-full font-semibold transition
-          max-sm:w-[86%] max-sm:py-3.5 max-sm:text-[15px] max-sm:rounded-[9999px]
-          ${
-            isFlavours
-              ? "border border-white text-white bg-white/10"
-              : "border border-white/40 text-white/90"
-          }
+          max-sm:w-[86%]
         `}
       >
-        SEE FLAVOURS
-      </motion.button>
+        <NavLink
+          to="/menu/flavours"
+          className={`block px-6 md:px-8 py-3 rounded-full font-semibold transition max-sm:w-full max-sm:py-3.5 max-sm:text-[15px] max-sm:rounded-[9999px] ${
+            isFlavours ? activeTabClass : inactiveTabClass
+          }`}
+        >
+          SEE FLAVOURS
+        </NavLink>
+      </motion.div>
         </div>
       </motion.div>
 
