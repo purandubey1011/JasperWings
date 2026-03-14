@@ -140,7 +140,7 @@ const ContactPage = () => {
           animate="animate"
           className="w-full h-full bg-cover bg-center"
           style={{
-            backgroundImage: "url('/assets/contacthero.jpg')",
+            backgroundImage: "url('https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/contacthero.jpeg')",
             filter: "saturate(0.9) contrast(0.9) brightness(0.8)",
           }}
         />

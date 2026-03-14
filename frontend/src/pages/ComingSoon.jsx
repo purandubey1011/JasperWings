@@ -108,7 +108,7 @@ const ComingSoon = () => {
           <motion.img
             variants={bgZoom}
             animate="animate"
-            src="/assets/cominghero.jpg"
+            src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/cominghero.jpeg"
             alt="Background"
             className="w-full h-full object-cover"
           />
@@ -124,7 +124,7 @@ const ComingSoon = () => {
           >
             {/* Rectangle image */}
             <img
-              src="/assets/Rectangle1.png"
+              src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/Rectangle1.png"
               alt="foreground"
               className="w-full h-full object-cover"
             />
@@ -183,7 +183,7 @@ const ComingSoon = () => {
     transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
     className="absolute top-14 left-5 opacity-20 pointer-events-none"
   >
-    <img src="/assets/splaterpizza.png" alt="" className="z-30 h-30" />
+    <img src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/splaterpizza.png" alt="" className="z-30 h-30" />
   </motion.div>
 
   <div className="max-w-7xl mx-auto mt-7 md:mt-8 md:mb-10">
@@ -223,13 +223,13 @@ const ComingSoon = () => {
         className="grid grid-cols-2 gap-4"
       >
         <motion.div className="col-span-2 h-64 md:h-80 overflow-hidden rounded-lg border-2 border-[#333]" variants={fadeInUp}>
-          <img src="/assets/toranto1.jpg" alt="Restaurant Main" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          <img src="/assets/toranto1.jpghttps://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/toranto1.jpeg" alt="Restaurant Main" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
         </motion.div>
         <motion.div className="h-40 md:h-48 overflow-hidden rounded-lg border-2 border-[#333]" variants={fadeInUp} transition={{ delay: 0.1 }}>
-          <img src="/assets/toranto2.jpg" alt="Food Detail" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          <img src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/toranto2.jpeg" alt="Food Detail" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
         </motion.div>
         <motion.div className="h-40 md:h-48 overflow-hidden rounded-lg border-2 border-[#333]" variants={fadeInUp} transition={{ delay: 0.2 }}>
-          <img src="/assets/toranto3.jpg" alt="Dining Atmosphere" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          <img src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/toranto3.jpeg" alt="Dining Atmosphere" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
         </motion.div>
       </motion.div>
 
@@ -357,7 +357,7 @@ const ComingSoon = () => {
       animate="animate"
       className="absolute bottom-3 right-0 opacity-20 pointer-events-none -rotate-12"
     >
-      <img src="/assets/garlic.png" alt="" />
+      <img src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/garlic.png" alt="" />
     </motion.div>
   </div>
 </section>
@@ -367,12 +367,12 @@ const ComingSoon = () => {
       <section className="relative w-full h-full mb-6 flex items-center justify-center py-24 overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 z-0">
-             <img src="/assets/Rectangle66.png" alt="background" className="w-full h-full object-cover" />
+             <img src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/Rectangle66.png" alt="background" className="w-full h-full object-cover" />
         </div>
 
         {/* Floating Decor */}
-        <motion.img variants={floatAnim} animate="animate" src="/assets/garliccopy.png" alt="" className="absolute top-52 left-24 w-24 md:w-32 opacity-80 pointer-events-none z-[2]" />
-        <motion.img variants={floatAnim} animate="animate" transition={{ delay: 1 }} src="/assets/burger.png" alt="" className="absolute top-52 right-24 w-24 md:w-32 opacity-80 pointer-events-none z-[2]" />
+        <motion.img variants={floatAnim} animate="animate" src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/garlic%20copy.png" alt="" className="absolute top-52 left-24 w-24 md:w-32 opacity-80 pointer-events-none z-[2]" />
+        <motion.img variants={floatAnim} animate="animate" transition={{ delay: 1 }} src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/burger.png" alt="" className="absolute top-52 right-24 w-24 md:w-32 opacity-80 pointer-events-none z-[2]" />
 
         {/* MAIN CONTENT */}
         <div className="relative z-[5] w-full max-w-5xl mx-auto mt-12 max-sm:mt-6 max-sm:px-4 max-sm:pb-6">
@@ -462,7 +462,7 @@ const ComingSoon = () => {
             initial={{ scale: 1.1 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 10, ease: "linear" }}
-            src="/assets/chef.jpg"
+            src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/chef.jpeg"
             alt="Chef Cooking"
             className="w-full h-full object-cover"
           />
@@ -477,7 +477,7 @@ const ComingSoon = () => {
           className="relative z-99 text-center px-4 max-w-5xl mx-auto"
         >
           <div className="flex items-center justify-center mb-7 space-x-2">
-            <img src="/assets/franchiseBear.png" alt="Teddy" className="w-5 h-5" />
+            <img src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/franchiseBear.png" alt="Teddy" className="w-5 h-5" />
             <p className="font-semibold">Book now</p>
           </div>
 

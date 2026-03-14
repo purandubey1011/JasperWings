@@ -75,7 +75,7 @@ const Footer = () => {
         className="absolute top-10 -left-12 opacity-60 pointer-events-none hidden sm:block"
       >
         <img
-          src="/assets/tomato.png"
+          src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/tomato.png"
           alt="decoration"
           className=" lg:w-26 w-22 md:w-40 rotate-7"
         />
@@ -89,7 +89,7 @@ const Footer = () => {
         className="absolute top-44 -right-12 -translate-y-1/2 opacity-70 pointer-events-none hidden sm:block"
       >
         <img
-          src="/assets/capsicum.png"
+          src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/capsicum.png"
           alt="decoration"
           className="w-28 md:w-40"
         />

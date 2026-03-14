@@ -203,7 +203,7 @@ const TestimonialSection = () => {
         className="absolute top-1 inset-0 z-0 flex justify-center items-start pointer-events-none"
       >
         <img
-          src="/assets/bear.png"
+          src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/bear.png"
           alt="Bear Background"
           className="w-auto h-[20rem] md:h-[27rem] object-cover opacity-30 md:opacity-50"
         />

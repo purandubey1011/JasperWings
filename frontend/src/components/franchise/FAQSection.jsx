@@ -83,7 +83,7 @@ const FAQSection = () => {
         className="absolute top-10 right-0 md:right-10 w-24 md:w-32 opacity-80 pointer-events-none"
       >
         <img
-          src="/assets/pumpkin2.png" 
+          src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/pumpkin2.png" 
           alt="Pepper Decoration"
           className="w-full h-auto rotate-12"
         />
@@ -96,7 +96,7 @@ const FAQSection = () => {
         className="absolute bottom-20 left-0 md:left-0 w-24 md:w-32 opacity-80 pointer-events-none"
       >
         <img
-          src="/assets/carrot.png" 
+          src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/carrot.png" 
           alt="Avocado Decoration"
           className="w-full h-auto"
         />

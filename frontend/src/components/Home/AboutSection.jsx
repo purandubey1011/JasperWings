@@ -87,7 +87,7 @@ const AboutSection = () => {
       <motion.img
         variants={floatVariant}
         animate="animate"
-        src="/assets/tomato.png"
+        src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/tomato.png"
         alt="tomato"
         className="absolute top-10 left-0 w-32 md:w-56 object-contain pointer-events-none z-2 ml-12"
       />
@@ -97,7 +97,7 @@ const AboutSection = () => {
         variants={floatVariant}
         animate="animate"
         transition={{ delay: 1 }} // Offset animation so they don't move together
-        src="/assets/capsicum.png"
+        src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/capsicum.png"
         alt="capsicum"
         className="absolute top-5 -right-14 h-48 w-40 md:w-56 object-contain pointer-events-none z-20"
       />
@@ -128,7 +128,7 @@ const AboutSection = () => {
             className="absolute -bottom-1 -right-1 flex items-center gap-2 bg-[#d96828] text-black px-3 py-1 rounded shadow-lg origin-bottom-right"
           >
             <img
-              src="/assets/franchiseBear.png"
+              src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/franchiseBear.png"
               alt="Teddy Bear"
               className="w-6 h-6"
             />

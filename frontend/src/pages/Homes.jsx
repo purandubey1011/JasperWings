@@ -102,7 +102,7 @@ const MenuSection = () => {
           >
             <motion.img
               animate={floatingAnimation}
-              src="/assets/radish.png"
+              src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/radish.png"
               alt="radish"
               className="w-44 h-72 object-contain"
             />
@@ -118,7 +118,7 @@ const MenuSection = () => {
             >
               <div className="flex items-center justify-center mb-4 space-x-2">
                 <img
-                  src="/assets/franchiseBear.png"
+                  src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/franchiseBear.png"
                   alt="Teddy"
                   className="w-8 h-8"
                 />
@@ -159,7 +159,7 @@ const MenuSection = () => {
           >
             <motion.img
               animate={floatingAnimation}
-              src="/assets/manucapsi.png"
+              src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/manucapsi.png"
               alt="vegetable"
               className="w-24 h-24 object-contain opacity-50"
             />
@@ -197,7 +197,7 @@ const FeatureSection = () => {
         <motion.img
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          src="/assets/splaterpizza.png"
+          src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/splaterpizza.png"
           alt="pizza sketch"
           className="w-full h-auto object-contain"
         />

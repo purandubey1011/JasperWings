@@ -10,19 +10,19 @@ const FEATURES = [
   {
     id: "demand",
     title: "Demand For Wings & Fast Food",
-    icon: "/assets/franicon1.png",
+    icon: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/franicon1.png",
     alt: "Demand",
   },
   {
     id: "operations",
     title: "Simple Operations Model",
-    icon: "/assets/franicon2.png",
+    icon: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/franicon2.png",
     alt: "Operations",
   },
   {
     id: "cost",
     title: "Low Entry Cost",
-    icon: "/assets/franicon3.png",
+    icon: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/franicon3.png",
     alt: "Cost",
   },
 ];
@@ -71,7 +71,7 @@ const WhyItWorks = () => {
         >
           <div className="flex items-center gap-2 mb-4">
             <img
-              src="/assets/franchiseBear.png"
+              src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/franchiseBear.png"
               alt="Mascot"
               className="w-5 h-5 md:w-5 md:h-5 object-contain"
             />

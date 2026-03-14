@@ -86,7 +86,7 @@ const HeroSection = () => {
           className="w-full h-full"
         >
           <img 
-            src="/assets/franchiseImg.png" 
+            src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/franchiseimg.jpeg" 
             alt="Restaurant Interior" 
             className="w-full h-full object-cover opacity-60"
           />

@@ -65,7 +65,7 @@ const MenuHero = () => {
       {/* Background Image Wrapper */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.img
-          src="/assets/menuhero.jpg"
+          src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/menuhero.jpeg"
           alt="Food Background"
           variants={heroImageAnim}
           initial="hidden"

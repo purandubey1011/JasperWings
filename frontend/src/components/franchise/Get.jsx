@@ -95,7 +95,7 @@ const WhatYouGet = () => {
           <motion.img
             animate={{ rotate: [0, 10, -10, 0] }}
             transition={{ repeat: Infinity, duration: 2, repeatDelay: 3 }}
-            src="/assets/franchiseBear.png"
+            src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/franchiseBear.png"
             alt="Teddy Bear"
             className="w-10 h-10"
           />
@@ -151,7 +151,7 @@ const WhatYouGet = () => {
           variants={bearSlide}
           className="absolute bottom-0 right-6 w-28 md:w-52 opacity-90 pointer-events-none z-0"
         >
-          <img src="/assets/bear.png" alt="Bear Mascot" />
+          <img src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/bear.png" alt="Bear Mascot" />
         </motion.div>
       </motion.div>
     </div>

@@ -174,7 +174,7 @@ const WhatHotNow = () => {
       {/* Top-Left Image (Floating) */}
       <motion.img
         animate={floatAnimation}
-        src="/assets/radish.png"
+        src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/radish.png"
         alt="Top Left Decor"
         className="hidden lg:block absolute top-44 left-0 w-40 pointer-events-none"
       />
@@ -183,7 +183,7 @@ const WhatHotNow = () => {
       <motion.img
         animate={floatAnimation}
         transition={{ delay: 1 }} // Offset animation
-        src="/assets/capsicum.png"
+        src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/capsicum.png"
         alt="Top Right Decor"
         className="hidden lg:block absolute top-44 -right-14 w-40 pointer-events-none"
       />

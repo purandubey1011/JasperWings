@@ -56,7 +56,7 @@ const BookTableSection = () => {
         <motion.div 
           variants={bgZoom}
           animate="animate"
-          className="w-full h-full bg-[url('/assets/booktable.jpg')] bg-no-repeat bg-cover bg-center"
+          className="w-full h-full bg-[url('https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/booktable.jpeg')] bg-no-repeat bg-cover bg-center"
         >
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/40"></div>
@@ -76,7 +76,7 @@ const BookTableSection = () => {
           variants={fadeInUp}
           className="flex items-center justify-center gap-2 text-white text-md md:text-sm font-semibold mb-6 tracking-wider"
         >
-          <img src="/assets/aboutteddy.png" alt="" className='h-5 drop-shadow-md' />
+          <img src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/aboutteddy.png" alt="" className='h-5 drop-shadow-md' />
           <span className="uppercase tracking-[0.2em]">BOOK NOW</span>
         </motion.div>
 

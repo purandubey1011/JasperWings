@@ -10,7 +10,7 @@ const specials = [
     title: "Monday Heat Kickoff",
     description:
       "Start the week strong with a fresh wings combo, crispy fries, and a flavour-packed first bite.",
-    image: "/assets/hero.jpg",
+    image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/hero.jpeg",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const specials = [
     title: "Tuesday Tender Treat",
     description:
       "Golden tenders, signature dips, and comfort-food energy built for an easy midweek craving.",
-    image: "/assets/booktable.jpg",
+    image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/booktable.jpeg",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const specials = [
     title: "Weekend Craving Rush",
     description:
       "Loaded fries, juicy chicken, bold sauces, and late-night comfort built for weekend hunger.",
-    image: "/assets/booktable.jpg",
+    image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/booktable.jpeg",
   },
 ];
 
