@@ -117,7 +117,7 @@ const AboutSection = () => {
             variants={imageReveal}
             whileHover={{ scale: 1.02 }} // Subtle hover effect
             transition={{ duration: 0.3 }}
-            src="/assets/pizza.jpg"
+            src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/4lb%20(2%20flavours)(1).jpg?updatedAt=1773393911399"
             alt="Cheesy Pizza"
             className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
           />

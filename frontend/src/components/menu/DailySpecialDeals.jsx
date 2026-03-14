@@ -102,7 +102,7 @@ const DailySpecialDeals = () => {
 
         <div
           ref={scrollRef}
-          className="grid grid-flow-col auto-cols-[85%] gap-6 overflow-x-auto scrollbar-hide pb-2 sm:auto-cols-[60%] md:auto-cols-[calc((100%_-_3rem)/3)]"
+          className="grid grid-flow-col auto-cols-[85%] gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide px-1 pt-3 pb-4 sm:auto-cols-[60%] md:auto-cols-[calc((100%_-_3rem)/3)]"
         >
           {specials.map((special, index) => (
             <motion.article
