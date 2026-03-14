@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 
 const ExploreMenu = () => {
   const [activeCategory, setActiveCategory] = useState(null);
+  const fallbackMenuImage =
+    "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?q=80&w=1115&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
   // ================= PDF BASED MENU DATA =================
 
@@ -42,7 +44,7 @@ const ExploreMenu = () => {
         id: 6,
         title: "5 lb (5 flavours)",
         price: "$68.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
       {
         id: 7,
@@ -53,18 +55,18 @@ const ExploreMenu = () => {
     ],
 
     tenders: [
-      { id: 8, title: "1 Tender", price: "$6.99", image: "/assets/404.jpg" },
+      { id: 8, title: "1 Tender", price: "$6.99", image: fallbackMenuImage },
       {
         id: 9,
         title: "3 Tenders",
         price: "$18.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
       {
         id: 10,
         title: "5 Tenders",
         price: "$29.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
     ],
 
@@ -142,31 +144,31 @@ const ExploreMenu = () => {
         id: 21,
         title: "Classic Fries",
         price: "$6.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
       {
         id: 22,
         title: "Loaded Fries",
         price: "$9.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
       {
         id: 23,
         title: "Loaded Parmesan Fries",
         price: "$9.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
       {
         id: 24,
         title: "Garlic Parmesan Fries",
         price: "$8.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
       {
         id: 25,
         title: "Devil’s Ranch Fries",
         price: "$10.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
       {
         id: 26,
@@ -192,7 +194,7 @@ const ExploreMenu = () => {
         price: "$8.99",
         image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/_DSC8760.jpg?updatedAt=1773393922207",
       },
-      { id: 30, title: "Poutine", price: "$8.99", image: "/assets/404.jpg" },
+      { id: 30, title: "Poutine", price: "$8.99", image: fallbackMenuImage },
     ],
 
     bites: [
@@ -206,19 +208,19 @@ const ExploreMenu = () => {
         id: 32,
         title: "Jalapeño Bites",
         price: "$8.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
       {
         id: 33,
         title: "Mozzarella Sticks",
         price: "$8.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
       {
         id: 34,
         title: "Loaded Onion Rings",
         price: "$9.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
     ],
 
@@ -228,7 +230,7 @@ const ExploreMenu = () => {
         title: "Jasper Combo",
         desc: "(1 lb wings - 1 flavour, loaded fries, pop)",
         price: "$17.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
       {
         id: 36,
@@ -263,7 +265,7 @@ const ExploreMenu = () => {
         title: "Veggie Lovers Combo",
         desc: "(Veggie wrap, loaded fries, pop)",
         price: "$16.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
     ],
 
@@ -272,19 +274,19 @@ const ExploreMenu = () => {
         id: 41,
         title: "Cheesecake Roll",
         price: "$4.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
       {
         id: 42,
         title: "Cheesecake Slice",
         price: "$4.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
       {
         id: 43,
         title: "Choco Lava Cake",
         price: "$3.99",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
     ],
 
@@ -293,15 +295,15 @@ const ExploreMenu = () => {
         id: 44,
         title: "Soft Drinks",
         price: "$1.50",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
       {
         id: 45,
         title: "Red Bull",
         price: "$3.49",
-        image: "/assets/404.jpg",
+        image: fallbackMenuImage,
       },
-      { id: 46, title: "Juice", price: "$3.49", image: "/assets/404.jpg" },
+      { id: 46, title: "Juice", price: "$3.49", image: fallbackMenuImage },
     ],
   };
 
@@ -374,24 +376,31 @@ const ExploreMenu = () => {
   const ProductCard = ({ item }) => (
     <motion.div
       whileHover={{ y: -6 }}
-      className="bg-[#d96828] rounded-md p-5 text-center cursor-pointer flex flex-col items-center"
+      className="group relative min-h-[260px] cursor-pointer overflow-hidden rounded-md text-center"
     >
-      {/* IMAGE (dummy for now) */}
       <img
         src={item.image}
         alt={item.title}
-        className="w-full max-h-32 object-contain mb-3"
+        className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
       />
 
-      {/* TITLE */}
-      <div className="text-black font-extrabold text-sm md:text-base">
-        {item.title}
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
 
-      {/* OPTIONAL DESC (for combos) */}
-      {item.desc && (
-        <div className="text-xs text-black mt-1 font-medium">{item.desc}</div>
-      )}
+      <div className="relative z-10 flex h-full flex-col justify-end p-5">
+        <div className="mb-2 text-2xl font-black text-white drop-shadow-lg">
+          {item.price}
+        </div>
+
+        <div className="text-base font-extrabold text-white md:text-lg drop-shadow-lg">
+          {item.title}
+        </div>
+
+        {item.desc && (
+          <div className="mt-2 text-sm font-medium text-white/90 drop-shadow-md">
+            {item.desc}
+          </div>
+        )}
+      </div>
     </motion.div>
   );
 

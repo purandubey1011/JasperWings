@@ -284,13 +284,7 @@ const FlavourProductCard = ({ item }) => {
         HEAT_MAP[item.heat]
       }`}
     >
-      <img
-        src={item.image}
-        alt={item.name}
-        className="w-full max-h-32 object-contain mb-3"
-      />
-
-      <div className="text-black font-extrabold text-sm md:text-base">
+      <div className="text-white font-extrabold text-base md:text-lg">
         {item.name}
       </div>
     </motion.div>
