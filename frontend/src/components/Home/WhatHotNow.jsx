@@ -1,49 +1,201 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ShoppingBasket, Flame, UtensilsCrossed, Utensils } from "lucide-react";
+import { Utensils } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // --- Assets & Data ---
 
+const menuCollections = {
+  wings: [
+    {
+      id: 1,
+      name: "1 lb (1 flavour)",
+      price: "$13.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/jasper%20website%20images/1lb%20(1flavour)skip.jpg?updatedAt=1773393911524",
+    },
+    {
+      id: 2,
+      name: "2 lb (1 flavour)",
+      price: "$26.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/jasper%20website%20images/2lb%20(1%20Flavour)(1)skip.jpg?updatedAt=1773393911452",
+    },
+    {
+      id: 3,
+      name: "3 lb (2 flavours)",
+      price: "$38.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/jasper%20website%20images/3lb%20(2%20flavours)(1).jpg?updatedAt=1773393911397",
+    },
+    {
+      id: 4,
+      name: "4 lb (2 flavours)",
+      price: "$52.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/jasper%20website%20images/4lb%20(2%20flavours)(1).jpg?updatedAt=1773393911399",
+    },
+    {
+      id: 5,
+      name: "5 lb (3 flavours)",
+      price: "$65.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/jasper%20website%20images/5lb%20(3%20flavours)(1).jpg?updatedAt=1773393918721",
+    },
+    {
+      id: 7,
+      name: "6 lb (6 flavours)",
+      price: "$83.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/jasper%20website%20images/6lb%20(6%20flavours)(1).jpg?updatedAt=1773393917018",
+    },
+  ],
+  burgers: [
+    {
+      id: 11,
+      name: "Crispy Chicken Burger",
+      price: "$11.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/drive%20photos/crispy%20chicken%20burger.jpg",
+    },
+    {
+      id: 12,
+      name: "Grilled Chicken Burger",
+      price: "$11.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/drive%20photos/grilled%20chicken%20burger.jpg",
+    },
+    {
+      id: 13,
+      name: "Veggie Deluxe Burger",
+      price: "$11.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/jasper%20website%20images/breade(1).jpg?updatedAt=1773393914049",
+    },
+    {
+      id: 14,
+      name: "Ham Burger",
+      price: "$11.99",
+      image: "https://ik.imagekit.io/jasperwings/drive%20photos/Hamburger.jpg",
+    },
+    {
+      id: 15,
+      name: "Meat Lover Burger",
+      price: "$14.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/jasper%20website%20images/_DSC8777.jpg?updatedAt=1773393921306",
+    },
+  ],
+  fries: [
+    {
+      id: 21,
+      name: "Classic Fries",
+      price: "$6.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/drive%20photos/fries/classic%20fries%202%20.jpg?updatedAt=1773490682800",
+    },
+    {
+      id: 22,
+      name: "Loaded Fries",
+      price: "$9.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/drive%20photos/fries/loaded%20fries.jpg?updatedAt=1773490682637",
+    },
+    {
+      id: 23,
+      name: "Loaded Parmesan Fries",
+      price: "$9.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/drive%20photos/fries/parm%20fries.jpg?updatedAt=1773490666520",
+    },
+    {
+      id: 24,
+      name: "Garlic Parmesan Fries",
+      price: "$8.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/drive%20photos/fries/parm%20fries.jpg?updatedAt=1773490666520",
+    },
+    {
+      id: 29,
+      name: "Onion Rings",
+      price: "$8.99",
+      image:
+        "https://ik.imagekit.io/jasperwings/drive%20photos/fries/onion%20rings%20(1).jpg?updatedAt=1773554826670",
+    },
+  ],
+  combo: [
+    {
+      id: 35,
+      name: "Jasper Combo",
+      price: "$17.99",
+      desc: "(1 lb wings - 1 flavour, loaded fries, pop)",
+      image:
+        "https://ik.imagekit.io/jasperwings/drive%20photos/combo/Combo_1%20Loaded%20wing%20combo(1).jpg",
+    },
+    {
+      id: 36,
+      name: "Jasper King Combo",
+      price: "$29.99",
+      desc: "(1 lb wings, 2 tenders, fries, 2 pops)",
+      image:
+        "https://ik.imagekit.io/jasperwings/drive%20photos/combo/Combo_2%20Wing%20&%20tender%20combo(1).jpg",
+    },
+    {
+      id: 37,
+      name: "Wing Combo",
+      price: "$16.99",
+      desc: "(1 lb wings, fries, pop)",
+      image:
+        "https://ik.imagekit.io/jasperwings/drive%20photos/combo/loaded%20wing%20combo.jpg",
+    },
+    {
+      id: 38,
+      name: "Double Wings Combo",
+      price: "$34.99",
+      desc: "(2 lb wings, loaded fries, pop)",
+      image:
+        "https://ik.imagekit.io/jasperwings/drive%20photos/combo/dad73ff8-b6d2-4927-b1e6-958ad05deaee.jpg",
+    },
+    {
+      id: 39,
+      name: "Triple Wing Combo",
+      price: "$44.99",
+      desc: "(2 lb wings, 2 sliders, fries, 3 pops)",
+      image:
+        "https://ik.imagekit.io/jasperwings/drive%20photos/combo/fb6e3046-f8fa-4217-9c39-38201e1bfbff.jpg",
+    },
+    {
+      id: 40,
+      name: "Veggie Lovers Combo",
+      price: "$16.99",
+      desc: "(Veggie wrap, loaded fries, pop)",
+      image:
+        "https://ik.imagekit.io/jasperwings/drive%20photos/combo/Combo_5%20Veggie%20Loaded%20Combo(1)(1).jpg",
+    },
+  ],
+};
+
 const categories = [
   {
-    id: 1,
+    id: "wings",
     name: "Wings",
-    count: "12 Dishes",
-    image:
-      "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?q=80&w=1980&auto=format&fit=crop",
+    image: menuCollections.wings[0].image,
   },
   {
-    id: 2,
-    name: "Tenders",
-    count: "04 Dishes",
-    image:
-      "https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=2073&auto=format&fit=crop",
-  },
-  {
-    id: 3,
+    id: "burgers",
     name: "Burgers",
-    count: "12 Dishes",
-    image:
-      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1899&auto=format&fit=crop",
+    image: menuCollections.burgers[0].image,
   },
   {
-    id: 4,
+    id: "fries",
     name: "Fries",
-    count: "12 Dishes",
-    image:
-      "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?q=80&w=1925&auto=format&fit=crop",
+    image: menuCollections.fries[1].image,
   },
-];
-
-const products = [
-  { id: 1, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
-  { id: 2, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
-  { id: 3, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
-  { id: 4, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
-  { id: 5, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
-  { id: 6, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
-  { id: 7, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
-  { id: 8, name: "Delicious Burger", price: 280, oldPrice: 300, discount: "-25%", image: "/home/whathotnow/productfood.png" },
+  {
+    id: "combo",
+    name: "Combo",
+    image: menuCollections.combo[0].image,
+  },
 ];
 
 // --- Animation Variants ---
@@ -89,15 +241,20 @@ const floatAnimation = {
 
 // --- Components ---
 
-const CategoryCard = ({ category }) => (
-  <motion.div 
+const CategoryCard = ({ category, isActive, onClick }) => (
+  <motion.button
+    type="button"
+    onClick={onClick}
     variants={fadeInUp}
     whileHover={{ y: -5 }}
     className="flex flex-col items-center group cursor-pointer"
   >
-    {/* Pill Shape Image Container */}
-    <div className="relative w-64 h-32 md:w-68 md:h-32 rounded-full overflow-hidden border-4 border-white shadow-lg transition-all duration-300">
-      <div className="absolute inset-0 bg-black/10 z-10 transition-opacity group-hover:bg-black/0"></div>
+    <div
+      className={`relative w-64 h-32 md:w-68 md:h-32 rounded-full overflow-hidden border-4 shadow-lg transition-all duration-300 ${
+        isActive ? "border-[#d96828] scale-[1.03]" : "border-white"
+      }`}
+    >
+      <div className="absolute inset-0 bg-black/20 z-10 transition-opacity group-hover:bg-black/5"></div>
       <img
         src={category.image}
         alt={category.name}
@@ -105,45 +262,45 @@ const CategoryCard = ({ category }) => (
       />
     </div>
 
-    {/* Text */}
     <div className="mt-1 text-center z-10 bg-white/80 backdrop-blur-sm px-4 py-1 rounded-lg md:bg-transparent">
       <h3 className="text-xl font-bold text-gray-900">{category.name}</h3>
       <p className="text-[#d96828] text-xs font-medium uppercase tracking-wide mt-1">
-        {category.count}
+        {String(menuCollections[category.id].length).padStart(2, "0")} Dishes
       </p>
     </div>
-  </motion.div>
+  </motion.button>
 );
 
 const ProductCard = ({ product }) => (
   <motion.div 
     variants={scaleIn}
-    whileHover={{ y: -10, boxShadow: "0px 15px 30px rgba(0,0,0,0.1)" }}
-    className="bg-[#d96828] rounded-md overflow-hidden flex flex-col items-center p-4 sm:p-5 transition-shadow duration-300"
+    whileHover={{ y: -10, boxShadow: "0px 18px 36px rgba(0,0,0,0.18)" }}
+    className="group relative min-h-[280px] overflow-hidden rounded-md transition-shadow duration-300"
   >
-    {/* Image container */}
-    <div className="w-full flex-grow flex items-center justify-center">
-      <motion.img
-        whileHover={{ scale: 1.1, rotate: 2 }}
-        transition={{ type: "spring", stiffness: 200 }}
-        src={product.image}
-        alt={product.name}
-        className="w-full max-h-40 sm:max-h-48 object-contain drop-shadow-xl"
-      />
-    </div>
+    <motion.img
+      whileHover={{ scale: 1.08 }}
+      transition={{ duration: 0.45, ease: "easeOut" }}
+      src={product.image}
+      alt={product.name}
+      className="absolute inset-0 h-full w-full object-cover"
+    />
 
-    {/* Discount pill */}
-    <div className="w-full flex items-center justify-center mt-4">
-      <div className="bg-white text-xs font-bold text-gray-900 px-2 py-1 rounded-md shadow-sm">
-        {product.discount}
+    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
+
+    <div className="relative z-10 flex h-full flex-col justify-end p-5 text-center">
+      <div className="mb-2 inline-flex self-center rounded-full bg-white/92 px-3 py-1 text-xs font-bold text-gray-900 shadow-sm">
+        {product.price}
       </div>
-    </div>
 
-    {/* Title */}
-    <div className="mt-3 w-full text-center">
-      <h3 className="text-black font-extrabold text-base sm:text-lg tracking-tight">
+      <h3 className="text-base font-extrabold tracking-tight text-white drop-shadow-lg sm:text-lg">
         {product.name}
       </h3>
+
+      {product.desc && (
+        <p className="mt-2 text-xs font-medium leading-5 text-white/90 drop-shadow-md">
+          {product.desc}
+        </p>
+      )}
     </div>
   </motion.div>
 );
@@ -155,19 +312,27 @@ const ViewFullMenuButton = () => (
     viewport={{ once: true }}
     className="flex justify-center mt-12 md:mt-16 mb-6"
   >
-    <motion.button 
+    <motion.div
       whileHover={{ scale: 1.05, backgroundColor: "#FACC15", color: "#fff" }}
       whileTap={{ scale: 0.95 }}
-      className="px-8 py-3 bg-white border-2 border-[#d96828] text-[#d96828] font-bold rounded-full uppercase tracking-wider text-sm shadow-sm transition-colors duration-300"
+      className="rounded-full"
     >
-      View Full Menu
-    </motion.button>
+      <Link
+        to="/menu"
+        className="block px-8 py-3 bg-white border-2 border-[#d96828] text-[#d96828] font-bold rounded-full uppercase tracking-wider text-sm shadow-sm transition-colors duration-300"
+      >
+        View Full Menu
+      </Link>
+    </motion.div>
   </motion.div>
 );
 
 // --- Main App Component ---
 
 const WhatHotNow = () => {
+  const [activeCategory, setActiveCategory] = useState("wings");
+  const activeProducts = menuCollections[activeCategory];
+
   return (
     <div className="min-h-screen bg-white relative overflow-x-hidden font-sans selection:bg-yellow-200">
       
@@ -228,7 +393,12 @@ const WhatHotNow = () => {
           className="flex flex-wrap md:flex-nowrap justify-center gap-8 md:gap-6 mb-10 md:mb-20 mt-10"
         >
           {categories.map((cat) => (
-            <CategoryCard key={cat.id} category={cat} />
+            <CategoryCard
+              key={cat.id}
+              category={cat}
+              isActive={activeCategory === cat.id}
+              onClick={() => setActiveCategory(cat.id)}
+            />
           ))}
         </motion.div>
 
@@ -242,14 +412,14 @@ const WhatHotNow = () => {
         />
 
         {/* Products Grid */}
-        <motion.div 
+        <motion.div
+          key={activeCategory}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          animate="visible"
           variants={containerStagger}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto"
         >
-          {products.map((prod) => (
+          {activeProducts.map((prod) => (
             <ProductCard key={prod.id} product={prod} />
           ))}
         </motion.div>

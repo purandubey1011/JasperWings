@@ -55,18 +55,26 @@ const ExploreMenu = () => {
     ],
 
     tenders: [
-      { id: 8, title: "1 Tender", price: "$6.99", image: fallbackMenuImage },
+      {
+        id: 8,
+        title: "1 Tender",
+        price: "$6.99",
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/a0065c45-8ce5-4c81-b818-34317355e9be.jpg",
+      },
       {
         id: 9,
         title: "3 Tenders",
         price: "$18.99",
-        image: fallbackMenuImage,
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/a0b678b3-345e-437d-b2c2-fe745c4e1239.jpg",
       },
       {
         id: 10,
         title: "5 Tenders",
         price: "$29.99",
-        image: fallbackMenuImage,
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/55efe82c-ad0b-49d9-9c74-e9de88827e9e.jpg",
       },
     ],
 
@@ -75,31 +83,33 @@ const ExploreMenu = () => {
         id: 11,
         title: "Crispy Chicken Burger",
         price: "$11.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/3%20pound%20wings%202%20flavours%202.jpg?updatedAt=1773393924537",
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/crispy%20chicken%20burger.jpg",
       },
       {
         id: 12,
         title: "Grilled Chicken Burger",
         price: "$11.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/_DSC8796.jpg?updatedAt=1773393921043",
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/grilled%20chicken%20burger.jpg",
       },
       {
         id: 13,
         title: "Veggie Deluxe Burger",
         price: "$11.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/breade(1).jpg?updatedAt=1773393914049",
+        image: fallbackMenuImage,
       },
       {
         id: 14,
         title: "Ham Burger",
         price: "$11.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/burger%20with%20loaded%20combo.jpg?updatedAt=1773393924262",
+        image: "https://ik.imagekit.io/jasperwings/drive%20photos/Hamburger.jpg",
       },
       {
         id: 15,
         title: "Meat Lover Burger",
         price: "$14.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/_DSC8777.jpg?updatedAt=1773393921306",
+        image: fallbackMenuImage,
       },
     ],
 
@@ -108,13 +118,15 @@ const ExploreMenu = () => {
         id: 16,
         title: "Chicken Slider",
         price: "$6.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/_DSC8770.jpg?updatedAt=1773393921380",
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/chicken%20slider%20(1).jpg",
       },
       {
         id: 17,
         title: "Veggie Slider",
         price: "$6.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/_DSC8803.jpg?updatedAt=1773393921436",
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/veggie%20slider.jpg",
       },
     ],
 
@@ -123,19 +135,21 @@ const ExploreMenu = () => {
         id: 18,
         title: "Veggie Wrap",
         price: "$12.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/cheese%20cake%20roll%203.jpg?updatedAt=1773393914311",
+        image: fallbackMenuImage,
       },
       {
         id: 19,
         title: "Chicken Wrap",
         price: "$12.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/_DSC8798.jpg?updatedAt=1773393921858",
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/crispy%20chicken%20wrap.jpg",
       },
       {
         id: 20,
         title: "Meaty Wrap",
         price: "$12.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/_DSC8779.jpg?updatedAt=1773393921867",
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/meaty%20wrap(2).jpg",
       },
     ],
 
@@ -144,25 +158,29 @@ const ExploreMenu = () => {
         id: 21,
         title: "Classic Fries",
         price: "$6.99",
-        image: fallbackMenuImage,
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/fries/classic%20fries%202%20.jpg?updatedAt=1773490682800",
       },
       {
         id: 22,
         title: "Loaded Fries",
         price: "$9.99",
-        image: fallbackMenuImage,
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/fries/loaded%20fries.jpg?updatedAt=1773490682637",
       },
       {
         id: 23,
         title: "Loaded Parmesan Fries",
         price: "$9.99",
-        image: fallbackMenuImage,
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/fries/parm%20fries.jpg?updatedAt=1773490666520",
       },
       {
         id: 24,
         title: "Garlic Parmesan Fries",
         price: "$8.99",
-        image: fallbackMenuImage,
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/fries/parm%20fries.jpg?updatedAt=1773490666520",
       },
       {
         id: 25,
@@ -174,25 +192,26 @@ const ExploreMenu = () => {
         id: 26,
         title: "Chicken Bacon Ranch Fries",
         price: "$10.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/boneless%20chicken%20.jpg?updatedAt=1773393927006",
+        image: fallbackMenuImage,
       },
       {
         id: 27,
         title: "Chilli Chicken Fries",
         price: "$10.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/_DSC8818.jpg?updatedAt=1773393922873",
+        image: fallbackMenuImage,
       },
       {
         id: 28,
         title: "Meaty Poutine",
         price: "$12.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/_DSC8817.jpg?updatedAt=1773393922881",
+        image: fallbackMenuImage,
       },
       {
         id: 29,
         title: "Onion Rings",
         price: "$8.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/_DSC8760.jpg?updatedAt=1773393922207",
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/fries/onion%20rings%20(1).jpg?updatedAt=1773554826670",
       },
       { id: 30, title: "Poutine", price: "$8.99", image: fallbackMenuImage },
     ],
@@ -230,42 +249,48 @@ const ExploreMenu = () => {
         title: "Jasper Combo",
         desc: "(1 lb wings - 1 flavour, loaded fries, pop)",
         price: "$17.99",
-        image: fallbackMenuImage,
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/combo/Combo_1%20Loaded%20wing%20combo(1).jpg",
       },
       {
         id: 36,
         title: "Jasper King Combo",
         desc: "(1 lb wings, 2 tenders, fries, 2 pops)",
         price: "$29.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/3%20pound%20wings%202%20flavours%202.jpg?updatedAt=1773393924537",
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/combo/Combo_2%20Wing%20&%20tender%20combo(1).jpg",
       },
       {
         id: 37,
         title: "Wing Combo",
         desc: "(1 lb wings, fries, pop)",
         price: "$16.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/3%20pound%20wings%202%20flavours%202.jpg?updatedAt=1773393924537",
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/combo/loaded%20wing%20combo.jpg",
       },
       {
         id: 38,
         title: "Double Wings Combo",
         desc: "(2 lb wings, loaded fries, pop)",
         price: "$34.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/3%20pound%20wings%202%20flavours%202.jpg?updatedAt=1773393924537",
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/combo/dad73ff8-b6d2-4927-b1e6-958ad05deaee.jpg",
       },
       {
         id: 39,
         title: "Triple Wing Combo",
         desc: "(2 lb wings, 2 sliders, fries, 3 pops)",
         price: "$44.99",
-        image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/3%20pound%20wings%202%20flavours%202.jpg?updatedAt=1773393924537",
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/combo/fb6e3046-f8fa-4217-9c39-38201e1bfbff.jpg",
       },
       {
         id: 40,
         title: "Veggie Lovers Combo",
         desc: "(Veggie wrap, loaded fries, pop)",
         price: "$16.99",
-        image: fallbackMenuImage,
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/combo/Combo_5%20Veggie%20Loaded%20Combo(1)(1).jpg",
       },
     ],
 
@@ -274,19 +299,22 @@ const ExploreMenu = () => {
         id: 41,
         title: "Cheesecake Roll",
         price: "$4.99",
-        image: fallbackMenuImage,
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/dessert/80b6ac1d-4dc9-4550-8726-5c1ef3c53442.jpg",
       },
       {
         id: 42,
         title: "Cheesecake Slice",
         price: "$4.99",
-        image: fallbackMenuImage,
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/dessert/bde2fe16-0385-4b6f-9026-6e6d7129945e.jpg",
       },
       {
         id: 43,
         title: "Choco Lava Cake",
         price: "$3.99",
-        image: fallbackMenuImage,
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/dessert/a1b5923b-2b3d-4f22-9e49-1ad9c14f08a7.jpg",
       },
     ],
 
@@ -301,7 +329,8 @@ const ExploreMenu = () => {
         id: 45,
         title: "Red Bull",
         price: "$3.49",
-        image: fallbackMenuImage,
+        image:
+          "https://ik.imagekit.io/jasperwings/drive%20photos/drinks/red%20buu.png",
       },
       { id: 46, title: "Juice", price: "$3.49", image: fallbackMenuImage },
     ],

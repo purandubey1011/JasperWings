@@ -1,114 +1,142 @@
 import React from "react";
 
 const GallerySection = () => {
-  // image sources (kept same as your original)
   const images = {
-    steakPlate:
-      "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    qrCode:
-      "https://images.unsplash.com/photo-1706759755851-6163305080f0?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    grill:
-      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=999&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    coffee:
-      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80",
+    wings:
+      "https://ik.imagekit.io/jasperwings/jasper%20website%20images/1lb%20(1flavour)skip.jpg?updatedAt=1773393911524",
+    tenders:
+      "https://ik.imagekit.io/jasperwings/drive%20photos/a0b678b3-345e-437d-b2c2-fe745c4e1239.jpg",
+    burger:
+      "https://ik.imagekit.io/jasperwings/drive%20photos/crispy%20chicken%20burger.jpg",
+    slider:
+      "https://ik.imagekit.io/jasperwings/drive%20photos/chicken%20slider%20(1).jpg",
+    wrap:
+      "https://ik.imagekit.io/jasperwings/drive%20photos/crispy%20chicken%20wrap.jpg",
+    fries:
+      "https://ik.imagekit.io/jasperwings/drive%20photos/fries/loaded%20fries.jpg?updatedAt=1773490682637",
+    combo:
+      "https://ik.imagekit.io/jasperwings/drive%20photos/combo/Combo_1%20Loaded%20wing%20combo(1).jpg",
+    dessert:
+      "https://ik.imagekit.io/jasperwings/drive%20photos/dessert/80b6ac1d-4dc9-4550-8726-5c1ef3c53442.jpg",
+    drink:
+      "https://ik.imagekit.io/jasperwings/drive%20photos/drinks/red%20buu.png",
+    onionRings:
+      "https://ik.imagekit.io/jasperwings/drive%20photos/fries/onion%20rings%20(1).jpg?updatedAt=1773554826670",
   };
 
   const row1 = [
-    { id: 1, src: images.steakPlate, alt: "Steak on wooden board" },
-    { id: 2, src: images.qrCode, alt: "Scanning QR menu" },
-    { id: 3, src: images.grill, alt: "Steaks on grill" },
-    { id: 4, src: images.qrCode, alt: "Scanning QR menu" },
-    { id: 5, src: images.coffee, alt: "Pouring coffee" },
+    { id: 1, src: images.wings, alt: "Jasper wings" },
+    { id: 2, src: images.tenders, alt: "Jasper tenders" },
+    { id: 3, src: images.burger, alt: "Crispy chicken burger" },
+    { id: 4, src: images.slider, alt: "Chicken slider" },
+    { id: 5, src: images.wrap, alt: "Chicken wrap" },
   ];
 
   const row2 = [
-    { id: 6, src: images.grill, alt: "Steaks on grill" },
-    { id: 7, src: images.steakPlate, alt: "Steak on wooden board" },
-    { id: 8, src: images.coffee, alt: "Pouring coffee" },
-    { id: 9, src: images.steakPlate, alt: "Steak on wooden board" },
-    { id: 10, src: images.grill, alt: "Steaks on grill" },
+    { id: 6, src: images.fries, alt: "Loaded fries" },
+    { id: 7, src: images.combo, alt: "Jasper combo" },
+    { id: 8, src: images.dessert, alt: "Cheesecake roll" },
+    { id: 9, src: images.drink, alt: "Red Bull drink" },
+    { id: 10, src: images.onionRings, alt: "Onion rings" },
   ];
 
-  return (
-    <div className="w-full bg-gray-200 py-4 overflow-hidden px-4 sm:px-12">
-      <div className="flex flex-col gap-4">
-        {/* ROW 1 */}
-        <div
-          className="
-            /* desktop: usual wide row (keeps previous behaviour) */
-            w-[180%] ml-[-40%] sm:w-[150%] sm:ml-[-25%] md:w-[125%] md:ml-[-12.5%]
-            flex gap-4
-
-            /* MOBILE: use vw/vh units so visible parts match screenshot exactly */
-            max-sm:w-[220vw] max-sm:-ml-[60vw] max-sm:gap-3
-            max-sm:overflow-visible
-          "
-        >
-          {row1.map((img, index) => (
-            <div
-              key={`r1-${index}`}
-              className="
-                flex-none relative group overflow-hidden bg-white rounded-md
-                /* make each tile width responsive with vw */
-                w-[20%] sm:w-[20%] md:flex-1
-
-                /* MOBILE: width relative to viewport so cropping is predictable */
-                max-sm:w-[42vw] max-sm:h-[28vh] max-sm:rounded-sm
-              "
-              style={{ minWidth: "0" }}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="
-                  w-full object-cover 
-h-[260px] md:h-[300px] transform transition-transform duration-500 group-hover:scale-110 block
-
-                  /* MOBILE: ensure image fills designated vh height */
-                  max-sm:w-[100%] max-sm:h-[28vh] max-sm:object-cover
-                "
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-            </div>
-          ))}
-        </div>
-
-        {/* ROW 2 */}
-        <div
-          className="
-            w-[180%] ml-[-40%] sm:w-[150%] sm:ml-[-25%] md:w-[125%] md:ml-[-6.5%]
-            flex gap-4
-
-            /* MOBILE specific */
-            max-sm:w-[220vw] max-sm:-ml-[30vw] max-sm:gap-3
-            max-sm:overflow-visible
-          "
-        >
-          {row2.map((img, index) => (
-            <div
-              key={`r2-${index}`}
-              className="
-                flex-none relative group overflow-hidden bg-white rounded-md
-                w-[20%] sm:w-[20%] md:flex-1
-
-                /* MOBILE sizing */
-                max-sm:w-[42vw] max-sm:h-[28vh] max-sm:rounded-sm
-              "
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="
-                  w-full object-cover 
-h-[260px] md:h-[300px]  transform transition-transform duration-500 group-hover:scale-110 block
-                  max-sm:w-[100%] max-sm:h-[28vh] max-sm:object-cover
-                "
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-            </div>
-          ))}
-        </div>
+  const GalleryRow = ({ items, direction = "left" }) => (
+    <div className="overflow-hidden">
+      <div
+        className={`gallery-track ${
+          direction === "left" ? "gallery-track-left" : "gallery-track-right"
+        }`}
+      >
+        {[0, 1].map((copyIndex) => (
+          <div
+            key={copyIndex}
+            className="gallery-group"
+            aria-hidden={copyIndex === 1 ? "true" : undefined}
+          >
+            {items.map((img, index) => (
+              <div
+                key={`${copyIndex}-${img.id}-${index}`}
+                className="gallery-card group relative overflow-hidden rounded-md bg-white"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
+    </div>
+  );
+
+  return (
+    <div className="w-full overflow-hidden bg-gray-200 py-4">
+      <div className="flex flex-col gap-4">
+        <GalleryRow items={row1} direction="left" />
+        <GalleryRow items={row2} direction="right" />
+      </div>
+
+      <style>{`
+        .gallery-track {
+          display: flex;
+          width: max-content;
+        }
+
+        .gallery-group {
+          display: flex;
+          gap: 1rem;
+          flex-shrink: 0;
+        }
+
+        .gallery-card {
+          width: 42vw;
+          height: 28vh;
+          flex-shrink: 0;
+        }
+
+        .gallery-track-left {
+          animation: gallery-left 32s linear infinite;
+        }
+
+        .gallery-track-right {
+          animation: gallery-right 32s linear infinite;
+        }
+
+        @keyframes gallery-left {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes gallery-right {
+          from {
+            transform: translateX(-50%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+
+        @media (min-width: 640px) {
+          .gallery-card {
+            width: 32vw;
+            height: 260px;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .gallery-card {
+            width: 24vw;
+            height: 300px;
+          }
+        }
+      `}</style>
     </div>
   );
 };

@@ -19,15 +19,18 @@ import GallerySection from "../components/Home/GallerySection";
 import WhatHotNow from "../components/Home/WhatHotNow";
 
 // --- Mock Data ---
+const fallbackHomeMenuImage =
+  "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?q=80&w=1115&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
 const menuItems = [
-  { id: 1, name: "Inferno Burger", price: "$12.99", image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=60", oldPrice: "15.99" },
-  { id: 2, name: "Spicy Wings", price: "$14.50", image: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=60", oldPrice: "18.50" },
-  { id: 3, name: "Loaded Fries", price: "$8.99", image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=60", oldPrice: "10.99" },
-  { id: 4, name: "Crispy Tenders", price: "$10.99", image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=500&q=60", oldPrice: "12.99" },
-  { id: 5, name: "Veggie Wrap", price: "$16.00", image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/cheese%20cake%20roll%203.jpg?updatedAt=1773393914311", oldPrice: "19.00" },
-  { id: 6, name: "Mega Wrap", price: "$9.50", image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=60", oldPrice: "11.50" },
-  { id: 7, name: "Street Tacos", price: "$11.00", image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=60", oldPrice: "14.00" },
-  { id: 8, name: "Double Smash", price: "$15.99", image: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=500&q=60", oldPrice: "18.99" },
+  { id: 1, name: "Inferno Burger", price: "$12.99", image: fallbackHomeMenuImage, oldPrice: "15.99" },
+  { id: 2, name: "Spicy Wings", price: "$14.50", image: fallbackHomeMenuImage, oldPrice: "18.50" },
+  { id: 3, name: "Loaded Fries", price: "$8.99", image: "https://ik.imagekit.io/jasperwings/drive%20photos/fries/loaded%20fries.jpg", oldPrice: "10.99" },
+  { id: 4, name: "Crispy Tenders", price: "$10.99", image: "https://ik.imagekit.io/jasperwings/drive%20photos/a0b678b3-345e-437d-b2c2-fe745c4e1239.jpg", oldPrice: "12.99" },
+  { id: 5, name: "Veggie Wrap", price: "$16.00", image: fallbackHomeMenuImage, oldPrice: "19.00" },
+  { id: 6, name: "Mega Wrap", price: "$9.50", image: fallbackHomeMenuImage, oldPrice: "11.50" },
+  { id: 7, name: "Street Tacos", price: "$11.00", image: fallbackHomeMenuImage, oldPrice: "14.00" },
+  { id: 8, name: "Double Smash", price: "$15.99", image: fallbackHomeMenuImage, oldPrice: "18.99" },
 ];
 
 // --- Animation Variants ---
