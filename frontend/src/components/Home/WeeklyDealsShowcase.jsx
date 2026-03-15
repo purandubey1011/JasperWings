@@ -56,17 +56,23 @@ const WeeklyDealsShowcase = () => {
   const [activeDeal, setActiveDeal] = useState("monday");
 
   return (
-    <div className="flex flex-col gap-4 lg:flex-row">
+    <motion.div layout className="flex flex-col gap-4 lg:flex-row">
       {deals.map((deal, index) => {
         const isActive = activeDeal === deal.id;
 
         return (
           <motion.article
             key={deal.id}
+            layout
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ delay: index * 0.07, duration: 0.45, ease: "easeOut" }}
+            transition={{
+              delay: index * 0.07,
+              duration: 0.45,
+              ease: "easeOut",
+              layout: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+            }}
             onClick={() => setActiveDeal(deal.id)}
             className={`group relative overflow-hidden rounded-[28px] bg-black text-white cursor-pointer transition-all duration-500 ${
               isActive
@@ -79,16 +85,27 @@ const WeeklyDealsShowcase = () => {
               alt={deal.title}
               className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
             />
-            <div
-              className={`absolute inset-0 ${
-                isActive
-                  ? "bg-[linear-gradient(135deg,rgba(0,0,0,0.84),rgba(0,0,0,0.45)_52%,rgba(217,104,40,0.2))]"
-                  : "bg-[linear-gradient(180deg,rgba(0,0,0,0.3),rgba(0,0,0,0.82))]"
-              }`}
+
+            <motion.div
+              className="absolute inset-0"
+              animate={{
+                background: isActive
+                  ? "linear-gradient(135deg,rgba(0,0,0,0.84),rgba(0,0,0,0.45) 52%,rgba(217,104,40,0.2))"
+                  : "linear-gradient(180deg,rgba(0,0,0,0.3),rgba(0,0,0,0.82))",
+              }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
             />
 
-            {isActive ? (
-              <div className="relative z-10 flex h-full flex-col justify-between p-6 md:p-8">
+            <motion.div
+              className="absolute inset-0 z-10"
+              animate={{
+                opacity: isActive ? 1 : 0,
+                y: isActive ? 0 : 8,
+              }}
+              transition={{ duration: 0.28, ease: "easeOut" }}
+              style={{ pointerEvents: isActive ? "auto" : "none" }}
+            >
+              <div className="flex h-full flex-col justify-between p-6 md:p-8">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#f0a33a]">
                     {deal.day}
@@ -128,17 +145,27 @@ const WeeklyDealsShowcase = () => {
                   </div>
                 </div>
               </div>
-            ) : (
-              <div className="relative z-10 flex h-full items-end justify-start p-4 lg:items-center lg:justify-center lg:p-0">
+            </motion.div>
+
+            <motion.div
+              className="absolute inset-0 z-10"
+              animate={{
+                opacity: isActive ? 0 : 1,
+                y: isActive ? -8 : 0,
+              }}
+              transition={{ duration: 0.24, ease: "easeOut" }}
+              style={{ pointerEvents: isActive ? "none" : "auto" }}
+            >
+              <div className="flex h-full items-end justify-start p-4 lg:items-center lg:justify-center lg:p-0">
                 <span className="text-xl font-black uppercase tracking-[0.22em] text-white drop-shadow-lg lg:[writing-mode:vertical-rl] lg:rotate-180 lg:text-2xl">
                   {deal.day}
                 </span>
               </div>
-            )}
+            </motion.div>
           </motion.article>
         );
       })}
-    </div>
+    </motion.div>
   );
 };
 

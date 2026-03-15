@@ -416,10 +416,6 @@ const ExploreMenu = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
 
       <div className="relative z-10 flex h-full flex-col justify-end p-5">
-        <div className="mb-2 text-2xl font-black text-white drop-shadow-lg">
-          {item.price}
-        </div>
-
         <div className="text-base font-extrabold text-white md:text-lg drop-shadow-lg">
           {item.title}
         </div>

@@ -3,7 +3,6 @@ import { Outlet } from "react-router-dom";
 import { ChevronUp } from "lucide-react";
 import Navbar from "../common/Navbar";
 import MenuHero from "./MenuHero";
-import DailySpecialDeals from "./DailySpecialDeals";
 import BookTableSection from "../Home/BookTableSection";
 import Footer from "../Home/Footer";
 
@@ -38,7 +37,6 @@ const MenuLayout = () => {
     >
       <Navbar />
       <MenuHero />
-      <DailySpecialDeals />
 
       {/* 👇 yahin swap hoga Explore / Flavours */}
       <Outlet />
