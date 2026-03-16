@@ -180,7 +180,7 @@ const ExploreMenu = () => {
         title: "Garlic Parmesan Fries",
         price: "$8.99",
         image:
-          "https://ik.imagekit.io/jasperwings/drive%20photos/fries/parm%20fries.jpg?updatedAt=1773490666520",
+          "https://ik.imagekit.io/jasperwings/drive%20photos/Loaded%20Garlic%20Parm%20Fries.PNG",
       },
       {
         id: 25,
