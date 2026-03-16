@@ -23,14 +23,14 @@ const fallbackHomeMenuImage =
   "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?q=80&w=1115&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 const menuItems = [
-  { id: 1, name: "Inferno Burger", price: "$12.99", image: fallbackHomeMenuImage, oldPrice: "15.99" },
-  { id: 2, name: "Spicy Wings", price: "$14.50", image: fallbackHomeMenuImage, oldPrice: "18.50" },
+  { id: 1, name: "Meaty Wrap", price: "$12.99", image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/folder%20images/Wraps/meaty%20wrap.jpg?updatedAt=1773657828764", oldPrice: "15.99" },
+  { id: 2, name: "Spicy Wings", price: "$14.50", image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/folder%20images/Wings%20(bone%20in%20or%20boneless)/6lb%20(6%20flavours)(1).jpg?updatedAt=1773657786218", oldPrice: "18.50" },
   { id: 3, name: "Loaded Fries", price: "$8.99", image: "https://ik.imagekit.io/jasperwings/drive%20photos/fries/loaded%20fries.jpg", oldPrice: "10.99" },
   { id: 4, name: "Crispy Tenders", price: "$10.99", image: "https://ik.imagekit.io/jasperwings/drive%20photos/a0b678b3-345e-437d-b2c2-fe745c4e1239.jpg", oldPrice: "12.99" },
-  { id: 5, name: "Veggie Wrap", price: "$16.00", image: fallbackHomeMenuImage, oldPrice: "19.00" },
-  { id: 6, name: "Mega Wrap", price: "$9.50", image: fallbackHomeMenuImage, oldPrice: "11.50" },
-  { id: 7, name: "Street Tacos", price: "$11.00", image: fallbackHomeMenuImage, oldPrice: "14.00" },
-  { id: 8, name: "Double Smash", price: "$15.99", image: fallbackHomeMenuImage, oldPrice: "18.99" },
+  { id: 5, name: "Veggie Slider", price: "$16.00", image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/folder%20images/Sliders/veggie%20slider.jpg?updatedAt=1773657751878", oldPrice: "19.00" },
+  { id: 6, name: "Cauliflower Bites", price: "$9.50", image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/folder%20images/On-Sides%20Bites/cauliflower%20bites.jpg?updatedAt=1773657702988", oldPrice: "11.50" },
+  { id: 7, name: "Veggie Combo", price: "$11.00", image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/folder%20images/Combos/Combo_5%20Veggie%20Loaded%20Combo(1)(1).jpg?updatedAt=1773657448463", oldPrice: "14.00" },
+  { id: 8, name: "Ham Burger", price: "$15.99", image: "https://ik.imagekit.io/jasperwings/jasper%20website%20images/folder%20images/Burgers/Ham%20Burger.jpg?updatedAt=1773657406427", oldPrice: "18.99" },
 ];
 
 // --- Animation Variants ---
