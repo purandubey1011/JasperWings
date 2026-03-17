@@ -17,9 +17,6 @@ import { Link } from "react-router-dom";
 import { CLOVER_ORDER_URL } from "../../utils/externalLinks";
 
 const Footer = () => {
-  // --- Animation Variants ---
-
-  // 1. Floating Animation for Decor
   const floatAnim = {
     animate: {
       y: [0, -15, 0],
@@ -32,7 +29,6 @@ const Footer = () => {
     },
   };
 
-  // 2. Stagger Container
   const containerStagger = {
     hidden: { opacity: 0 },
     visible: {
@@ -44,7 +40,6 @@ const Footer = () => {
     },
   };
 
-  // 3. Fade Up Item
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -54,9 +49,8 @@ const Footer = () => {
     },
   };
 
-  // 4. Social Icon Hover
   const iconHover = {
-    rest: { scale: 1, color: "#9ca3af" }, // text-gray-400
+    rest: { scale: 1, color: "#9ca3af" },
     hover: {
       scale: 1.2,
       color: "#ffffff",
@@ -66,9 +60,6 @@ const Footer = () => {
 
   return (
     <footer className="relative w-full bg-[#080808] text-gray-400 font-sans overflow-hidden py-16 md:py-14">
-      {/* ===================== DECOR IMAGES (Floating) ===================== */}
-
-      {/* Top Left Image */}
       <motion.div
         variants={floatAnim}
         animate="animate"
@@ -77,15 +68,14 @@ const Footer = () => {
         <img
           src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/tomato.png"
           alt="decoration"
-          className=" lg:w-26 w-22 md:w-40 rotate-7"
+          className="lg:w-26 w-22 md:w-40 rotate-7"
         />
       </motion.div>
 
-      {/* Right Side Image */}
       <motion.div
         variants={floatAnim}
         animate="animate"
-        transition={{ delay: 2 }} // Offset animation
+        transition={{ delay: 2 }}
         className="absolute top-44 -right-12 -translate-y-1/2 opacity-70 pointer-events-none hidden sm:block"
       >
         <img
@@ -95,8 +85,6 @@ const Footer = () => {
         />
       </motion.div>
 
-      {/* ===================== MAIN CONTENT ===================== */}
-
       <motion.div
         variants={containerStagger}
         initial="hidden"
@@ -104,7 +92,6 @@ const Footer = () => {
         viewport={{ once: true }}
         className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 relative z-10"
       >
-        {/* Top Border (Animated Width) */}
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "100%" }}
@@ -114,9 +101,7 @@ const Footer = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          {/* ================= LEFT SIDE ================= */}
           <div>
-            {/* Logo */}
             <motion.div variants={fadeInUp} className="mb-8">
               <div className="inline-flex p-2 border border-gray-700 rounded bg-black w-40 sm:w-48">
                 <img
@@ -127,20 +112,17 @@ const Footer = () => {
               </div>
             </motion.div>
 
-            {/* Opening Hours */}
             <motion.div
               variants={fadeInUp}
               className="space-y-2 text-sm sm:text-base text-gray-300"
             >
-              <p>Monday–Thursday: 11:00 AM – 12 AM</p>
-              <p>Friday–Saturday: 11:00 AM – 2 PM</p>
-              <p>Sunday: 11:00 AM – 12 AM</p>
+              <p>Monday-Thursday: 11:00 AM - 12 AM</p>
+              <p>Friday-Saturday: 11:00 AM - 2 AM</p>
+              <p>Sunday: 11:00 AM - 12 AM</p>
             </motion.div>
           </div>
 
-          {/* ================= RIGHT SIDE ================= */}
           <div className="lg:flex lg:flex-col lg:items-end">
-            {/* Address */}
             <motion.div variants={fadeInUp} className="flex items-start mb-4">
               <MdLocationOn className="text-white text-lg mt-0.5 mr-3" />
               <span className="text-sm sm:text-base text-gray-300">
@@ -148,7 +130,6 @@ const Footer = () => {
               </span>
             </motion.div>
 
-            {/* Contact Info */}
             <motion.div
               variants={fadeInUp}
               className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 mb-8 text-sm text-gray-300"
@@ -164,9 +145,8 @@ const Footer = () => {
               </div>
             </motion.div>
 
-            {/* Social Icons (Staggered Pop) */}
-            {/* <motion.div 
-              variants={containerStagger} 
+            {/* <motion.div
+              variants={containerStagger}
               className="flex items-center gap-4 text-gray-400"
             >
               <motion.span variants={fadeInUp} className="text-sm mr-2 hidden sm:block">
@@ -175,9 +155,9 @@ const Footer = () => {
 
               {[FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaInstagram, FaGooglePlusG, FaPinterestP, FaRss].map(
                 (Icon, index) => (
-                  <motion.a 
-                    key={index} 
-                    href="#" 
+                  <motion.a
+                    key={index}
+                    href="#"
                     variants={iconHover}
                     initial="rest"
                     whileHover="hover"
@@ -191,7 +171,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Border (Animated Width) */}
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "100%" }}
@@ -200,22 +179,19 @@ const Footer = () => {
           className="border-t border-gray-800 mb-6"
         />
 
-        {/* ================== BOTTOM BAR ================== */}
         <motion.div
           variants={fadeInUp}
           className="flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-gray-400 tracking-wide"
         >
-          {/* Pages */}
-          {/* Pages */}
           <div className="flex flex-wrap justify-center md:justify-start gap-4 sm:gap-6 mb-4 md:mb-0">
             {[
               { label: "Home", path: "/" },
               { label: "Menu", path: "/menu" },
               { label: "Coming Soon", path: "/coming-soon" },
               { label: "Contact", path: "/contact" },
-              { label: "Franchise", path: "/franchizy" },
+              { label: "Franchise", path: "/franchise" },
               { label: "Order Now", path: CLOVER_ORDER_URL, external: true },
-            ].map((item) => (
+            ].map((item) =>
               item.external ? (
                 <a
                   key={item.label}
@@ -235,11 +211,10 @@ const Footer = () => {
                   {item.label}
                 </Link>
               )
-            ))}
+            )}
           </div>
 
-          {/* Copyright */}
-          <p className="text-center md:text-right">© 2025 • Falverra</p>
+          <p className="text-center md:text-right">(c) 2025 • Falverra</p>
         </motion.div>
       </motion.div>
     </footer>

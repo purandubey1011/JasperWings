@@ -60,10 +60,10 @@ const Navbar = ({ bg = "black" }) => {
             Contact
           </Link>
           <Link
-            to="/franchizy"
+            to="/franchise"
             className="hover:text-[#d96828] transition-colors uppercase"
           >
-            Franshise
+            Franchise
           </Link>
         </div>
 
@@ -141,11 +141,11 @@ const Navbar = ({ bg = "black" }) => {
               Coming Soon
             </Link>
             <Link
-              to="/franchizy"
+              to="/franchise"
               className="hover:text-[#d96828] transition-colors uppercase"
               onClick={() => setIsOpen(false)}
             >
-              Franshise
+              Franchise
             </Link>
 
             <a

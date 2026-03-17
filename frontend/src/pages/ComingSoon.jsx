@@ -490,7 +490,7 @@ const ComingSoon = () => {
             className="mt-6 inline-flex"
           >
             <Link
-              to="/franchizy"
+              to="/franchise"
               className="bg-[#d96828] text-black font-medium uppercase px-5 py-3 rounded-full transition-colors tracking-wide"
             >
               Become a Franchise Partner

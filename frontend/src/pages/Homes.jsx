@@ -200,7 +200,7 @@ const FeatureSection = () => {
         <motion.img
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          src="https://ik.imagekit.io/jasperwings/jasper%20website%20images/assets%20images/splaterpizza.png"
+          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jasper%20wings/burger.png"
           alt="pizza sketch"
           className="w-full h-auto object-contain"
         />
